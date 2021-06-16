@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 def get_username():
     details = mongo.db.users.find()
     for detail in details:
-        return detail
+    return detail
 
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"), port = int(os.environ.get("PORT")), debug = True)
