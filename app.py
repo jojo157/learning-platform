@@ -13,12 +13,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+  
+
 @app.route("/")
-def get_username():
+@app.route("/profile")
+def profile():
     details = mongo.db.users.find()
-    for detail in details:
-        username = detail.username
-    return username
+    return render_template("profile.html", details = details)
+
 
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"), port = int(os.environ.get("PORT")), debug = True)

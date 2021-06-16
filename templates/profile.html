@@ -7,10 +7,13 @@
     <title>Profile</title>
 </head>
 <body>
-    {%% for detail in details %%}
-        {{detail.username}} <br>
+    <h3>I loaded </h3>
+    {% for detail in details %}
+    <p>{{detail.username}} <br>
         {{detail.access_level}} <br>
-    {{%% endfor %%}}
+    </p>
+        
+    {% endfor %}
     
 </body>
 </html>
