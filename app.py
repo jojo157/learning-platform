@@ -13,7 +13,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-@app.route("/get_username")
+@app.route("/")
 def get_username():
     details = mongo.db.users.find()
     return render_template("profile.html", details = details)
