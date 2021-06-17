@@ -1,0 +1,17 @@
+.logo-size{
+    
+    object-fit: contain;
+}
+
+.brand-logo{
+    margin-left: 10px;
+}
+
+.side-panel{
+    background-color: pink;
+} 
+
+
+.main-panel{
+    background-color: aqua;
+}

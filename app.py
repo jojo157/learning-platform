@@ -16,6 +16,10 @@ mongo = PyMongo(app)
   
 
 @app.route("/")
+def home():
+    return render_template("base.html")
+
+
 @app.route("/profile")
 def profile():
     details = mongo.db.users.find()
