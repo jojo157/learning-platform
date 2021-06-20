@@ -25,7 +25,7 @@
                         <li><a href="#">Settings</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         {%  if session.access|lower == "admin"|lower %}
-                            <li><a href="#">Admin</a></li>
+                            <li><a href="{{ url_for('admin') }}">Admin</a></li>
                             <li><a href="{{ url_for('content') }}">Add Site Content</a></li>
                         {% endif %}
                     {% else %}
@@ -43,7 +43,7 @@
                         <li><a href="#">Settings</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         {%  if session.access|lower == "admin"|lower %}
-                            <li><a href="#">Admin</a></li>
+                            <li><a href="{{ url_for('admin') }}">Admin</a></li>
                             <li><a href="{{ url_for('content') }}">Add Site Content</a></li>
                         {% endif %}
                     {% else %}

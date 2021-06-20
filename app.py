@@ -101,9 +101,7 @@ def profile():
     return render_template("index.html")
 
 @app.route("/content", methods=["GET", "POST"])
-def content():
-   
-   
+def content():  
     if request.method == "GET":   
         if not session.get("user") is None:
             return render_template("content.html")
@@ -129,6 +127,10 @@ def content():
 
     return render_template("register.html")
 
+@app.route("/admin")
+def admin():
+    all_users = mongo.db.users.find()
+    return render_template("admin.html", all_users=all_users)
 
 
 
