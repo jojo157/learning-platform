@@ -99,5 +99,16 @@ def profile():
         return render_template("profile.html", name=name)
     return render_template("index.html")
 
+@app.route("/content", methods=["GET", "POST"])
+def content():
+    if not session.get("user") is None:
+        return render_template("content.html")
+    return render_template("index.html")
+
+
+
+
+
+
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"), port = int(os.environ.get("PORT")), debug = True)
