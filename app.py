@@ -95,8 +95,8 @@ def logout():
 @app.route("/profile")
 def profile():
     if not session.get("user") is None:
-        details = mongo.db.users.find()
-        return render_template("profile.html", details = details)
+        name = mongo.db.users.find_one({"username": session["user"]})["first_name"]
+        return render_template("profile.html", name=name)
     return render_template("index.html")
 
 if __name__ == "__main__":
