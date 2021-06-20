@@ -18,7 +18,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("index.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -44,8 +44,9 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
+        session["access"] = "general"
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", username=session["user"], access=session["access"]))
 
     return render_template("register.html")
 
@@ -64,8 +65,9 @@ def login():
                         session["user"] = request.form.get("username").lower()
                         flash("Welcome, {}".format(
                             request.form.get("username")))
+                        session["access"] = existing_user["access_level"]
                         return redirect(url_for(
-                            "profile", username=session["user"]))
+                            "profile", username=session["user"], access=session["access"]) )
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -78,11 +80,24 @@ def login():
 
     return render_template("login.html")
 
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    session.pop("access")
+    return redirect(url_for("login"))
+
+
+
+
+
 @app.route("/profile")
 def profile():
-    details = mongo.db.users.find()
-    return render_template("profile.html", details = details)
-
+    if not session.get("user") is None:
+        details = mongo.db.users.find()
+        return render_template("profile.html", details = details)
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"), port = int(os.environ.get("PORT")), debug = True)
