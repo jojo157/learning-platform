@@ -3,13 +3,14 @@
     <h3>Admin Page</h3>
     <div class="row">
 
+        
         {% for singleuser in all_users %}
         <div class="col s10 offset-s1 m6 l4">
             <div class="collection">
               <p> Username : {{ singleuser.username }}</p> 
               <p> First Name : {{ singleuser.first_name }}</p> 
               <p> Last Name : {{ singleuser.last_name }}</p> 
-              <p> Access Level: {{ singleuser.access_level }}</p> 
+              <p> Access Level : {{ singleuser.access_level }}</p> 
               <p> Email : {{ singleuser.email }}</p> 
                 <a  href="" class="col s4 btn-small light-blue darken-4 text-shadow right">
                     Edit <i class="fas fa-user-edit"></i>

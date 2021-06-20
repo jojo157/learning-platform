@@ -19,3 +19,7 @@
 textarea#body.materialize-textarea{
     height: 6rem;
 }
+
+.tab {
+    tab-size: 4;
+}

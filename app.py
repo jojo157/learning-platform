@@ -132,6 +132,39 @@ def admin():
     all_users = mongo.db.users.find()
     return render_template("admin.html", all_users=all_users)
 
+@app.route("/user_settings", methods=["GET", "POST"])
+def user_settings():
+    if request.method == "GET":
+        user_details = mongo.db.users.find_one({"username": session["user"]})
+        return render_template("usersettings.html", user_details=user_details)
+
+
+    if request.method == "POST":
+        user_details = mongo.db.users.find_one({"username": session["user"]})
+        if user_details["password"]== "######":
+           updated = {
+            "first_name": request.form.get("first_name").lower(),
+            "last_name": request.form.get("last_name").lower(),
+            "email": request.form.get("email").lower(),
+            "password": user_details.password,
+            "access_level": user_details["access_level"]
+           }
+           mongo.db.tasks.update({"username": session["user"]}, update)
+        else :
+            updated = {
+            "password": generate_password_hash(request.form.get("password")),
+            "first_name": request.form.get("first_name").lower(),
+            "last_name": request.form.get("last_name").lower(),
+            "email": request.form.get("email").lower(),
+            "access_level": user_details["access_level"]
+           }
+            mongo.db.tasks.update_one({"username": session["user"]}, updated)
+        flash("Profile Updated")
+    return render_template("profile.html")
+
+    
+
+
 
 
 
