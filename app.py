@@ -1,6 +1,7 @@
 import os
 from flask import Flask, flash, render_template, redirect, request, session, url_for
 from flask_pymongo import PyMongo
+from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -101,10 +102,32 @@ def profile():
 
 @app.route("/content", methods=["GET", "POST"])
 def content():
-    if not session.get("user") is None:
-        return render_template("content.html")
-    return render_template("index.html")
+   
+   
+    if request.method == "GET":   
+        if not session.get("user") is None:
+            return render_template("content.html")
+        return render_template("index.html")
 
+    if request.method == "POST":
+        newpost = {
+            "user": session.get("user").lower(),
+            "category": request.form.get("category").lower(),
+            "title": request.form.get("title").lower(),
+            "content": request.form.get("body"),
+            "date": datetime.now(),
+            "keywords": request.form.get("keywords").lower(),
+            "view": "public",
+            "rating_up": 0,
+            "rating_down":0
+        }
+        mongo.db.content.insert_one(newpost)
+
+        # put the new user into 'session' cookie
+        flash("Post added!")
+        return redirect(url_for("profile", username=session["user"], access=session["access"]))
+
+    return render_template("register.html")
 
 
 
