@@ -2,7 +2,6 @@ import os
 from flask import Flask, flash, render_template, redirect, request, session, url_for
 from flask_pymongo import PyMongo
 from datetime import datetime
-import bson
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -30,15 +29,18 @@ def home():
 
 @app.route("/home/score_up/<string:rated_article>")
 def score_up(rated_article):
-    current_score = mongo.db.content.find_one({'_id': ObjectId(rated_article)})
-    return render_template('home.html', current_score=current_score)
+    document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
+    current_score = document["rating_up"]
+    new_score = current_score + 1
+    mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
+    return redirect(url_for('home'))
 
 @app.route("/home/score_down/<string:rated_article>")
 def score_down(rated_article):
-    current_score = mongo.db.content.find_one({"_id": ObjectId(str(rated_article))})
-    new_score = current_score.rating_down
-    new_score = new_score + 1
-    mongo.db.content.update_one({"_id": rated_article}, { "$set": {"rating_down": new_score} })
+    document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
+    current_score = document["rating_down"]
+    new_score = current_score + 1
+    mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
     return redirect(url_for('home'))
     
 
