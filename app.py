@@ -2,6 +2,7 @@ import os
 from flask import Flask, flash, render_template, redirect, request, session, url_for
 from flask_pymongo import PyMongo
 from datetime import datetime
+import bson
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -27,6 +28,19 @@ def home():
     site_contents = mongo.db.content.find( {"view" : "public"})
     return render_template("home.html", site_contents = site_contents)
 
+@app.route("/home/score_up/<string:rated_article>")
+def score_up(rated_article):
+    current_score = mongo.db.content.find_one({'_id': ObjectId(rated_article)})
+    return render_template('home.html', current_score=current_score)
+
+@app.route("/home/score_down/<string:rated_article>")
+def score_down(rated_article):
+    current_score = mongo.db.content.find_one({"_id": ObjectId(str(rated_article))})
+    new_score = current_score.rating_down
+    new_score = new_score + 1
+    mongo.db.content.update_one({"_id": rated_article}, { "$set": {"rating_down": new_score} })
+    return redirect(url_for('home'))
+    
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -124,7 +138,8 @@ def content():
             "view": "public",
             "rating_up": 0,
             "rating_down":0,
-            "picture": request.form.get("picture")
+            "picture": request.form.get("picture"),
+            "resource": request.form.get("resource")
         }
         mongo.db.content.insert_one(newpost)
 

@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
     <h3>Home Page</h3>
- 
+
+
     <div class="row">
         {% for single_content in site_contents %}
 
@@ -14,14 +15,20 @@
                 <div class="collapsible-header">
                     <div>
                         <h4 class="center">{{ single_content.title.capitalize()}}</h4>   
-                        <p class="center">Category: {{ single_content.category.capitalize()}}</p> 
+                        <p class="center">Category: {{ single_content.category.capitalize()}}</p>
+                        <a href="{{ url_for('score_up', rated_article = single_content._id) }}"><i class="far fa-thumbs-up"></i>{{ single_content.rating_up}}</a>   
+                        <a href="{{ url_for('score_down', rated_article = single_content._id) }}"><i class="far fa-thumbs-down"></i>{{ single_content.rating_down}}</a>
                         <p><i class="fas fa-chevron-circle-down right"></i></p>
                     </div>
                 </div>
                 <div class="collapsible-body">
                     <span>{{ single_content.content}}</span>
+                    <br> <br>
+                    <span><a href="{{ single_content.resource}}" target="_blank">External Resource</a>
+                    </span>
                     <hr>
-                    <span>{{ single_content.date}}</span>
+                    <span class="left">{{ single_content.date}}</span>
+                    <span class="right">Author: {{ single_content.user}}</span>
                 </div>
               </li>
             </ul>
