@@ -196,7 +196,14 @@ def admin_edit(user_to_edit):
     return redirect(url_for('admin'))
 
 
-
+@app.route("/admin_delete/<string:user_to_delete>", methods=["GET", "POST"])
+def admin_delete(user_to_delete):
+    if request.method == "GET":
+        mongo.db.users.remove({"username": user_to_delete})
+    
+    flash("User has been Deleted")
+    return redirect(url_for('admin'))
+    
 
 
 if __name__ == "__main__":
