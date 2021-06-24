@@ -171,28 +171,9 @@ def admin_edit(user_to_edit):
         user_data = mongo.db.users.find_one({"username": user_to_edit})
         return render_template("adminedit.html", user_data=user_data)
     
-    if request.method == "POST":
-        user_details = mongo.db.users.find_one({"username": user_to_edit})
-        if user_details["password"]== "######":
-            updated = {
-                "first_name": request.form.get("first_name").lower(),
-                "last_name": request.form.get("last_name").lower(),
-                "email": request.form.get("email").lower(),
-                "password": user_details["password"],
-                "access_level": user_details["access_level"]
-            }
-            mongo.db.tasks.update_one({"username": session["user"]}, { "$set": updated})
-        else :
-            updated = {
-                "password": generate_password_hash(request.form.get("password")),
-                "first_name": request.form.get("first_name").lower(),
-                "last_name": request.form.get("last_name").lower(),
-                "email": request.form.get("email").lower(),
-                "access_level": user_details["access_level"]
-            }
-            mongo.db.users.update_one({"username": session["user"]}, { "$set": updated})
+  
         flash("User {{ user_to_edit }}  has been updated Updated")
-    return render_template("admin.html")
+    return redirect("admin")
 
 
 
