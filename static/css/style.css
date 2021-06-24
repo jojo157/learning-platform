@@ -23,3 +23,7 @@ textarea#body.materialize-textarea{
 .tab {
     tab-size: 4;
 }
+
+.collapsible-header div{
+    width: 100%;
+}

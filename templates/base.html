@@ -21,11 +21,12 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('profile') }}">Profile</a></li>
                         <li><a href="{{ url_for('user_settings') }}">Settings</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         {%  if session.access|lower == "admin"|lower %}
-                            <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                            <li><a href="{{ url_for('admin') }}">User Management</a></li>
                             <li><a href="{{ url_for('content') }}">Add Site Content</a></li>
                         {% endif %}
                     {% else %}
@@ -39,11 +40,12 @@
         
         <ul class="sidenav" id="mobile-demo">
             {% if session.user %}
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('profile') }}">Profile</a></li>
                         <li><a href="{{ url_for('user_settings') }}"></a>">Settings</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         {%  if session.access|lower == "admin"|lower %}
-                            <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                            <li><a href="{{ url_for('admin') }}">User Management</a></li>
                             <li><a href="{{ url_for('content') }}">Add Site Content</a></li>
                         {% endif %}
                     {% else %}

@@ -18,8 +18,14 @@ mongo = PyMongo(app)
   
 
 @app.route("/")
-def home():
+def index():
     return render_template("index.html")
+
+
+@app.route("/home")
+def home():
+    site_contents = mongo.db.content.find( {"view" : "public"})
+    return render_template("home.html", site_contents = site_contents)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -113,11 +119,12 @@ def content():
             "category": request.form.get("category").lower(),
             "title": request.form.get("title").lower(),
             "content": request.form.get("body"),
-            "date": datetime.now(),
+            "date": datetime.now().strftime('%d-%m-%Y'),
             "keywords": request.form.get("keywords").lower(),
             "view": "public",
             "rating_up": 0,
-            "rating_down":0
+            "rating_down":0,
+            "picture": request.form.get("picture")
         }
         mongo.db.content.insert_one(newpost)
 

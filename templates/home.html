@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Home Page</h3>
+ 
+    <div class="row">
+        {% for single_content in site_contents %}
+
+        <div class=" col s12 l4 m6">
+            <ul class="collapsible">
+              <li>
+                <div class="media-container">
+                    <img class="materialboxed responsive-img"  src="{{ single_content.picture }}">
+                </div>
+                <div class="collapsible-header">
+                    <div>
+                        <h4 class="center">{{ single_content.title.capitalize()}}</h4>   
+                        <p class="center">Category: {{ single_content.category.capitalize()}}</p> 
+                        <p><i class="fas fa-chevron-circle-down right"></i></p>
+                    </div>
+                </div>
+                <div class="collapsible-body">
+                    <span>{{ single_content.content}}</span>
+                    <hr>
+                    <span>{{ single_content.date}}</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        {% endfor %}
+
+
+
+
+{% endblock %}

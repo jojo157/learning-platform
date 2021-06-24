@@ -9,47 +9,45 @@
                 <form method="POST" action="{{ url_for('content') }}">
                         <div class="row">
                             <div class="input-field col s12">
-                                <i class="far fa-user prefix"></i>
+                                <i class="far fa-folder prefix"></i>
                                 <input id="category" name="category" type="text" pattern="^[a-zA-Z]{3,30}$" class="validate" required>
                                 <label for="category">Category</label>
                             </div> 
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <i class="far fa-user prefix"></i>
+                                <i class="fas fa-heading prefix"></i>
                                 <input id="title" name="title" type="text" class="validate" required>
                                 <label for="title">Title</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <i class="far fa-envelope prefix"></i>
+                                <i class="far fa-newspaper prefix"></i>
                                 <textarea id="body" name="body" class="materialize-textarea" placeholder = "Enter Content text"></textarea>
                                 <label for="body">Text Content</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <i class="far fa-envelope prefix"></i>
+                                <i class="far fa-comment prefix"></i>
                                 <input id="keywords" name="keywords" type="text" class="validate" required placeholder = "Enter keywords seperated by a comma"></input>
-                                <label for="keywords">Text Content</label>
+                                <label for="keywords">Keywords</label>
                             </div>
                         </div>
 
 
-                        <div class="file-field input-field">
-                            <div class="btn">
-                              <span>Browse</span>
-                              <input type="file">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="far fa-image prefix"></i>
+                                <input id="picture" name="picture" type="text" class="validate">
+                                <label for="picture">Picture URL</label>
                             </div>
-                            <div class="file-path-wrapper">
-                              <input class="file-path validate" type="text" placeholder = "Upload file">
-                            </div>
-                          </div>
+                        </div>
                         
                         <div class="row">
                             <button type="submit" class="col s8 offset-s2 btn-large light-blue darken-4 text-shadow">
-                                Register <i class="fas fa-sign-in-alt"></i>
+                                Add Content <i class="fas fa-sign-in-alt"></i>
                             </button>
                         </div>     
                 </form>
