@@ -12,7 +12,7 @@
               <p> Last Name : {{ singleuser.last_name }}</p> 
               <p> Access Level : {{ singleuser.access_level }}</p> 
               <p> Email : {{ singleuser.email }}</p> 
-                <a  href="" class="col s4 btn-small light-blue darken-4 text-shadow right">
+                <a href="{{ url_for('admin_edit',user_to_edit = singleuser.username) }}" class="col s4 btn-small light-blue darken-4 text-shadow right">
                     Edit <i class="fas fa-user-edit"></i>
                 </a>  
             </div>

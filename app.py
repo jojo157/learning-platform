@@ -127,10 +127,6 @@ def content():
 
     return render_template("register.html")
 
-@app.route("/admin")
-def admin():
-    all_users = mongo.db.users.find()
-    return render_template("admin.html", all_users=all_users)
 
 @app.route("/user_settings", methods=["GET", "POST"])
 def user_settings():
@@ -163,7 +159,40 @@ def user_settings():
         flash("Profile Updated")
     return render_template("profile.html")
 
+
+@app.route("/admin")
+def admin():
+    all_users = mongo.db.users.find()
+    return render_template("admin.html", all_users=all_users)
     
+@app.route("/admin_edit/<string:user_to_edit>", methods=["GET", "POST"])
+def admin_edit(user_to_edit):
+    if request.method == "GET":
+        user_data = mongo.db.users.find_one({"username": user_to_edit})
+        return render_template("adminedit.html", user_data=user_data)
+    
+    if request.method == "POST":
+        user_details = mongo.db.users.find_one({"username": user_to_edit})
+        if user_details["password"]== "######":
+            updated = {
+                "first_name": request.form.get("first_name").lower(),
+                "last_name": request.form.get("last_name").lower(),
+                "email": request.form.get("email").lower(),
+                "password": user_details["password"],
+                "access_level": user_details["access_level"]
+            }
+            mongo.db.tasks.update_one({"username": session["user"]}, { "$set": updated})
+        else :
+            updated = {
+                "password": generate_password_hash(request.form.get("password")),
+                "first_name": request.form.get("first_name").lower(),
+                "last_name": request.form.get("last_name").lower(),
+                "email": request.form.get("email").lower(),
+                "access_level": user_details["access_level"]
+            }
+            mongo.db.users.update_one({"username": session["user"]}, { "$set": updated})
+        flash("User {{ user_to_edit }}  has been updated Updated")
+    return render_template("admin.html")
 
 
 
