@@ -146,10 +146,10 @@ def user_settings():
             "first_name": request.form.get("first_name").lower(),
             "last_name": request.form.get("last_name").lower(),
             "email": request.form.get("email").lower(),
-            "password": user_details.password,
+            "password": user_details["password"],
             "access_level": user_details["access_level"]
            }
-           mongo.db.tasks.update({"username": session["user"]}, update)
+           mongo.db.tasks.update_one({"username": session["user"]}, { "$set": updated})
         else :
             updated = {
             "password": generate_password_hash(request.form.get("password")),
@@ -158,7 +158,8 @@ def user_settings():
             "email": request.form.get("email").lower(),
             "access_level": user_details["access_level"]
            }
-            mongo.db.tasks.update_one({"username": session["user"]}, updated)
+            mongo.db.users.update_one({"username": session["user"]}, { "$set": updated})
+
         flash("Profile Updated")
     return render_template("profile.html")
 
