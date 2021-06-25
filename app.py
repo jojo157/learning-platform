@@ -175,6 +175,15 @@ def editnote(note_id):
     return render_template("register.html")
 
 
+@app.route("/delete_note/<string:note_id>", methods=["GET", "POST"])
+def delete_note(note_id):
+    if request.method == "GET":
+        if not session.get("user") is None:
+            mongo.db.posts.remove({"_id": ObjectId(note_id)})
+            flash("Note has been Deleted")
+        return redirect(url_for('profile'))
+    return redirect(url_for('profile'))
+
 @app.route("/content", methods=["GET", "POST"])
 def content():  
     if request.method == "GET":   
@@ -239,9 +248,13 @@ def user_settings():
 
 @app.route("/admin")
 def admin():
-    all_users = mongo.db.users.find()
-    return render_template("admin.html", all_users=all_users)
-    
+    if not session.get("user") is None:
+        user_details = mongo.db.users.find_one({"username": session["user"]})
+        if user_details.access_level == "admin":
+            all_users = mongo.db.users.find()
+        return render_template("admin.html", all_users=all_users)
+    return render_template("profile.html")
+        
 @app.route("/admin_edit/<string:user_to_edit>", methods=["GET", "POST"])
 def admin_edit(user_to_edit):
     if request.method == "GET":
