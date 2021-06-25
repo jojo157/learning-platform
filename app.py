@@ -43,6 +43,12 @@ def score_down(rated_article):
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
     return redirect(url_for('home'))
     
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("search")
+    content = mongo.db.content.find({"$text": {"$search": query}})
+    return render_template("home.html", site_contents = content)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
