@@ -125,8 +125,55 @@ def logout():
 def profile():
     if not session.get("user") is None:
         name = mongo.db.users.find_one({"username": session["user"]})["first_name"]
-        return render_template("profile.html", name=name)
+        notes = mongo.db.posts.find({"username": session["user"]})
+        return render_template("profile.html", name=name, notes=notes)
     return render_template("index.html")
+
+
+@app.route("/notes", methods=["GET", "POST"])
+def notes():
+    if request.method == "GET":   
+        if not session.get("user") is None:
+            return render_template("notes.html")
+        return redirect(url_for('profile'))
+  
+    if request.method == "POST":
+            newpost = {
+                "username": session.get("user").lower(),
+                "title": request.form.get("title"),
+                "note": request.form.get("body"),
+                "date": datetime.now().strftime('%d-%m-%Y')
+            }
+            mongo.db.posts.insert_one(newpost)
+
+            # put the new user into 'session' cookie
+            flash("Note added!")
+            return redirect(url_for('profile'))
+    return render_template("register.html")
+
+
+@app.route("/editnote/<string:note_id>", methods=["GET", "POST"])
+def editnote(note_id):
+    if request.method == "GET":   
+        if not session.get("user") is None:
+            note_data = mongo.db.posts.find_one({"_id": ObjectId(note_id)})
+            return render_template("editnote.html", note=note_data)
+        return redirect(url_for('profile'))
+  
+    if request.method == "POST":
+            updated_post = {
+                "username": session.get("user").lower(),
+                "title": request.form.get("title"),
+                "note": request.form.get("body"),
+                "date": datetime.now().strftime('%d-%m-%Y')
+            }
+            mongo.db.posts.update_one({"_id": ObjectId(note_id)}, { "$set": updated_post })
+
+            # put the new user into 'session' cookie
+            flash("Note added!")
+            return redirect(url_for('profile'))
+    return render_template("register.html")
+
 
 @app.route("/content", methods=["GET", "POST"])
 def content():  

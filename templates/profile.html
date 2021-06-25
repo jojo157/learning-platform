@@ -19,32 +19,34 @@
     </div>
 
     <div class="col s12 m8 l9 main-panel"> 
-      <!-- First expandable card -->
-      <div class=" col s12 l4 m6">
-        <ul class="collapsible">
-          <li>
-            <div class="collapsible-header">First</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-          </li>
-        </ul>
-      </div>
-      <!-- Second expandable card -->
-      <div class=" col s12 l4 m6">
-        <ul class="collapsible">
-          <li>
-            <div class="collapsible-header">Second</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-          </li>
-        </ul>
-      </div>
-      <!-- Third expandable card -->
-      <div class=" col s12 l4 m6">
-        <ul class="collapsible">
-          <li>
-            <div class="collapsible-header">Third</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-          </li>
-        </ul>
+      
+      <div class="row">
+        
+        <div>
+          <h4 class="center">Your notes</h4>
+          <a  href="{{ url_for('notes') }}" class="btn-large green"><i class="fas fa-plus-circle"></i></a>
+        </div>
+
+        {% for note in notes %}
+
+        <div class="col s6 m4 l4">
+          <div class="card yellow accent-1">
+            <div class="card-content grey-text darken-3">
+              <span class="card-title">{{ note.title }}</span>
+              <p>{{ note.note }}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ url_for('editnote', note_id = note._id) }}">Edit</a>
+              <a href="#">Delete</a> <br><br>
+              
+              <span>Date Added: {{note.date}}</span> 
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+
       </div>
     
     </div>
