@@ -253,7 +253,7 @@ def admin():
         if user_details["access_level"] == "admin":
             all_users = mongo.db.users.find()
             return render_template("admin.html", all_users=all_users)
-    return render_template("profile.html")
+    return redirect(url_for('profile'))
         
 @app.route("/admin_edit/<string:user_to_edit>", methods=["GET", "POST"])
 def admin_edit(user_to_edit):
