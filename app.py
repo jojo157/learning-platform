@@ -250,9 +250,9 @@ def user_settings():
 def admin():
     if not session.get("user") is None:
         user_details = mongo.db.users.find_one({"username": session["user"]})
-        if user_details.access_level == "admin":
+        if user_details["access_level"] == "admin":
             all_users = mongo.db.users.find()
-        return render_template("admin.html", all_users=all_users)
+            return render_template("admin.html", all_users=all_users)
     return render_template("profile.html")
         
 @app.route("/admin_edit/<string:user_to_edit>", methods=["GET", "POST"])
