@@ -24,7 +24,7 @@ def index():
 
 @app.route("/home")
 def home():
-    site_contents = mongo.db.content.find( {"view" : "public"})
+    site_contents = mongo.db.content.find( {"view" : "public"}).sort("date", -1)
     level = mongo.db.users.find_one( {"username" : session["user"]})["access_level"]
     return render_template("home.html", site_contents = site_contents, level = level)
 
@@ -126,7 +126,7 @@ def logout():
 def profile():
     if not session.get("user") is None:
         name = mongo.db.users.find_one({"username": session["user"]})["first_name"]
-        notes = mongo.db.posts.find({"username": session["user"]})
+        notes = mongo.db.posts.find({"username": session["user"]}).sort("date", -1)
         return render_template("profile.html", name=name, notes=notes)
     return render_template("index.html")
 
