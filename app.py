@@ -34,7 +34,8 @@ def score_up(rated_article):
     current_score = document["rating_up"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    return redirect(url_for('home'))
+    return '', 204
+    #return redirect(url_for('home'))
 
 @app.route("/home/score_down/<string:rated_article>")
 def score_down(rated_article):
@@ -42,7 +43,8 @@ def score_down(rated_article):
     current_score = document["rating_down"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
-    return redirect(url_for('home'))
+    return '', 204
+    #return redirect(url_for('home'))
     
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -130,6 +132,12 @@ def profile():
         favourites = mongo.db.favourites.find({"username": session["user"]})
         return render_template("profile.html", name=name, notes=notes, favourites=favourites)
     return render_template("index.html")
+
+
+@app.route("/search_fav/<string:query>", methods=["GET", "POST"])
+def search_fav(query):
+    content = mongo.db.content.find({"$text": {"$search": query}})
+    return render_template("home.html", site_contents = content)
 
 
 @app.route("/notes", methods=["GET", "POST"])
@@ -253,10 +261,8 @@ def fav_content(content_id):
         if not session.get("user") is None:
             #check if favoured article before
             existing_fav = mongo.db.favourites.find_one({"content_id": ObjectId(content_id)})
-            if existing_fav:
-                flash("Article already favoured")
-            else:
-                #add favourite to collection
+            if not existing_fav:
+                #add favourite to collection as hasnt been added before
                 content_title= mongo.db.content.find_one({"_id": ObjectId(content_id)})["title"]
                 favour = {
                     "content_id": ObjectId(content_id),
@@ -264,8 +270,8 @@ def fav_content(content_id):
                     "content_title": content_title
                 }
                 mongo.db.favourites.insert_one(favour)
-                flash("Article favoured, you can access your favourites on your profile")
-            return redirect(url_for('home'))
+                
+            return '', 204
     return render_template("register.html")
 
 

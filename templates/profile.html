@@ -16,7 +16,7 @@
       
         {% for favourite in favourites %}
         <div class="s12 m12 l12">
-          <a class="btn-small">{{ favourite.content_title }}</a>
+          <a href="{{ url_for('search_fav', query = favourite.content_title) }}" class="btn-small">{{ favourite.content_title }}</a>
         </div>  
         {% endfor %}
       
