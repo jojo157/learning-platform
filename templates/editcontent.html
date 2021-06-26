@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="center-align light-blue-text accent-2">Edit Post</h2>
+
+    <div class="row">
+        <div class = "col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card-panel">
+                <form method="POST" action="{{ url_for('content') }}">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="far fa-folder prefix"></i>
+                                <input id="category" name="category" type="text" pattern="^[a-zA-Z]{3,30}$" class="validate" required value="{{ post.category }}">
+                                <label for="category">Category</label>
+                            </div> 
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-heading prefix"></i>
+                                <input id="title" name="title" type="text" class="validate" required value="{{ post.title }}">
+                                <label for="title">Title</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="far fa-newspaper prefix"></i>
+                                <textarea id="body" name="body" class="materialize-textarea" placeholder = "Enter Content text">{{ post.content }}</textarea>
+                                <label for="body">Text Content</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="far fa-comment prefix"></i>
+                                <input id="keywords" name="keywords" type="text" class="validate" required placeholder = "Enter keywords seperated by a comma" value="{{ post.keywords }}"></input>
+                                <label for="keywords">Keywords</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="far fa-image prefix"></i>
+                                <input id="picture" name="picture" type="text" class="validate" value="{{ post.picture}}">
+                                <label for="picture">Picture URL</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="far fa-image prefix"></i>
+                                <input id="resource" name="resource" type="text" class="validate" value="{{ post.resource }}">
+                                <label for="resource">External Resource URL</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <button type="submit" class="col s8 offset-s2 btn-large light-blue darken-4 text-shadow">
+                                Submit <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>     
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

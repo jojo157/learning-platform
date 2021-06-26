@@ -170,8 +170,7 @@ def editnote(note_id):
             }
             mongo.db.posts.update_one({"_id": ObjectId(note_id)}, { "$set": updated_post })
 
-            # put the new user into 'session' cookie
-            flash("Note added!")
+            flash("Note updated!")
             return redirect(url_for('profile'))
     return render_template("register.html")
 
@@ -208,11 +207,40 @@ def content():
         }
         mongo.db.content.insert_one(newpost)
 
-        # put the new user into 'session' cookie
         flash("Post added!")
         return redirect(url_for("profile", username=session["user"], access=session["access"]))
 
     return render_template("register.html")
+
+
+@app.route("/editcontent/<string:content_id>", methods=["GET", "POST"])
+def editcontent(content_id):
+    if request.method == "GET":   
+        if not session.get("user") is None:
+            post_data = mongo.db.content.find_one({"_id": ObjectId(content_id)})
+            return render_template("editcontent.html", post=post_data)
+        return redirect(url_for('home'))
+  
+    if request.method == "POST":
+            updated_content = {
+                "category": request.form.get("category"),
+                "title": request.form.get("title"),
+                "content": request.form.get("body"),
+                "keywords": request.form.get("keywords").lower(),
+                "picture": request.form.get("picture"),
+                "resource": request.form.get("resource")
+            }
+            mongo.db.content.update_one({"_id": ObjectId(content_id)}, { "$set": updated_content })
+
+            flash("Post updated!")
+            return redirect(url_for('home'))
+    return render_template("register.html")
+
+
+
+
+
+
 
 
 @app.route("/user_settings", methods=["GET", "POST"])

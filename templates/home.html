@@ -35,7 +35,7 @@
                 </div>
                 {%  if level == "admin" %}
                 <div class="center">
-                    <a class="btn-small">Edit</a>
+                    <a href="{{ url_for('editcontent', content_id = single_content._id) }}" class="btn-small">Edit</a>
                     <a class="btn-small">Delete</a>
                 </div>
                 {% endif %}
