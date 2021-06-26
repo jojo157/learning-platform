@@ -13,9 +13,13 @@
         3-columns-wide on large screens,
         4-columns-wide on medium screens,
         12-columns-wide on small screens  -->
-        <p>
-            this is the side
-        </p>
+      
+        {% for favourite in favourites %}
+        <div class="s12 m12 l12">
+          <a class="btn-small">{{ favourite.content_title }}</a>
+        </div>  
+        {% endfor %}
+      
     </div>
 
     <div class="col s12 m8 l9 main-panel"> 

@@ -127,7 +127,8 @@ def profile():
     if not session.get("user") is None:
         name = mongo.db.users.find_one({"username": session["user"]})["first_name"]
         notes = mongo.db.posts.find({"username": session["user"]}).sort("date", -1)
-        return render_template("profile.html", name=name, notes=notes)
+        favourites = mongo.db.favourites.find({"username": session["user"]})
+        return render_template("profile.html", name=name, notes=notes, favourites=favourites)
     return render_template("index.html")
 
 
@@ -246,8 +247,26 @@ def delete_content(content_id):
         return redirect(url_for('home'))
     return redirect(url_for('profile'))
 
-
-
+@app.route("/fav_content/<string:content_id>")
+def fav_content(content_id):
+    if request.method == "GET":
+        if not session.get("user") is None:
+            #check if favoured article before
+            existing_fav = mongo.db.favourites.find_one({"content_id": ObjectId(content_id)})
+            if existing_fav:
+                flash("Article already favoured")
+            else:
+                #add favourite to collection
+                content_title= mongo.db.content.find_one({"_id": ObjectId(content_id)})["title"]
+                favour = {
+                    "content_id": ObjectId(content_id),
+                    "username": session["user"],
+                    "content_title": content_title
+                }
+                mongo.db.favourites.insert_one(favour)
+                flash("Article favoured, you can access your favourites on your profile")
+            return redirect(url_for('home'))
+    return render_template("register.html")
 
 
 

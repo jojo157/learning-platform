@@ -45,6 +45,7 @@
                         <p class="center">Category: {{ single_content.category.capitalize()}}</p>
                         <a href="{{ url_for('score_up', rated_article = single_content._id) }}"><i class="far fa-thumbs-up"></i>{{ single_content.rating_up}}</a>   
                         <a href="{{ url_for('score_down', rated_article = single_content._id) }}"><i class="far fa-thumbs-down"></i>{{ single_content.rating_down}}</a>
+                        <a href="{{ url_for('fav_content', content_id = single_content._id) }}"><i class="far fa-bookmark right"></i></a>
                         <p><i class="fas fa-chevron-circle-down right"></i></p>
                     </div>
                 </div>
