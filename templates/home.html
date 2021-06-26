@@ -33,6 +33,12 @@
                 <div class="media-container">
                     <img class="materialboxed responsive-img"  src="{{ single_content.picture }}">
                 </div>
+                {%  if level == "admin" %}
+                <div class="center">
+                    <a class="btn-small">Edit</a>
+                    <a class="btn-small">Delete</a>
+                </div>
+                {% endif %}
                 <div class="collapsible-header">
                     <div>
                         <h4 class="center">{{ single_content.title.capitalize()}}</h4>   
@@ -51,6 +57,7 @@
                     <span class="left">{{ single_content.date}}</span>
                     <span class="right">Author: {{ single_content.user}}</span>
                 </div>
+                
               </li>
             </ul>
           </div>

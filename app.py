@@ -25,7 +25,8 @@ def index():
 @app.route("/home")
 def home():
     site_contents = mongo.db.content.find( {"view" : "public"})
-    return render_template("home.html", site_contents = site_contents)
+    level = mongo.db.users.find_one( {"username" : session["user"]})["access_level"]
+    return render_template("home.html", site_contents = site_contents, level = level)
 
 @app.route("/home/score_up/<string:rated_article>")
 def score_up(rated_article):
