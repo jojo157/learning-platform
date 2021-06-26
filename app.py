@@ -208,7 +208,7 @@ def content():
         mongo.db.content.insert_one(newpost)
 
         flash("Post added!")
-        return redirect(url_for("profile", username=session["user"], access=session["access"]))
+        return redirect(url_for('home'))
 
     return render_template("register.html")
 
@@ -237,6 +237,14 @@ def editcontent(content_id):
     return render_template("register.html")
 
 
+@app.route("/delete_content/<string:content_id>", methods=["GET", "POST"])
+def delete_content(content_id):
+    if request.method == "GET":
+        if not session.get("user") is None:
+            mongo.db.content.remove({"_id": ObjectId(content_id)})
+            flash("Post has been Deleted")
+        return redirect(url_for('home'))
+    return redirect(url_for('profile'))
 
 
 
