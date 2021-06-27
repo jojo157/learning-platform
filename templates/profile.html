@@ -13,9 +13,9 @@
         3-columns-wide on large screens,
         4-columns-wide on medium screens,
         12-columns-wide on small screens  -->
-      
+        <h5 class="center">Your Favourite Articles</h5>
         {% for favourite in favourites %}
-        <div class="s12 m12 l12">
+        <div class="s12 m12 l12 post_it">
           <div class="btn-small">
             <a href="{{ url_for('search_fav', query = favourite.content_title) }}" >{{ favourite.content_title }}</a>
             <a href="{{ url_for('delete_fav', fav_title = favourite.content_title) }}" class="confirm" title="Are you sure you wish to delete this favourite?"><i class="fas fa-times right"></i></a>
@@ -36,7 +36,7 @@
 
         {% for note in notes %}
 
-        <div class="col s6 m4 l4">
+        <div class="col s12 m4 l4">
           <div class="card yellow accent-1">
             <div class="card-content grey-text darken-3">
               <span class="card-title">{{ note.title }}</span>

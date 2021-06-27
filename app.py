@@ -24,9 +24,12 @@ def index():
 
 @app.route("/home")
 def home():
-    site_contents = mongo.db.content.find( {"view" : "public"}).sort("date", -1)
-    level = mongo.db.users.find_one( {"username" : session["user"]})["access_level"]
-    return render_template("home.html", site_contents = site_contents, level = level)
+    if not session.get("user") is None:
+        site_contents = mongo.db.content.find( {"view" : "public"}).sort("date", -1)
+        level = mongo.db.users.find_one( {"username" : session["user"]})["access_level"]
+        return render_template("home.html", site_contents = site_contents, level = level)
+    return render_template("index.html")
+
 
 @app.route("/home/score_up/<string:rated_article>")
 def score_up(rated_article):

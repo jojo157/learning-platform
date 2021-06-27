@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
 .logo-size{
     
     object-fit: contain;
@@ -31,4 +41,14 @@ textarea#body.materialize-textarea{
 a{
     text-decoration: none;
     color: black;
+}
+
+.post_it{
+    margin: 10px;
+    text-align:center;
+    
+}
+
+div.btn-small{
+    border-radius: 50px;
 }
