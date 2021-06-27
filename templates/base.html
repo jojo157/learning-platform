@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    
     <title>Finance Mind</title>
 </head>
 <body>
     <header>
         <nav>
-                <div class="nav-wrapper green accent-2">
-                <a href="{{ url_for('home') }}" class="brand-logo">Finance Mind</a>
+                <div class="nav-wrapper gradient-colours">
+                <a href="{{ url_for('home') }}" class="brand-logo"><h3 class="header-title">Finance Mind</h3></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
@@ -77,19 +76,28 @@
         {% endblock %}
     </main>
 
-    <footer class="page-footer green accent-2">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
-            
-            </div>
+    <footer class="page-footer gradient-colours">
+        
+          <div class="row center">
+                <div class=" col s4">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <div class=" col s4">
+                    <a href="https://twitter.com/?lang=en" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class=" col s4">
+                    <a href="https://ie.linkedin.com/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                </div>  
           </div>
-        </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © Designed by Joanne Carrig
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        
+          <div class="row center">
+              <div class="col s12">
+                © Created by Joanne Carrig
+              </div>
+              <div class="col s12">
+                For Educational purposes
+              </div>
+            
           </div>
         </div>
       </footer>

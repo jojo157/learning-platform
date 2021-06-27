@@ -1,4 +1,14 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap');
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Playfair Display';
+}
+
+p{
+    font-family: 'Open Sans';
+}
+
 /* General styles */
 body {
     display: flex;
@@ -15,6 +25,14 @@ a{
     color: black;
 }
 
+.gradient-colours{
+    background-image: linear-gradient( #3e688c, #69bf6f );
+}
+
+nav{
+    height: 20vh;
+}
+
 /* Flash messaging styles */
 .flashes{
     border-radius: 15px;
@@ -29,11 +47,29 @@ a{
 }
 
 
+.fit-image{
+    object-fit: contain;
+    max-width:100%;
+    max-height: 50vh;
+}
+
+/* Navbar */
+.header-title{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+/* Footer */
+i.fab.fa-facebook-f, i.fab.fa-twitter, i.fab.fa-linkedin-in{
+    color: white;
+    font-size: 20px;
+}
+
 /* Home Page */
 
-.logo-size{
-    
+.logo-size{ 
     object-fit: contain;
+    overflow: hidden;
 }
 .collapsible-header div{
     width: 100%;
@@ -64,10 +100,10 @@ div.btn-small{
 
 
 .side-panel{
-    background-color: pink;
+    
 } 
 
 
 .main-panel{
-    background-color: aqua;
+    
 }
