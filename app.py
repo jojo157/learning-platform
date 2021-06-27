@@ -274,7 +274,14 @@ def fav_content(content_id):
             return '', 204
     return render_template("register.html")
 
-
+@app.route("/delete_fav/<string:fav_title>", methods=["GET", "POST"])
+def delete_fav(fav_title):
+    if request.method == "GET":
+        if not session.get("user") is None:
+            mongo.db.favourites.remove({"content_title": fav_title})
+            flash("Favourite has been Deleted")
+        return redirect(url_for('profile'))
+    return redirect(url_for('profile'))
 
 @app.route("/user_settings", methods=["GET", "POST"])
 def user_settings():

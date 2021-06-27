@@ -16,7 +16,10 @@
       
         {% for favourite in favourites %}
         <div class="s12 m12 l12">
-          <a href="{{ url_for('search_fav', query = favourite.content_title) }}" class="btn-small">{{ favourite.content_title }}</a>
+          <div class="btn-small">
+            <a href="{{ url_for('search_fav', query = favourite.content_title) }}" >{{ favourite.content_title }}</a>
+            <a href="{{ url_for('delete_fav', fav_title = favourite.content_title) }}" class="confirm" title="Are you sure you wish to delete this favourite?"><i class="fas fa-times right"></i></a>
+          </div>
         </div>  
         {% endfor %}
       
