@@ -1,30 +1,45 @@
+
+/* General styles */
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
 
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Flash messaging styles */
+.flashes{
+    border-radius: 15px;
+}
+
+.alert-error{
+    background-color: red;
+}
+
+.alert-success{
+    background-color: green;
+}
+
+
+/* Home Page */
 
 .logo-size{
     
     object-fit: contain;
 }
-
-.brand-logo{
-    margin-left: 10px;
+.collapsible-header div{
+    width: 100%;
 }
 
-.side-panel{
-    background-color: pink;
-} 
-
-
-.main-panel{
-    background-color: aqua;
-}
+/* Content Page forum */
 
 textarea#body.materialize-textarea{
     height: 6rem;
@@ -34,14 +49,8 @@ textarea#body.materialize-textarea{
     tab-size: 4;
 }
 
-.collapsible-header div{
-    width: 100%;
-}
 
-a{
-    text-decoration: none;
-    color: black;
-}
+/* Profile Page */
 
 .post_it{
     margin: 10px;
@@ -51,4 +60,14 @@ a{
 
 div.btn-small{
     border-radius: 50px;
+}
+
+
+.side-panel{
+    background-color: pink;
+} 
+
+
+.main-panel{
+    background-color: aqua;
 }

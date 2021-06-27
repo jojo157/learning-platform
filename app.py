@@ -64,7 +64,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Username already exists, try another username")
+            flash("Username already exists, try another username", "error")
             return redirect(url_for("register"))
 
         register = {
@@ -80,7 +80,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         session["access"] = "general"
-        flash("Registration Successful!")
+        flash("Registration Successful!", "success")
         return redirect(url_for("profile", username=session["user"], access=session["access"]))
 
     return render_template("register.html")
@@ -98,19 +98,17 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
                         session["access"] = existing_user["access_level"]
                         return redirect(url_for(
                             "profile", username=session["user"], access=session["access"]) )
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password", "error")
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password", "error")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -118,7 +116,7 @@ def login():
 @app.route("/logout")
 def logout():
     # remove user from session cookie
-    flash("You have been logged out")
+    flash("You have been logged out", "success")
     session.pop("user")
     session.pop("access")
     return redirect(url_for("login"))
@@ -160,7 +158,7 @@ def notes():
             mongo.db.posts.insert_one(newpost)
 
             # put the new user into 'session' cookie
-            flash("Note added!")
+            flash("Note added!", "success")
             return redirect(url_for('profile'))
     return render_template("register.html")
 
@@ -182,7 +180,7 @@ def editnote(note_id):
             }
             mongo.db.posts.update_one({"_id": ObjectId(note_id)}, { "$set": updated_post })
 
-            flash("Note updated!")
+            flash("Note updated!", "success")
             return redirect(url_for('profile'))
     return render_template("register.html")
 
@@ -192,7 +190,7 @@ def delete_note(note_id):
     if request.method == "GET":
         if not session.get("user") is None:
             mongo.db.posts.remove({"_id": ObjectId(note_id)})
-            flash("Note has been Deleted")
+            flash("Note has been Deleted", "success")
         return redirect(url_for('profile'))
     return redirect(url_for('profile'))
 
@@ -219,7 +217,7 @@ def content():
         }
         mongo.db.content.insert_one(newpost)
 
-        flash("Post added!")
+        flash("Post added!", "success")
         return redirect(url_for('home'))
 
     return render_template("register.html")
@@ -244,7 +242,7 @@ def editcontent(content_id):
             }
             mongo.db.content.update_one({"_id": ObjectId(content_id)}, { "$set": updated_content })
 
-            flash("Post updated!")
+            flash("Post updated!", "success")
             return redirect(url_for('home'))
     return render_template("register.html")
 
@@ -254,7 +252,7 @@ def delete_content(content_id):
     if request.method == "GET":
         if not session.get("user") is None:
             mongo.db.content.remove({"_id": ObjectId(content_id)})
-            flash("Post has been Deleted")
+            flash("Post has been Deleted", "success")
         return redirect(url_for('home'))
     return redirect(url_for('profile'))
 
@@ -282,7 +280,7 @@ def delete_fav(fav_title):
     if request.method == "GET":
         if not session.get("user") is None:
             mongo.db.favourites.remove({"content_title": fav_title})
-            flash("Favourite has been Deleted")
+            flash("Favourite has been Deleted", "success")
         return redirect(url_for('profile'))
     return redirect(url_for('profile'))
 
@@ -314,7 +312,7 @@ def user_settings():
            }
             mongo.db.users.update_one({"username": session["user"]}, { "$set": updated})
 
-        flash("Profile Updated")
+        flash("Profile Updated", "success")
     return render_template("profile.html")
 
 
@@ -354,7 +352,7 @@ def admin_edit(user_to_edit):
            }
             mongo.db.users.update_one({"username": user_to_edit}, { "$set": updated})
         
-        flash("User has been Updated")
+        flash("User has been Updated", "success")
     return redirect(url_for('admin'))
 
 
@@ -363,7 +361,7 @@ def admin_delete(user_to_delete):
     if request.method == "GET":
         mongo.db.users.remove({"username": user_to_delete})
     
-    flash("User has been Deleted")
+    flash("User has been Deleted", "success")
     return redirect(url_for('admin'))
     
 
