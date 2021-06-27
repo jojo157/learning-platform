@@ -3,6 +3,7 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.materialboxed').materialbox();
     M.textareaAutoResize($('#body'));
+    $('body').Aplus();
 
   });
   

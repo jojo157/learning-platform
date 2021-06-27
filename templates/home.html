@@ -36,7 +36,7 @@
                 {%  if level == "admin" %}
                 <div class="center">
                     <a href="{{ url_for('editcontent', content_id = single_content._id) }}" class="btn-small">Edit</a>
-                    <a href="{{ url_for('delete_content', content_id = single_content._id) }}" class="btn-small">Delete</a>
+                    <a href="{{ url_for('delete_content', content_id = single_content._id) }}" class="btn-small confirm" title="Are you sure you wish to delete this post?">Delete</a>
                 </div>
                 {% endif %}
                 <div class="collapsible-header">
