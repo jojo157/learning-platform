@@ -29,9 +29,9 @@
                             <li><a href="{{ url_for('content') }}">Add Site Content</a></li>
                         {% endif %}
                     {% else %}
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
                     {% endif %}
                 </ul>
                 </div>
@@ -48,9 +48,9 @@
                             <li><a href="{{ url_for('content') }}">Add Site Content</a></li>
                         {% endif %}
                     {% else %}
+                        <li><a href="{{ url_for('register') }}">Register</a></li>    
                         <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="#">Contact</a></li> 
                     {% endif %}
         </ul>
     </header>
