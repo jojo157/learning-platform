@@ -99,8 +99,8 @@ def login():
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
                         session["access"] = existing_user["access_level"]
-                        return redirect(url_for(
-                            "profile", username=session["user"], access=session["access"]) )
+                        return redirect(url_for("home"))
+                            
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password", "error")
