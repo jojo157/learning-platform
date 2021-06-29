@@ -28,21 +28,6 @@ a{
     color: black;
 }
 
-.gradient-colours{
-
-    background-image: linear-gradient(213deg, rgba(2,0,36,1) 0%, rgba(63,172,255,1) 35%, rgba(0,255,203,1) 100%);
-    /*linear-gradient( #3e688c, #69bf6f ); */
-}
-
-.gradient-colours-2{
-
-    background-image: linear-gradient(48deg, rgba(2,0,36,1) 0%, rgba(63,172,255,1) 35%, rgba(0,255,203,1) 100%);  
-}
-
-nav{
-    height: 20vh;
-}
-
 /* button styles */ 
 .green-button{
  background-color: #00ffcb;
@@ -65,19 +50,26 @@ nav{
 }
 
 
-
-
-
 /* Navbar */
 .header-title{
     margin-left: 20px;
     margin-top: 30px;
+}
+nav{
+    height: 20vh;
+}
+.gradient-colours{
+    background-image: linear-gradient(213deg, rgba(2,0,36,1) 0%, rgba(63,172,255,1) 35%, rgba(0,255,203,1) 100%);
 }
 
 /* Footer */
 i.fab.fa-facebook-f, i.fab.fa-twitter, i.fab.fa-linkedin-in{
     color: white;
     font-size: 20px;
+}
+.gradient-colours-2{
+
+    background-image: linear-gradient(48deg, rgba(2,0,36,1) 0%, rgba(63,172,255,1) 35%, rgba(0,255,203,1) 100%);  
 }
 
 /* Index Page */
@@ -89,8 +81,7 @@ img{
 }
 
 .success-div{
-    height: 200px; 
-    
+    height: 200px;    
 }
 
 .offer-div{
@@ -125,6 +116,20 @@ i.fas.fa-file-alt, i.fas.fa-book-open, i.far.fa-thumbs-up, i.fas.fa-users, i.fas
 .sub-header-text{
     font-size: 18px;
 }
+
+/* Register Page */
+
+i.far.fa-user, i.far.fa-user, i.far.fa-envelope, i.fas.fa-user-tag, i.fas.fa-lock{
+    color: #3facff;
+    font-size: 30px;
+}
+
+i.fas.fa-sign-in-alt{
+    color: #1565c0;
+    font-size: 30px;
+}
+
+
 
 
 
