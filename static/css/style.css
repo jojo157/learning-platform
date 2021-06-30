@@ -75,7 +75,6 @@ i.fab.fa-facebook-f, i.fab.fa-twitter, i.fab.fa-linkedin-in{
 
 /* Index Page */
 img{
-    
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -131,15 +130,16 @@ i.fas.fa-search, i.fas.fa-chevron-circle-down, i.far.fa-thumbs-down, i.far.fa-bo
     margin-top: 10px;
 }
 
+
 .content-image-container{
     height: 300px;
     margin-bottom: 10px;
-   
 }
+
 
 .content-image-container img{
     height: 300px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .collapsible-header p{

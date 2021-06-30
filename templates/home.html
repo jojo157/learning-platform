@@ -33,6 +33,16 @@
                 <div class="media-container content-image-container">
                     <img class="materialboxed"  src="{{ single_content.picture }}">
                 </div>
+                <div>
+                    <div class="col s12 expand-actions-container">
+                        <div class="col hide-on-small-and-down l2 m2">
+                            <i class="fas fa-expand-alt tooltipped" data-tooltip="Change in/out of full screen" ></i>
+                        </div>
+                        <div class="collapsible-header col s3 offset-s9 l2 offset-l8 m2 offset-m8">
+                            <i class="fas fa-chevron-circle-down right tooltipped" data-tooltip="Expand to read article"></i>
+                        </div>
+                    </div> 
+                </div>
                 {%  if level == "admin" %}
                 <div class="center content-admin-buttons">
                     <a href="{{ url_for('editcontent', content_id = single_content._id) }}" class="btn-small green-button ">Edit</a>
@@ -42,15 +52,7 @@
                 <div class="col s12">
                     <div class="col s12">
                         <h4 class="center">{{ single_content.title.capitalize()}}</h4>   
-                        <p class="center">Category: {{ single_content.category.capitalize()}}</p>
-                        <div class="col s12 expand-actions-container">
-                            <div class="col hide-on-small-and-down l9 m9">
-                                <i class="fas fa-expand-alt tooltipped" data-tooltip="Change in/out of full screen" ></i>
-                            </div>
-                            <div class="collapsible-header col s3 offset-s9 l3 m3">
-                                <i class="fas fa-chevron-circle-down right tooltipped" data-tooltip="Expand to read article"></i>
-                            </div>
-                        </div>  
+                        <p class="center">Category: {{ single_content.category.capitalize()}}</p> 
                     </div>
                 </div>
                
