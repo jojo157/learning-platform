@@ -146,6 +146,18 @@ i.fas.fa-search, i.fas.fa-chevron-circle-down, i.far.fa-thumbs-down, i.far.fa-bo
     width: 100%;
 }
 
+.expand-actions-container{
+   margin-bottom:20px
+}
+
+.collapsible-header{
+    border-bottom: none;
+}
+
+
+
+
+
 /* Register Page */
 
 i.far.fa-user, i.far.fa-user, i.far.fa-envelope, i.fas.fa-user-tag, i.fas.fa-lock, i.fas.fa-expand-alt{

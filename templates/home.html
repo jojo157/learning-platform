@@ -43,17 +43,19 @@
                     <div class="col s12">
                         <h4 class="center">{{ single_content.title.capitalize()}}</h4>   
                         <p class="center">Category: {{ single_content.category.capitalize()}}</p>
-                        <div class="col s9">
-                            <i class="fas fa-expand-alt"></i>
-                        </div>
-                        <div class="collapsible-header col s3">
-                            <p><i class="fas fa-chevron-circle-down right"></i></p>
-                        </div>
-                        
-                        
+                        <div class="col s12 expand-actions-container">
+                            <div class="col hide-on-small-and-down l9 m9">
+                                <i class="fas fa-expand-alt tooltipped" data-tooltip="Change in/out of full screen" ></i>
+                            </div>
+                            <div class="collapsible-header col s3 offset-s9 l3 m3">
+                                <i class="fas fa-chevron-circle-down right tooltipped" data-tooltip="Expand to read article"></i>
+                            </div>
+                        </div>  
                     </div>
                 </div>
+               
                 <div class="collapsible-body">
+                    
                     <span>{{ single_content.content}}</span>
                     <br> <br>
                     <span><a class="btn-small green-button"href="{{ single_content.resource}}" target="_blank">Further Reading</a>
@@ -62,11 +64,10 @@
                     <span class="left">{{ single_content.date}}</span>
                     <span class="right">Author: {{ single_content.user}}</span>
                 </div>
-
-                <div>
+                <div class="content-feedback-area">
                     <a class="refresh" href="{{ url_for('score_up', rated_article = single_content._id) }}"><i class="far fa-thumbs-up content"></i>{{ single_content.rating_up}}</a>   
                     <a class="refresh" href="{{ url_for('score_down', rated_article = single_content._id) }}"><i class="far fa-thumbs-down content"></i>{{ single_content.rating_down}}</a>
-                    <a class="refresh" href="{{ url_for('fav_content', content_id = single_content._id) }}"><i class="far fa-bookmark right content"></i></a>
+                    <a class="refresh" href="{{ url_for('fav_content', content_id = single_content._id) }}"><i class="far fa-bookmark right content tooltipped" data-tooltip="Add article to your favourites"></i></a>
                 </div>
                 
                 

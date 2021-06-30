@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('.materialboxed').materialbox();
     M.textareaAutoResize($('#body'));
     $('body').Aplus();
+    $('.tooltipped').tooltip();
 
   });
   
@@ -17,14 +18,14 @@ $(document).ready(function(){
     if ($(this).hasClass('active')){
       $('.content-container').removeClass('col s12 m8 offset-m2 l8 offset-l2 content-container').addClass('col s12 l4 m6 content-container'); 
       $(this).removeClass('active');
-      $(this).scrollIntoView();
+      
     }
   else {
        $(this).addClass('active');
        $('.content-container').removeClass('col s12 l4 m6 content-container').addClass('col s12 m8 offset-m2 l8 offset-l2 content-container');
-       $(this).scrollIntoView();
-      }  
-  });
+       $(this)[0].scrollIntoView(0, -40);
+  }
+      });
 
   
 
