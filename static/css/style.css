@@ -142,11 +142,13 @@ i.fas.fa-search, i.fas.fa-chevron-circle-down, i.far.fa-thumbs-down, i.far.fa-bo
     object-fit: cover;
 }
 
-
+.collapsible-header p{
+    width: 100%;
+}
 
 /* Register Page */
 
-i.far.fa-user, i.far.fa-user, i.far.fa-envelope, i.fas.fa-user-tag, i.fas.fa-lock{
+i.far.fa-user, i.far.fa-user, i.far.fa-envelope, i.fas.fa-user-tag, i.fas.fa-lock, i.fas.fa-expand-alt{
     color: #3facff;
     font-size: 30px;
 }
