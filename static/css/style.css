@@ -119,12 +119,16 @@ i.fas.fa-file-alt, i.fas.fa-book-open, i.far.fa-thumbs-up, i.fas.fa-users, i.fas
     font-size: 18px;
 }
 
-i.fas.fa-search, i.fas.fa-chevron-circle-down, i.far.fa-thumbs-down, i.far.fa-bookmark {
+i.fas.fa-search, i.far.fa-thumbs-down, i.far.fa-bookmark {
     color: #3facff;
     font-size: 30px;
     
 }
 
+i.fas.fa-chevron-circle-down, i.fas.fa-expand-alt {
+    color: #000;
+    font-size: 20px;
+}
 
 .content-admin-buttons{
     margin-top: 10px;
@@ -154,13 +158,18 @@ i.fas.fa-search, i.fas.fa-chevron-circle-down, i.far.fa-thumbs-down, i.far.fa-bo
     border-bottom: none;
 }
 
+.content-icon-left, .content-icon-right{
+    margin:10px;
+}
+
+
 
 
 
 
 /* Register Page */
 
-i.far.fa-user, i.far.fa-user, i.far.fa-envelope, i.fas.fa-user-tag, i.fas.fa-lock, i.fas.fa-expand-alt{
+i.far.fa-user, i.far.fa-user, i.far.fa-envelope, i.fas.fa-user-tag, i.fas.fa-lock{
     color: #3facff;
     font-size: 30px;
 }

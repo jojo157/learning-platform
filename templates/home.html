@@ -67,9 +67,9 @@
                     <span class="right">Author: {{ single_content.user}}</span>
                 </div>
                 <div class="content-feedback-area">
-                    <a class="refresh" href="{{ url_for('score_up', rated_article = single_content._id) }}"><i class="far fa-thumbs-up content"></i>{{ single_content.rating_up}}</a>   
-                    <a class="refresh" href="{{ url_for('score_down', rated_article = single_content._id) }}"><i class="far fa-thumbs-down content"></i>{{ single_content.rating_down}}</a>
-                    <a class="refresh" href="{{ url_for('fav_content', content_id = single_content._id) }}"><i class="far fa-bookmark right content tooltipped" data-tooltip="Add article to your favourites"></i></a>
+                    <a class="refresh" href="{{ url_for('score_up', rated_article = single_content._id) }}"><i class="far fa-thumbs-up content-icon-left"></i>{{ single_content.rating_up}}</a>   
+                    <a class="refresh" href="{{ url_for('score_down', rated_article = single_content._id) }}"><i class="far fa-thumbs-down content-icon-left"></i>{{ single_content.rating_down}}</a>
+                    <a class="refresh" href="{{ url_for('fav_content', content_id = single_content._id) }}"><i class="far fa-bookmark content-icon-right right content tooltipped" data-tooltip="Add article to your favourites"></i></a>
                 </div>
                 
                 
