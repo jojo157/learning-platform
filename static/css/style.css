@@ -43,11 +43,13 @@ a{
 }
 
 .alert-error{
-    background-color: red;
+    color: red;
+    
 }
 
 .alert-success{
-    background-color: green;
+    color: green;
+    
 }
 
 
