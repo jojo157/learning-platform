@@ -358,11 +358,14 @@ def admin_edit(user_to_edit):
 
 @app.route("/admin_delete/<string:user_to_delete>", methods=["GET", "POST"])
 def admin_delete(user_to_delete):
-    if request.method == "GET":
-        mongo.db.users.remove({"username": user_to_delete})
-    
-    flash("User has been Deleted", "success")
-    return redirect(url_for('admin'))
+    if not session.get("user") is None:
+        if request.method == "GET":
+            mongo.db.users.remove({"username": user_to_delete})
+            mongo.db.favourites.remove({"username": user_to_delete})
+            mongo.db.posts.remove({"username": user_to_delete})
+            flash("User has been Deleted", "success")
+        return redirect(url_for('admin'))
+    return redirect(url_for('profile'))
     
 
 

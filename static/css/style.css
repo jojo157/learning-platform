@@ -148,6 +148,9 @@ i.fas.fa-chevron-circle-down, i.fas.fa-expand-alt {
     object-fit: fill;
 }
 
+.content-container{
+    border: 1px solid #e0e0e0 ;
+}
 .collapsible-header p{
     width: 100%;
 }
