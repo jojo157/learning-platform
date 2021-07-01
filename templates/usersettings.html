@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h4>User Settings Page</h4>
+<h3 class="center">{{ user_details.first_name|capitalize }}'s Account Settings</h3>
 
 <div class="row">
     <div class = "col s12 m8 offset-m2 l6 offset-l3">
@@ -43,7 +43,7 @@
                         </div>
                     </div> 
                     <div class="row">
-                        <button type="submit" class="col s8 offset-s2 btn-large light-blue darken-4 text-shadow">
+                        <button type="submit" class="col s8 offset-s2 btn-large green-button">
                             Update <i class="fas fa-sign-in-alt"></i>
                         </button>
                     </div>     
