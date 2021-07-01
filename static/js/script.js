@@ -4,7 +4,6 @@ $(document).ready(function(){
     $('.materialboxed').materialbox();
     $('body').Aplus();
     $('.tooltipped').tooltip();
-
   });
   
   $('.refresh').click(function() {

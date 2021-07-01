@@ -16,7 +16,8 @@ body {
     flex-direction: column;
     max-width: 100vw;
     padding: 0;
-    margin: 0
+    margin: 0;
+    overflow: auto;
   }
 
 main {
@@ -176,9 +177,6 @@ ul.collapsible{
 
 }
 
-
-
-
 /* Register Page */
 
 i.far.fa-user, i.far.fa-user, i.far.fa-envelope, i.fas.fa-user-tag, i.fas.fa-lock{
@@ -190,10 +188,6 @@ i.fas.fa-sign-in-alt{
     color: #1565c0;
     font-size: 30px;
 }
-
-/* Login Page */
-
-
 
 /* Content Page forum */
 
@@ -219,16 +213,17 @@ div.btn-small{
 }
 
 
-.side-panel{
-    
-} 
-
-
-.main-panel{
-    
+.profile-container{
+    height: 100%;
 }
 
+.fav-articles-heading{
+    margin-bottom: 40px;
+}
 
+div a.post-it-action{
+    color: #311b92;
+}
 
    /* Media Queries: */
 

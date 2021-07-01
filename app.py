@@ -38,7 +38,6 @@ def score_up(rated_article):
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
     return ('', 204)
-    #return redirect(url_for('home'))
 
 @app.route("/home/score_down/<string:rated_article>")
 def score_down(rated_article):
@@ -47,7 +46,6 @@ def score_down(rated_article):
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
     return ('', 204)
-    #return redirect(url_for('home'))
     
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -175,8 +173,7 @@ def editnote(note_id):
             updated_post = {
                 "username": session.get("user").lower(),
                 "title": request.form.get("title"),
-                "note": request.form.get("body"),
-                "date": datetime.now().strftime('%d-%m-%Y')
+                "note": request.form.get("body")
             }
             mongo.db.posts.update_one({"_id": ObjectId(note_id)}, { "$set": updated_post })
 
@@ -270,8 +267,7 @@ def fav_content(content_id):
                     "username": session["user"],
                     "content_title": content_title
                 }
-                mongo.db.favourites.insert_one(favour)
-                
+                mongo.db.favourites.insert_one(favour)       
             return('', 204)
     return render_template("register.html")
 
