@@ -22,7 +22,6 @@
                     {% if session.user %}
                         <li><a href="{{ url_for('home') }}">Library</a></li>
                         <li><a href="{{ url_for('profile') }}">My Profile</a></li>
-                        <li><a href="{{ url_for('user_settings') }}">Settings</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         {%  if session.access|lower == "admin"|lower %}
                             <li><a href="{{ url_for('admin') }}">User Management</a></li>
@@ -41,7 +40,6 @@
             {% if session.user %}
                         <li><a href="{{ url_for('home') }}">Library</a></li>
                         <li><a href="{{ url_for('profile') }}"> My Profile</a></li>
-                        <li><a href="{{ url_for('user_settings') }}">Settings</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         {%  if session.access|lower == "admin"|lower %}
                             <li><a href="{{ url_for('admin') }}">User Management</a></li>
