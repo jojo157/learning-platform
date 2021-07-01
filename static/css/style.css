@@ -235,6 +235,22 @@ i.fas.fa-user-cog{
     margin-top: 10px;
 }
 
+ /* Admin User management page  */
+
+.user-card-container{
+    margin: 20px;
+}
+
+.user-buttons{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+
+
+
+
+
    /* Media Queries: */
 
 @media only screen and (max-width: 321px) {

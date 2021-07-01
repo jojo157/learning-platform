@@ -1,26 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3>Admin Page</h3>
+    <h3 class="center">Admin Page</h3>
     <div class="row">
-
-        
         {% for singleuser in all_users %}
-        <div class="col s10 offset-s1 m6 l4">
-            <div class="collection">
-              <p> Username : {{ singleuser.username }}</p> 
-              <p> First Name : {{ singleuser.first_name }}</p> 
-              <p> Last Name : {{ singleuser.last_name }}</p> 
-              <p> Access Level : {{ singleuser.access_level }}</p> 
-              <p> Email : {{ singleuser.email }}</p> 
-                <a href="{{ url_for('admin_edit',user_to_edit = singleuser.username) }}" class="col s4 btn-small light-blue darken-4 text-shadow right">
-                    Edit <i class="fas fa-user-edit"></i>
-                </a>  
-                <a href="{{ url_for('admin_delete',user_to_delete = singleuser.username) }}" class="col s4 btn-small light-blue darken-4 text-shadow left confirm" title="Are you sure you wish to delete username {{ singleuser.username }} ?">
-                    Delete <i class="fas fa-user-edit"></i>
-                </a>
+        <div class="col s10 offset-s1 m4 offset-m1 l4 offset-l1 card">
+            <div class="user-card-container">
+                <div class="col s6">
+                    Username : 
+                </div>
+                <div class="col s6">
+                   {{ singleuser.username }}
+                </div>
+                <div class="col s6">
+                    First Name :
+                </div>
+                <div class="col s6">
+                    {{ singleuser.first_name }}
+                </div>
+                <div class="col s6">
+                    Last Name : 
+                </div>
+                <div class="col s6">
+                    {{ singleuser.last_name }}
+                </div>
+                <div class="col s6">
+                    Access Level :
+                </div>
+                <div class="col s6">
+                    {{ singleuser.access_level }}
+                </div>
+                <div class="col s6">
+                    Email :
+                </div>
+                <div class="col s6">
+                    {{ singleuser.email }}
+                </div>
+                <div class="col s12 user-buttons center">  
+                    <hr>
+                    <a href="{{ url_for('admin_edit',user_to_edit = singleuser.username) }}" class="col s4 offset-s1 btn-small green-button">
+                        Edit <i class="fas fa-user-edit"></i>
+                    </a> 
+                    <a href="{{ url_for('admin_delete',user_to_delete = singleuser.username) }}" class="col s4 offset-s1 btn-small green-button confirm" title="Are you sure you wish to delete username {{ singleuser.username }} ?">
+                        Delete <i class="fas fa-user-edit"></i>
+                    </a>
+                </div>
             </div>
         </div>
         {% endfor %}
-
     </div>
+
+    
 {% endblock %}
