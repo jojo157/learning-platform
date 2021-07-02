@@ -178,8 +178,9 @@ ul.collapsible{
     -webkit-box-shadow: none;
     box-shadow:none;
     border:none;
-
 }
+
+
 
 /* Register Page */
 
@@ -246,15 +247,20 @@ i.fas.fa-user-cog{
 }
 
 .user-buttons{
-   
     margin-top:20px;
     margin-bottom:20px;
 }
 
+.user-management-header{
+    margin-bottom: 30px;
+}
 
+/* Add site content */
 
-
-
+i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.fa-image{
+    color: #3facff;
+    font-size: 30px;
+}
 
    /* Media Queries: */
 

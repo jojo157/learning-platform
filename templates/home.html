@@ -3,23 +3,25 @@
     <h4 class="center">Content Library</h4>
 
     
-    <div class="row ">
+    
       <form action="{{ url_for('search') }}" method="post" class="col s12 m8 offset-m2 l8 offset-l2">
-          <div class="row valign-wrapper center-align">
-              <div class="input-field col s12 m8">
+    <div class="row"> 
+        <div class=" valign-wrapper center-align">
+              <div class="input-field col s12 m7 offset-m1 l7 0ffset-l1">
                   <i class="fas fa-search prefix"></i>
                   <input type="text" name="search" id="search" minlength="3" class="validate" required>
                   <label for="search">Search</label>
               </div>
-              <div class="col s12 m4">
+              <div class="col s12 m4 l4 search-buttons">
                   <a href="{{ url_for('home') }}" class="btn-small green-button text-shadow">Reset</a>
                   <button type="submit" class="green-button btn-small text-shadow">
                  Search
                   </button>
               </div>
           </div>
+        </div>
       </form>
-  </div>
+  
   
 
 
