@@ -1,6 +1,7 @@
 import os
 from flask import Flask, flash, render_template, redirect, request, session, url_for
 from flask_pymongo import PyMongo
+from flask_mail import Mail, Message
 from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -13,8 +14,17 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-mongo = PyMongo(app)
+app.config["MAIL_SERVER"]="smtp.gmail.com"
+app.config["MAIL_PORT"]= 587
+app.config["MAIL_USE_TLS"] = True
+app.config["MAIL_USE_SSL"]= False
+app.config["MAIL_USERNAME"]= os.environ.get("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"]= os.environ.get("MAIL_PASSWORD")
 
+
+
+mongo = PyMongo(app)
+mail = Mail(app)
   
 
 @app.route("/")
@@ -362,7 +372,33 @@ def admin_delete(user_to_delete):
             flash("User has been Deleted", "success")
         return redirect(url_for('admin'))
     return redirect(url_for('profile'))
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "GET":
+        return render_template('contact.html')
+
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        message = request.form.get("message")
+        if not session.get("user") is None:
+            username = session["user"]
+        else:
+            username = "guest"
+
+        msg = Message(
+            subject=f"Finance Mind message from {name}",
+            body = f"Name: {name} \nUsername: {username} \nEmail: {email} \nMessage: {message}",
+            sender = email,
+            recipients=[os.environ.get("MAIL_USERNAME")]
+        )
+
+        mail.send(msg)
+        flash("Message sent, an admin will contact you shortly", "success")
+    return render_template("contact.html")
     
+  
 
 
 if __name__ == "__main__":
