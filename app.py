@@ -317,7 +317,7 @@ def admin():
     if not session.get("user") is None:
         user_details = mongo.db.users.find_one({"username": session["user"]})
         if user_details["access_level"] == "admin":
-            all_users = mongo.db.users.find()
+            all_users = mongo.db.users.find().sort("first_name", 1)
             return render_template("admin.html", all_users=all_users)
     return redirect(url_for('profile'))
         

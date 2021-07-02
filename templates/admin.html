@@ -1,35 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3 class="center">Admin Page</h3>
+    <h3 class="center">User Management</h3>
     <div class="row">
         {% for singleuser in all_users %}
         <div class="col s10 offset-s1 m4 offset-m1 l4 offset-l1 card">
             <div class="user-card-container">
-                <div class="col s6">
+                <div class="col s6 bold">
                     Username : 
                 </div>
                 <div class="col s6">
                    {{ singleuser.username }}
                 </div>
-                <div class="col s6">
+                <div class="col s6 bold">
                     First Name :
                 </div>
                 <div class="col s6">
                     {{ singleuser.first_name }}
                 </div>
-                <div class="col s6">
+                <div class="col s6 bold">
                     Last Name : 
                 </div>
                 <div class="col s6">
                     {{ singleuser.last_name }}
                 </div>
-                <div class="col s6">
+                <div class="col s6 bold">
                     Access Level :
                 </div>
                 <div class="col s6">
                     {{ singleuser.access_level }}
                 </div>
-                <div class="col s6">
+                <div class="col s6 bold">
                     Email :
                 </div>
                 <div class="col s6">
@@ -38,10 +38,10 @@
                 <div class="col s12 user-buttons center">  
                     <hr>
                     <a href="{{ url_for('admin_edit',user_to_edit = singleuser.username) }}" class="col s4 offset-s1 btn-small green-button">
-                        Edit <i class="fas fa-user-edit"></i>
+                        Edit 
                     </a> 
                     <a href="{{ url_for('admin_delete',user_to_delete = singleuser.username) }}" class="col s4 offset-s1 btn-small green-button confirm" title="Are you sure you wish to delete username {{ singleuser.username }} ?">
-                        Delete <i class="fas fa-user-edit"></i>
+                        Delete 
                     </a>
                 </div>
             </div>
