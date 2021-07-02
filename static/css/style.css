@@ -109,7 +109,15 @@ i.fas.fa-file-alt, i.fas.fa-book-open, i.far.fa-thumbs-up, i.fas.fa-users, i.fas
     font-size: 30px;
 }
 
+.hero-image{
+  
+    position: relative;
+}
 
+.div-text{
+    position: absolute;
+    top: 20px;
+}
 
 /* Home Page */
 
