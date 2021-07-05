@@ -282,8 +282,8 @@ def fav_content(content_id):
                     "content_title": content_title
                 }
                 mongo.db.favourites.insert_one(favour)  
-            return redirect(request.referrer)            
-        return render_template("register.html")
+                return redirect(request.referrer)            
+            return render_template("register.html")
 
 @app.route("/delete_fav/<string:fav_title>", methods=["GET", "POST"])
 def delete_fav(fav_title):
