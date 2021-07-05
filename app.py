@@ -46,7 +46,8 @@ def score_up(rated_article):
     current_score = document["rating_up"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    return ( 204)
+    return('', 204)
+
 
 @app.route("/home/score_down/<string:rated_article>")
 def score_down(rated_article):
@@ -54,8 +55,9 @@ def score_down(rated_article):
     current_score = document["rating_down"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
-    return ('', 204)
-    
+    return('', 204)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("search")
