@@ -42,24 +42,23 @@ def home():
 
 @app.route("/home/score_up/<string:rated_article>")
 def score_up(rated_article):
-    if not session.get("user") is None:
-        document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
-        current_score = document["rating_up"]
-        new_score = current_score + 1
-        mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    return render_template("index.html")   
-
+    document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
+    current_score = document["rating_up"]
+    new_score = current_score + 1
+    mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
+    return redirect(request.referrer)
+    
 
 
 
 @app.route("/home/score_down/<string:rated_article>")
 def score_down(rated_article):
-    if not session.get("user") is None:
-        document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
-        current_score = document["rating_down"]
-        new_score = current_score + 1
-        mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
-    return render_template("index.html")     
+    
+    document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
+    current_score = document["rating_down"]
+    new_score = current_score + 1
+    mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
+    return redirect(request.referrer)    
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -282,7 +281,8 @@ def fav_content(content_id):
                     "username": session["user"],
                     "content_title": content_title
                 }
-                mongo.db.favourites.insert_one(favour)       
+                mongo.db.favourites.insert_one(favour)  
+                return redirect(request.referrer)     
             
     return render_template("register.html")
 
