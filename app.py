@@ -1,5 +1,5 @@
 import os
-from flask import Flask, flash, render_template, redirect, request, session, url_for, Response
+from flask import Flask, flash, render_template, redirect, request, session, url_for, Response, make_response
 from flask_pymongo import PyMongo
 from flask_mail import Mail, Message
 from datetime import datetime
@@ -46,7 +46,9 @@ def score_up(rated_article):
     current_score = document["rating_up"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    return Response(response='', status=204, headers=None, mimetype=None)
+    
+    return make_response('', 204)
+    
     
 
 
@@ -57,7 +59,7 @@ def score_down(rated_article):
     current_score = document["rating_down"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
-    Response.content_length=0
+    
     return Response(response='', status=204)
 
 
