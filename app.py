@@ -14,13 +14,12 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-app.config["MAIL_SERVER"]="smtp.gmail.com"
-app.config["MAIL_PORT"]= 587
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USE_SSL"]= False
-app.config["MAIL_USERNAME"]= os.environ.get("MAIL_USERNAME")
-app.config["MAIL_PASSWORD"]= os.environ.get("MAIL_PASSWORD")
-
+app.config["MAIL_USE_SSL"] = False
+app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
 
 
 mongo = PyMongo(app)
@@ -47,7 +46,7 @@ def score_up(rated_article):
     current_score = document["rating_up"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    return ('', 204)
+    return ('', status.HTTP_204_NO_CONTENT)
 
 @app.route("/home/score_down/<string:rated_article>")
 def score_down(rated_article):
