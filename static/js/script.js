@@ -7,7 +7,7 @@ $(document).ready(function(){
   });
   
   $('.refresh').click(function() {
-    setTimeout(function(){ location.reload()},1000);
+    setTimeout(function(){ location.reload()},500);
   });
 
   // code to zoom in on content when click and zoom out when clicked again
