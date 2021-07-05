@@ -46,7 +46,7 @@ def score_up(rated_article):
     current_score = document["rating_up"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    return ('', status.HTTP_204_NO_CONTENT)
+    return ('', 204)
 
 @app.route("/home/score_down/<string:rated_article>")
 def score_down(rated_article):
