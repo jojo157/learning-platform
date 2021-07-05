@@ -25,11 +25,18 @@ app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
 mongo = PyMongo(app)
 mail = Mail(app)
   
-
 @app.route("/")
 def index():
     return render_template("index.html")
 
+
+@app.before_request
+def before_request():
+    scheme = request.headers.get('X-Forwarded-Proto')
+    if scheme and scheme == 'http' and request.url.startswith('http://'):
+        url = request.url.replace('http://', 'https://', 1)
+        code = 301
+        return redirect(url, code=code)
 
 @app.route("/home")
 def home():
@@ -50,7 +57,6 @@ def score_up(rated_article):
     resp.headers['Content-Length'] = 0
     return resp
     
-
 
 
 @app.route("/home/score_down/<string:rated_article>")
