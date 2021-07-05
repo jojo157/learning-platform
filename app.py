@@ -57,7 +57,8 @@ def score_down(rated_article):
     current_score = document["rating_down"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
-    return Response(response='', status=204, headers=None, mimetype=None, content_type=None, direct_passthrough=False)
+    Response.content_length=0
+    return Response(response='', status=204)
 
 
 @app.route("/search", methods=["GET", "POST"])
