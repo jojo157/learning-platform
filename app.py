@@ -291,7 +291,7 @@ def fav_content(content_id):
                 }
                 mongo.db.favourites.insert_one(favour)  
 
-                status_code = Response(status=204)
+            status_code = Response(status=204)
             return status_code 
         return render_template("register.html")
 
