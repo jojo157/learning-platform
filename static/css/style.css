@@ -187,7 +187,10 @@ ul.collapsible{
     border:none;
 }
 
-
+.refresh{
+    background-color: #fff;
+    border:none;
+}
 
 /* Register Page */
 
