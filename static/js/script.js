@@ -6,9 +6,7 @@ $(document).ready(function(){
     $('.tooltipped').tooltip();
   });
   
-  $('.refresh').click(function() {
-    setTimeout(function(){ location.reload()},1000);
-  });
+ 
 
   // code to zoom in on content when click and zoom out when clicked again
 
@@ -27,7 +25,10 @@ $(document).ready(function(){
       });
 
  
-  
+$('.score_up').click(function() {
+    score_up(this.id);
+    location.reload();
+}); 
 
 
 

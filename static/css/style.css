@@ -187,10 +187,12 @@ ul.collapsible{
     border:none;
 }
 
-.refresh{
+.refresh, .refresh:active, .refresh:focus{
     background-color: #fff;
     border:none;
 }
+
+ 
 
 /* Register Page */
 
