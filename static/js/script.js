@@ -26,8 +26,16 @@ $(document).ready(function(){
 
  
 $('.score_up').click(function() {
-    score_up(this.id);
-    location.reload();
+    stopPropagation();
+    stopImmediatePropagation();
+
+    try{
+      score_up(this.id);
+    }
+    finally{
+      location.reload();
+    }
+    
 }); 
 
 
