@@ -1,5 +1,5 @@
 import os
-from flask import Flask, flash, render_template, redirect, request, session, url_for, Response, make_response
+from flask import Flask, flash, render_template, redirect, request, session, url_for, make_response, jsonify
 from flask_pymongo import PyMongo
 from flask_mail import Mail, Message
 from datetime import datetime
@@ -48,13 +48,16 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/home/score_up/<string:rated_article>")
-def score_up(rated_article):
+@app.route("/home/score_up/", methods=["GET", "POST"])
+def score_up():
+    req = request.get_json()
+    rated_article = req["article"]
     document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
     current_score = document["rating_up"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    return redirect(url_for("home"))
+    res = make_response(200)
+    return res
     
 
 

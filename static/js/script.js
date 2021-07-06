@@ -26,6 +26,36 @@ $(document).ready(function(){
   }
       });
 
+ 
   
+
+
+
+function score_up(id){
+  var articleV = id;
+
+  var data = {
+    article : articleV
+  };
+
+
+  fetch(`${window.origin}/home/score_up/`, {
+    method:"POST",
+    credentials: "include",
+    body: JSON.stringify(data),
+    cache: "no-cache",
+    headers: new Headers({"content-type": "application/json"})
+  })
+.then(function(response){
+
+    return;
+  
+
+})
+
+
+
+
+}
 
 
