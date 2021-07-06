@@ -54,8 +54,7 @@ def score_up(rated_article):
     current_score = document["rating_up"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    status_code = Response(status=204)
-    return status_code
+    return redirect(url_for("home"))
     
 
 
@@ -65,8 +64,7 @@ def score_down(rated_article):
     current_score = document["rating_down"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
-    status_code = Response(status=204)
-    return status_code
+    return redirect(url_for("home"))
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -291,8 +289,7 @@ def fav_content(content_id):
                 }
                 mongo.db.favourites.insert_one(favour)  
 
-            status_code = Response(status=204)
-            return status_code 
+            return redirect(url_for("home"))
         return render_template("register.html")
 
 
