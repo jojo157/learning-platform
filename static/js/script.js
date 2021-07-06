@@ -25,9 +25,9 @@ $(document).ready(function(){
       });
 
  
-$('.score_up').click(function() {
-    stopPropagation();
-    stopImmediatePropagation();
+$('.score_up').click(function(event) {
+    event.stopPropagation();
+    event.stopImmediatePropagation();
 
     try{
       score_up(this.id);
