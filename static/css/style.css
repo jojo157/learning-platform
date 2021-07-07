@@ -177,8 +177,10 @@ i.fas.fa-chevron-circle-down, i.fas.fa-expand-alt {
     border-bottom: none;
 }
 
-.content-icon-left, .content-icon-right{
-    margin:10px;
+
+.content-icon{
+    margin-top: 20px;
+
 }
 
 ul.collapsible{
@@ -192,7 +194,9 @@ ul.collapsible{
     border:none;
 }
 
- 
+ .modal-trigger{
+    
+ }
 
 /* Register Page */
 

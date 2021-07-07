@@ -22,8 +22,16 @@
         </div>
       </form>
   
-  
-
+      
+      <div id="favouredArticle" class="modal">
+        <div class="modal-content">
+          <h4 class="center">Article Favoured</h4>
+          <p class="center">A quick link has been added to your profile, under your favoruites section.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close  btn-flat">OK</a>
+        </div>
+      </div>
 
     <div class="row">
 
@@ -44,11 +52,20 @@
                     <a href="{{ url_for('delete_content', content_id = single_content._id) }}" class="btn-small green-button confirm" title="Are you sure you wish to delete this post?">Delete</a>
                 </div>
                 {% endif %}
-                <div class="content-feedback-area">
-                    <button class="refresh score_up" id="{{single_content._id}}"><i class="far fa-thumbs-up content-icon-left"></i>{{ single_content.rating_up}}</button>   
-                    <a class="refresh score_down" href="{{ url_for('score_down', rated_article = single_content._id) }}"><i class="far fa-thumbs-down content-icon-left"></i>{{ single_content.rating_down}}</a>
-                    <a class="refresh fav_content" href="{{ url_for('fav_content', content_id = single_content._id) }}"><i class="far fa-bookmark content-icon-right right content tooltipped" data-tooltip="Add article to your favourites"></i></a>
-                </div>
+                <div class="content-feedback-area row">
+                  <div class="col s3">
+                    <button class="refresh score_up" id="{{single_content._id}}"><i class="far fa-thumbs-up content-icon"></i>{{ single_content.rating_up}}</button>   
+                    
+                  </div>
+                  <div class="col s3">
+                    <button class="refresh score_down" id="{{single_content._id}}"><i class="far fa-thumbs-down content-icon"></i>{{ single_content.rating_down}}</button>
+                    
+                  </div>
+                  <div class="col s3 offset-s3">
+                    <button class="refresh fav_content" id="{{single_content._id}}" ><i class="far fa-bookmark content-icon tooltipped" data-tooltip="Add article to your favourites"></i></button>
+                  </div>
+                    </div>
+
 
                 <div class="col s12">
                     <div class="col s12">
@@ -76,10 +93,6 @@
                         <i class="fas fa-chevron-circle-down right tooltipped" data-tooltip="Expand to read article"></i>
                     </div>
                 </div> 
-                
-                
-                
-                
               </li>
             </ul>
           </div>
@@ -93,6 +106,7 @@
             </div>
         </div>
       {% endif %}
-
+      
+    
 
 {% endblock %}
