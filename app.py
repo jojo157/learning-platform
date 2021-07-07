@@ -21,18 +21,14 @@ app.config["MAIL_USE_SSL"] = False
 app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
 app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
 
-
 mongo = PyMongo(app)
 mail = Mail(app)
-
 
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
 
 
-
-  
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -49,42 +45,53 @@ def before_request():
 
 @app.route("/home")
 def home():
-    if not session.get("user") is None:
-        site_contents = mongo.db.content.find( {"view" : "public"}).sort("date", -1)
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        site_contents = mongo.db.content.find( {"view" : "public"}).sort("date_time", -1)
         level = mongo.db.users.find_one( {"username" : session["user"]})["access_level"]
-        return render_template("home.html", site_contents = site_contents, level = level)
-    return render_template("index.html")
+    return render_template("home.html", site_contents = site_contents, level = level)
+    
 
 
 @app.route("/home/score_up/", methods=["GET", "POST"])
 def score_up():
-    req = request.get_json()
-    rated_article = req["article"]
-    document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
-    current_score = document["rating_up"]
-    new_score = current_score + 1
-    mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    res = make_response("score changed")
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        req = request.get_json()
+        rated_article = req["article"]
+        document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
+        current_score = document["rating_up"]
+        new_score = current_score + 1
+        mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
+        res = make_response("score changed")
     return res
     
 
 
 @app.route("/home/score_down/", methods=["GET", "POST"])
 def score_down(): 
-    req = request.get_json()
-    rated_article = req["article"] 
-    document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
-    current_score = document["rating_down"]
-    new_score = current_score + 1
-    mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
-    res = make_response("score changed")
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        req = request.get_json()
+        rated_article = req["article"] 
+        document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
+        current_score = document["rating_down"]
+        new_score = current_score + 1
+        mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
+        res = make_response("score changed")
     return res
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    query = request.form.get("search")
-    content = mongo.db.content.find({"$text": {"$search": query}})
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        query = request.form.get("search")
+        content = mongo.db.content.find({"$text": {"$search": query}})
     return render_template("home.html", site_contents = content)
 
 
@@ -142,19 +149,17 @@ def login():
             # username doesn't exist
             flash("Incorrect Username and/or Password", "error")
             return redirect(url_for("login"))
-
     return render_template("login.html")
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
-    flash("You have been logged out", "success")
-    session.pop("user")
-    session.pop("access")
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        flash("You have been logged out", "success")
+        session.pop("user")
+        session.pop("access")
     return redirect(url_for("login"))
-
-
-
 
 
 @app.route("/profile")
@@ -169,18 +174,21 @@ def profile():
 
 @app.route("/search_fav/<string:query>", methods=["GET", "POST"])
 def search_fav(query):
-    content = mongo.db.content.find({"$text": {"$search": query}})
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        content = mongo.db.content.find({"$text": {"$search": query}})
     return render_template("home.html", site_contents = content)
 
 
 @app.route("/notes", methods=["GET", "POST"])
 def notes():
-    if request.method == "GET":   
-        if not session.get("user") is None:
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        if request.method == "GET":   
             return render_template("notes.html")
-        return redirect(url_for('profile'))
-  
-    if request.method == "POST":
+        if request.method == "POST":
             newpost = {
                 "username": session.get("user").lower(),
                 "title": request.form.get("title"),
@@ -191,19 +199,19 @@ def notes():
 
             # put the new user into 'session' cookie
             flash("Note added!", "success")
-            return redirect(url_for('profile'))
-    return render_template("register.html")
+        return redirect(url_for('profile'))
 
 
 @app.route("/editnote/<string:note_id>", methods=["GET", "POST"])
 def editnote(note_id):
-    if request.method == "GET":   
-        if not session.get("user") is None:
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        if request.method == "GET":   
             note_data = mongo.db.posts.find_one({"_id": ObjectId(note_id)})
             return render_template("editnote.html", note=note_data)
-        return redirect(url_for('profile'))
-  
-    if request.method == "POST":
+
+        if request.method == "POST":
             updated_post = {
                 "username": session.get("user").lower(),
                 "title": request.form.get("title"),
@@ -213,7 +221,7 @@ def editnote(note_id):
 
             flash("Note updated!", "success")
             return redirect(url_for('profile'))
-    return render_template("register.html")
+   
 
 
 @app.route("/delete_note/<string:note_id>", methods=["GET", "POST"])
@@ -223,46 +231,47 @@ def delete_note(note_id):
             mongo.db.posts.remove({"_id": ObjectId(note_id)})
             flash("Note has been Deleted", "success")
         return redirect(url_for('profile'))
-    return redirect(url_for('profile'))
+    return redirect(url_for('index'))
 
 @app.route("/content", methods=["GET", "POST"])
-def content():  
-    if request.method == "GET":   
-        if not session.get("user") is None:
-            return render_template("content.html")
+def content(): 
+    if session.get("user") is None:
         return render_template("index.html")
+    else: 
+        if request.method == "GET":   
+            return render_template("content.html")
 
-    if request.method == "POST":
-        newpost = {
-            "user": session.get("user").lower(),
-            "category": request.form.get("category").lower(),
-            "title": request.form.get("title").lower(),
-            "content": request.form.get("body"),
-            "date": datetime.now().strftime('%d-%m-%Y'),
-            "keywords": request.form.get("keywords").lower(),
-            "view": "public",
-            "rating_up": 0,
-            "rating_down":0,
-            "picture": request.form.get("picture"),
-            "resource": request.form.get("resource")
-        }
-        mongo.db.content.insert_one(newpost)
+        if request.method == "POST":
+            newpost = {
+                "user": session.get("user").lower(),
+                "category": request.form.get("category").lower(),
+                "title": request.form.get("title").lower(),
+                "content": request.form.get("body"),
+                "date": datetime.now().strftime('%d-%m-%Y'),
+                "keywords": request.form.get("keywords").lower(),
+                "view": "public",
+                "rating_up": 0,
+                "rating_down":0,
+                "picture": request.form.get("picture"),
+                "resource": request.form.get("resource"),
+                "date_time":datetime.now()
+            }
+            mongo.db.content.insert_one(newpost)
 
-        flash("Post added!", "success")
-        return redirect(url_for('home'))
-
-    return render_template("register.html")
+            flash("Post added!", "success")
+            return redirect(url_for('home'))
 
 
 @app.route("/editcontent/<string:content_id>", methods=["GET", "POST"])
 def editcontent(content_id):
-    if request.method == "GET":   
-        if not session.get("user") is None:
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        if request.method == "GET":   
             post_data = mongo.db.content.find_one({"_id": ObjectId(content_id)})
             return render_template("editcontent.html", post=post_data)
-        return redirect(url_for('home'))
-  
-    if request.method == "POST":
+        
+        if request.method == "POST":
             updated_content = {
                 "category": request.form.get("category"),
                 "title": request.form.get("title"),
@@ -275,7 +284,6 @@ def editcontent(content_id):
 
             flash("Post updated!", "success")
             return redirect(url_for('home'))
-    return render_template("register.html")
 
 
 @app.route("/delete_content/<string:content_id>", methods=["GET", "POST"])
@@ -289,67 +297,75 @@ def delete_content(content_id):
 
 @app.route("/fav_content/", methods=["GET", "POST"])
 def fav_content():
-    req = request.get_json()
-    content_id = req["article"]
-    #check if favoured article before
-    existing_fav = mongo.db.favourites.find_one({"content_id": ObjectId(content_id)})
-    if not existing_fav:
-    #add favourite to collection as hasnt been added before
-        content_title= mongo.db.content.find_one({"_id": ObjectId(content_id)})["title"]
-        favour = {
-            "content_id": ObjectId(content_id),
-            "username": session["user"],
-            "content_title": content_title
-        }
-        mongo.db.favourites.insert_one(favour)  
-    res = make_response("favoured")
-    return res
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        req = request.get_json()
+        content_id = req["article"]
+        #check if favoured article before
+        existing_fav = mongo.db.favourites.find_one({"content_id": ObjectId(content_id)})
+        if not existing_fav:
+        #add favourite to collection as hasnt been added before
+            content_title= mongo.db.content.find_one({"_id": ObjectId(content_id)})["title"]
+            favour = {
+                "content_id": ObjectId(content_id),
+                "username": session["user"],
+                "content_title": content_title
+            }
+            mongo.db.favourites.insert_one(favour)  
+        res = make_response("favoured")
+        return res
  
 
 @app.route("/delete_fav/<string:fav_title>", methods=["GET", "POST"])
 def delete_fav(fav_title):
-    if request.method == "GET":
-        if not session.get("user") is None:
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        if request.method == "GET":
             mongo.db.favourites.remove({"content_title": fav_title})
             flash("Favourite has been Deleted", "success")
         return redirect(url_for('profile'))
-    return redirect(url_for('profile'))
+    
 
 @app.route("/user_settings", methods=["GET", "POST"])
 def user_settings():
-    if request.method == "GET":
-        user_details = mongo.db.users.find_one({"username": session["user"]})
-        return render_template("usersettings.html", user_details=user_details)
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
+        if request.method == "GET":
+            user_details = mongo.db.users.find_one({"username": session["user"]})
+            return render_template("usersettings.html", user_details=user_details)
 
-
-    if request.method == "POST":
-        user_details = mongo.db.users.find_one({"username": session["user"]})
-        if user_details["password"]== "######":
-           updated = {
-            "first_name": request.form.get("first_name").lower(),
-            "last_name": request.form.get("last_name").lower(),
-            "email": request.form.get("email").lower(),
-            "password": user_details["password"],
-            "access_level": user_details["access_level"]
-           }
-           mongo.db.tasks.update_one({"username": session["user"]}, { "$set": updated})
-        else :
-            updated = {
-            "password": generate_password_hash(request.form.get("password")),
-            "first_name": request.form.get("first_name").lower(),
-            "last_name": request.form.get("last_name").lower(),
-            "email": request.form.get("email").lower(),
-            "access_level": user_details["access_level"]
-           }
-            mongo.db.users.update_one({"username": session["user"]}, { "$set": updated})
-
-        flash("Profile Updated", "success")
-    return render_template("profile.html")
+        if request.method == "POST":
+            user_details = mongo.db.users.find_one({"username": session["user"]})
+            if user_details["password"]== "######":
+                updated = {
+                "first_name": request.form.get("first_name").lower(),
+                "last_name": request.form.get("last_name").lower(),
+                "email": request.form.get("email").lower(),
+                "password": user_details["password"],
+                "access_level": user_details["access_level"]
+                }
+                mongo.db.tasks.update_one({"username": session["user"]}, { "$set": updated})
+            else:
+                updated = {
+                "password": generate_password_hash(request.form.get("password")),
+                "first_name": request.form.get("first_name").lower(),
+                "last_name": request.form.get("last_name").lower(),
+                "email": request.form.get("email").lower(),
+                "access_level": user_details["access_level"]
+                }
+                mongo.db.users.update_one({"username": session["user"]}, { "$set": updated})
+            flash("Profile Updated", "success")
+        return render_template("profile.html")
 
 
 @app.route("/admin")
 def admin():
-    if not session.get("user") is None:
+    if session.get("user") is None:
+        return render_template("index.html")
+    else:
         user_details = mongo.db.users.find_one({"username": session["user"]})
         if user_details["access_level"] == "admin":
             all_users = mongo.db.users.find().sort("first_name", 1)
