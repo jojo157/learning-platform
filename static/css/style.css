@@ -278,6 +278,13 @@ i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.f
     font-size: 30px;
 }
 
+
+/* 404 page */
+.pageNF{
+    margin-top: 10vh;
+}
+
+
    /* Media Queries: */
 
 @media only screen and (max-width: 321px) {

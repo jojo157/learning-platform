@@ -57,7 +57,7 @@ function score_up(id){
     headers: new Headers({"content-type": "application/json"})
   })
 .then(function(response){
-    return 200;
+    return ;
 })
 }
 
@@ -93,7 +93,7 @@ fetch(`${window.origin}/home/score_down/`, {
   headers: new Headers({"content-type": "application/json"})
 })
 .then(function(response){
-  return 200;
+  return ;
 })
 }
 
@@ -127,6 +127,6 @@ fetch(`${window.origin}/fav_content/`, {
   headers: new Headers({"content-type": "application/json"})
 })
 .then(function(response){
-  return 200;
+  return ;
 })
 }

@@ -24,6 +24,14 @@ app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
 
 mongo = PyMongo(app)
 mail = Mail(app)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+
   
 @app.route("/")
 def index():
@@ -56,7 +64,7 @@ def score_up():
     current_score = document["rating_up"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_up": new_score} })
-    res = make_response(200)
+    res = make_response("score changed")
     return res
     
 
@@ -69,7 +77,7 @@ def score_down():
     current_score = document["rating_down"]
     new_score = current_score + 1
     mongo.db.content.update_one({"_id": ObjectId(rated_article)}, { "$set": {"rating_down": new_score} })
-    res = make_response(200)
+    res = make_response("score changed")
     return res
 
 
@@ -281,24 +289,22 @@ def delete_content(content_id):
 
 @app.route("/fav_content/", methods=["GET", "POST"])
 def fav_content():
-    if not session.get("user") is None:
-        req = request.get_json()
-        content_id = req["article"]
-            #check if favoured article before
-        existing_fav = mongo.db.favourites.find_one({"content_id": ObjectId(content_id)})
-        if not existing_fav:
-                #add favourite to collection as hasnt been added before
-            content_title= mongo.db.content.find_one({"_id": ObjectId(content_id)})["title"]
-            favour = {
-                "content_id": ObjectId(content_id),
-                "username": session["user"],
-                "content_title": content_title
-            }
-            mongo.db.favourites.insert_one(favour)  
-            res = make_response(200)
-        return res
-        
-
+    req = request.get_json()
+    content_id = req["article"]
+    #check if favoured article before
+    existing_fav = mongo.db.favourites.find_one({"content_id": ObjectId(content_id)})
+    if not existing_fav:
+    #add favourite to collection as hasnt been added before
+        content_title= mongo.db.content.find_one({"_id": ObjectId(content_id)})["title"]
+        favour = {
+            "content_id": ObjectId(content_id),
+            "username": session["user"],
+            "content_title": content_title
+        }
+        mongo.db.favourites.insert_one(favour)  
+    res = make_response("favoured")
+    return res
+ 
 
 @app.route("/delete_fav/<string:fav_title>", methods=["GET", "POST"])
 def delete_fav(fav_title):
