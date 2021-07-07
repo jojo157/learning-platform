@@ -54,11 +54,11 @@
                 {% endif %}
                 <div class="content-feedback-area row">
                   <div class="col s3">
-                    <button class="refresh score_up" id="{{single_content._id}}"><i class="far fa-thumbs-up content-icon"></i>{{ single_content.rating_up}}</button>   
+                    <button class="refresh score_up" id="{{single_content._id}}"><i class="far fa-thumbs-up content-icon"></i><span>{{ single_content.rating_up}}</span></button>   
                     
                   </div>
                   <div class="col s3">
-                    <button class="refresh score_down" id="{{single_content._id}}"><i class="far fa-thumbs-down content-icon"></i>{{ single_content.rating_down}}</button>
+                    <button class="refresh score_down" id="{{single_content._id}}"><i class="far fa-thumbs-down content-icon"></i><span>{{ single_content.rating_down}}</span></button>
                     
                   </div>
                   <div class="col s3 offset-s3">

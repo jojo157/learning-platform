@@ -35,7 +35,9 @@ $('.score_up').click(function(event) {
       score_up(this.id);
     }
     finally{
-      location.reload();
+      var value = parseInt($(this).text());
+      value = value + 1;
+      $(this).find("span").text(value);
     }   
 }); 
 
@@ -69,7 +71,9 @@ $('.score_down').click(function(event) {
     score_down(this.id);
   }
   finally{
-    location.reload();
+    var value = parseInt($(this).text());
+      value = value + 1;
+      $(this).find("span").text(value);
   }   
 }); 
 
