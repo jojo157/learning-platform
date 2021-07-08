@@ -223,10 +223,18 @@ textarea#body.materialize-textarea{
 
 /* Profile Page */
 
-.post_it{
+.post-it{
     margin: 10px;
-    text-align:center;
-    
+    text-align:center;    
+}
+
+.post-it-body{
+    height: 200px;
+}
+
+.card-content{
+    overflow-y: scroll;
+    overflow-wrap: break-word;
 }
 
 div.btn-small{
