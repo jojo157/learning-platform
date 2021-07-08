@@ -145,8 +145,8 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "first_name": request.form.get("first_name").lower(),
-            "last_name": request.form.get("last_name").lower(),
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
             "email": request.form.get("email").lower(),
             "access_level": "general"
         }
@@ -328,11 +328,11 @@ def content():
         if request.method == "POST":
             newpost = {
                 "user": session.get("user").lower(),
-                "category": request.form.get("category").lower(),
-                "title": request.form.get("title").lower(),
+                "category": request.form.get("category"),
+                "title": request.form.get("title"),
                 "content": request.form.get("body"),
                 "date": datetime.now().strftime('%d-%m-%Y'),
-                "keywords": request.form.get("keywords").lower(),
+                "keywords": request.form.get("keywords"),
                 "view": "public",
                 "rating_up": 0,
                 "rating_down":0,
@@ -366,7 +366,7 @@ def editcontent(content_id):
                 "category": request.form.get("category"),
                 "title": request.form.get("title"),
                 "content": request.form.get("body"),
-                "keywords": request.form.get("keywords").lower(),
+                "keywords": request.form.get("keywords"),
                 "picture": request.form.get("picture"),
                 "resource": request.form.get("resource")
             }
@@ -454,8 +454,8 @@ def user_settings():
             user_details = mongo.db.users.find_one({"username": session["user"]})
             if user_details["password"]== "######":
                 updated = {
-                "first_name": request.form.get("first_name").lower(),
-                "last_name": request.form.get("last_name").lower(),
+                "first_name": request.form.get("first_name"),
+                "last_name": request.form.get("last_name"),
                 "email": request.form.get("email").lower(),
                 "password": user_details["password"],
                 "access_level": user_details["access_level"]
@@ -465,9 +465,9 @@ def user_settings():
             else:
                 updated = {
                 "password": generate_password_hash(request.form.get("password")),
-                "first_name": request.form.get("first_name").lower(),
-                "last_name": request.form.get("last_name").lower(),
-                "email": request.form.get("email").lower(),
+                "first_name": request.form.get("first_name"),
+                "last_name": request.form.get("last_name"),
+                "email": request.form.get("email"),
                 "access_level": user_details["access_level"]
                 }
                 mongo.db.users.update_one({"username": session["user"]}, { "$set": updated})
@@ -509,20 +509,20 @@ def admin_edit(user_to_edit):
             user_details = mongo.db.users.find_one({"username": user_to_edit})
             
             if user_details["password"]== "######":
-            updated = {
-                "first_name": request.form.get("first_name").lower(),
-                "last_name": request.form.get("last_name").lower(),
-                "email": request.form.get("email").lower(),
-                "password": user_details["password"],
-                "access_level": request.form.get("access_level").lower()
-            }
-            mongo.db.tasks.update_one({"username": user_to_edit}, { "$set": updated})
+                updated = {
+                    "first_name": request.form.get("first_name"),
+                    "last_name": request.form.get("last_name"),
+                    "email": request.form.get("email"),
+                    "password": user_details["password"],
+                    "access_level": request.form.get("access_level").lower()
+                }
+                mongo.db.tasks.update_one({"username": user_to_edit}, { "$set": updated})
             
-            else :
+            else:
                 updated = {
                 "password": generate_password_hash(request.form.get("password")),
-                "first_name": request.form.get("first_name").lower(),
-                "last_name": request.form.get("last_name").lower(),
+                "first_name": request.form.get("first_name"),
+                "last_name": request.form.get("last_name"),
                 "email": request.form.get("email").lower(),
                 "access_level": request.form.get("access_level").lower()
             }
