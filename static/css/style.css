@@ -45,6 +45,9 @@ a{
  margin-right: 5px;
 }
 
+.card-title{
+    margin-bottom: 10px;
+}
 
 /* Flash messaging styles */
 .flashes{
@@ -198,9 +201,7 @@ ul.collapsible{
     border:none;
 }
 
- .modal-trigger{
-    
- }
+
 
 /* Register Page */
 
