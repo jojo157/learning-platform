@@ -66,8 +66,9 @@ def home():
     else:
         site_contents = mongo.db.content.find( {"view" : "public"}).sort("date_time", -1)
         level = mongo.db.users.find_one( {"username" : session["user"]})["access_level"]
+        query = " "
     
-    return render_template("home.html", site_contents = site_contents, level = level)
+    return render_template("home.html", site_contents = site_contents, level = level, query=query)
     
 
 @app.route("/home/score_up/", methods=["GET", "POST"])
@@ -115,7 +116,7 @@ def score_down():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     """
-    Returns search results from user input and renders the library page with this content.
+    Returns search results from user input and renders the library page with relevant content.
     If not logged in, renders app landing page.
     """
     if session.get("user") is None:
@@ -124,8 +125,9 @@ def search():
     else:
         query = request.form.get("search")
         content = mongo.db.content.find({"$text": {"$search": query}})
+        level = session.get("access")
     
-    return render_template("home.html", site_contents = content)
+    return render_template("home.html", site_contents = content, level=level, query=query)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -235,7 +237,7 @@ def search_fav(query):
     else:
         content = mongo.db.content.find({"$text": {"$search": query}})
     
-    return render_template("home.html", site_contents = content)
+    return render_template("home.html", site_contents = content , query=query)
 
 
 @app.route("/notes", methods=["GET", "POST"])
