@@ -20,6 +20,10 @@ body {
     overflow: auto;
   }
 
+textarea, .article-body {
+    white-space: pre-wrap;
+}
+
 main {
     flex: 1 0 auto;
 }
