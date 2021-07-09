@@ -10,14 +10,14 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="far fa-user prefix"></i>
-                            <input id="first_name" name="first_name" type="text" pattern="^[a-zA-Z]{3,30}$" class="validate" required value="{{ user_details.first_name }}">
+                            <input id="first_name" name="first_name" type="text" pattern="^[a-zA-Z\s]{3,30}$" title="First Name must be letters only" class="validate" required value="{{ user_details.first_name }}">
                             <label for="first_name">First Name</label>
                         </div> 
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="far fa-user prefix"></i>
-                            <input id="last_name" name="last_name" type="text" pattern="^[a-zA-Z]{3,30}$" class="validate" required value="{{ user_details.last_name }}">
+                            <input id="last_name" name="last_name" type="text" pattern="^[a-zA-Z\s]{3,30}$" class="validate" title="Last Name must be letters only" required value="{{ user_details.last_name }}">
                             <label for="last_name">Last Name</label>
                         </div>
                     </div>
@@ -38,7 +38,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-lock prefix"></i>
-                            <input id="password" name="password" type="password" pattern="^[a-zA-Z0-9#]{5,20}$" class="validate" required value="######">
+                            <input id="password" name="password" type="password" class="validate" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required value="######">
                             <label for="password">Password</label>
                         </div>
                     </div> 

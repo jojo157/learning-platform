@@ -10,42 +10,42 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-folder prefix"></i>
-                                <input id="category" name="category" type="text" pattern="^[a-zA-Z]{3,30}$" class="validate" required>
+                                <input id="category" name="category" type="text" pattern="[\w,./_=?-]+" class="validate" title="Category is required" required>
                                 <label for="category">Category</label>
                             </div> 
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-heading prefix"></i>
-                                <input id="title" name="title" type="text" class="validate" required>
+                                <input id="title" name="title" type="text" class="validate" pattern="[\w,./_=?-]+"  title="Title required" required>
                                 <label for="title">Title</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-newspaper prefix"></i>
-                                <textarea id="body" name="body" class="materialize-textarea" placeholder = "Enter Content text"></textarea>
+                                <textarea id="body" name="body" class="materialize-textarea" placeholder = "Enter Content text" validate pattern="[\w,./_=?-]+"  title="Empty article not allowed"></textarea>
                                 <label for="body">Text Content</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-comment prefix"></i>
-                                <input id="keywords" name="keywords" type="text" class="validate" required placeholder = "Enter keywords seperated by a comma"></input>
+                                <input id="keywords" name="keywords" type="text" class="validate" pattern="[\w,./_=?-]+"  required placeholder = "Enter keywords seperated by a comma"></input>
                                 <label for="keywords">Keywords</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-image prefix"></i>
-                                <input id="picture" name="picture" type="text" class="validate">
+                                <input id="picture" name="picture" type="text">
                                 <label for="picture">Picture URL</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-image prefix"></i>
-                                <input id="resource" name="resource" type="text" class="validate">
+                                <input id="resource" name="resource" type="text">
                                 <label for="resource">External Resource URL</label>
                             </div>
                         </div>
