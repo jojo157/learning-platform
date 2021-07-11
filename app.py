@@ -215,7 +215,7 @@ def profile():
     """
     if not session.get("user") is None:
         name = mongo.db.users.find_one({"username": session["user"]})["first_name"]
-        notes = mongo.db.posts.find({"username": session["user"]}).sort("date", -1)
+        notes = mongo.db.posts.find({"username": session["user"]}).sort("date_time", -1)
         favourites = mongo.db.favourites.find({"username": session["user"]})
         return render_template("profile.html", name=name, notes=notes, favourites=favourites)
     
@@ -255,7 +255,8 @@ def notes():
                 "username": session.get("user").lower(),
                 "title": request.form.get("title"),
                 "note": request.form.get("body"),
-                "date": datetime.now().strftime('%d-%m-%Y')
+                "date": datetime.now().strftime('%d-%m-%Y'),
+                "date_time": datetime.now()
             }
             mongo.db.posts.insert_one(newpost)
 
