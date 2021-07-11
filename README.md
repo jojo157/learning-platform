@@ -5,7 +5,7 @@ The Finance Mind application is a platform that allows a company to provide lear
 
 View Live Website [here](https://learning-platform-ms3.herokuapp.com/)
 
-![Finance Mind on different devices](#)
+![Finance Mind on different devices](images/readme_images/mockup.png)
 
 Image created using [Am I responsive](http://ami.responsivedesign.is/)
 
@@ -56,22 +56,78 @@ Image created using [Am I responsive](http://ami.responsivedesign.is/)
 The 5 planes of User Experience:
 
 ### Strategy
-
-...
+Finance Mind was created with the purpose of providing an innovative solution to allow a company's trainning team provide relevant and informative finance content to their employees in a secure platform, to assist with self learning. 
 
 #### User Needs
 
 ##### As a site user
--
+- I want to be able to understand the site purpose immediately.
+- I want to be able to register and login, so that I can access the learning content.
+- I want to be able to easily naviage the site, ensuring I can acess the desired content with ease. 
+- I want to be able to search articles to show relevant results only.
+- I want to be able to favourite articles for quick access in the future.
+- I want to be able to contact the site admin if needed.
+- I want to be able to update my own user details, such as password without needing to contact the site admin.
+- I want to be able to create short personal notes, that only I have access to.
+
+
+##### As a site admin
+- I want to be able to create site content such as articles that allow the inclusion of resources such as images and links. 
+- I want to be able to edit all site library contents, even if another admin created it. 
+- I want to be able to amend all users' details, to enable a change in user access rights or if user has issue logging in. 
+- I want to be able to remove a user from the platform and all their stored data.
+- I want to be informaed of users reaction to content. 
+
 
 ##### As the business owner
-- 
+- I want to enable my employees to learn on the go.
+- I want my employees to stay up to date on relevant topics.
+- I want to see feedback from users engaging with content. 
 
 ### Scope
 
 #### Features 
 
 The following features are in scope for this project.
+- Register Functionality.
+  - Validated form to allow user create a profile for accessing the application. 
+- Login Functionality.
+  - Validated form that checks the users stored details and logs user in only if a successful match. 
+- Navigation Menu.
+  - A navigation menu will be presented on all pages on application. 
+- Responsive Design.
+  - Application is responsive on all device size and browsers.
+- CRUD Functionality.
+  - Application enables the functionality to Create, Read, Update and Delete data.
+- Database to store app data.
+  - MongoDB database is used to store all application data. 
+- Contact Form.
+  - Contact form to enable user to send message to admin. 
+- Library with searchable content.
+  - Search bar that allows user query to filter the articles to shown those with a match only. 
+- Favourite article.
+  - Allow user to create a quick link on their profile that redirects to the article that was favoured.
+- Article like and dislike feedback.
+  - like and dislike button that records the total like and dislikes of an article.
+- Profile Page.
+  - Unique profile for each user that shows their favoured articles and sticky notes.
+- Add sticky note on profile page.
+  - Option to create a new sticky note when on profile page.
+- Edit sticky note on profile page.
+  - Edit selected note where data is prefilled on form.
+- Admin content creation. 
+  - Form to create site contents that only admin has access to. 
+- Admin content edit. 
+  - Edit selected article where data is prefilled on form.
+- Admin user management 
+  - Page that shows all registered users and allows admin user to edit or delete users.
+- User settings page.
+  - Page that user can amend their own profile settings. 
+- 404 Error Page
+  - A custom 404 error page if the user navigate to a resourse that doesnt exist with a button to return home. 
+
+
+
 
 
 
