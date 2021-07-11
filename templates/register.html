@@ -10,14 +10,14 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-user prefix"></i>
-                                <input id="first_name" name="first_name" type="text" pattern="^[a-zA-Z\s]{3,30}$" title="First Name must be letters only" class="validate" required>
+                                <input id="first_name" name="first_name" type="text" pattern="^[\w,./_=?-]+.{3,30}$" title="First Name must be letters only" class="validate" required>
                                 <label for="first_name">First Name</label>
                             </div> 
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-user prefix"></i>
-                                <input id="last_name" name="last_name" type="text" pattern="^[a-zA-Z\s]{3,30}$" class="validate" title="Last Name must be letters only" required>
+                                <input id="last_name" name="last_name" type="text" pattern="^[\w,./_=?-]+.{3,30}$" class="validate" title="Last Name must be letters only" required>
                                 <label for="last_name">Last Name</label>
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-user-tag prefix"></i>
-                                <input id="username" name="username" type="text" class="validate" pattern=".{6,}" title="Must contain six or more characters" required>
+                                <input id="username" name="username" type="text" class="validate" pattern="[\w,./_=?-]+.{6,}" title="Must contain six or more characters" required>
                                 <label for="username">Username</label>
                             </div>
                         </div>

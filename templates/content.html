@@ -10,22 +10,25 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-folder prefix"></i>
-                                <input id="category" name="category" type="text" pattern="[\w,./_=?-]+" class="validate" title="Category is required" required>
+                                <input id="category" name="category" type="text" pattern="[\w,./_=?-]+" class="validate" required>
                                 <label for="category">Category</label>
+                                <span class="helper-text" data-error="Category required"> </span>
                             </div> 
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-heading prefix"></i>
-                                <input id="title" name="title" type="text" class="validate" pattern="[\w,./_=?-]+"  title="Title required" required>
+                                <input id="title" name="title" type="text" class="validate" pattern="[\w,./_=?-]+" required>
                                 <label for="title">Title</label>
+                                <span class="helper-text" data-error="Title required"> </span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-newspaper prefix"></i>
-                                <textarea id="body" name="body" class="materialize-textarea" placeholder = "Enter Content text" validate pattern="[\w,./_=?-]+"  title="Empty article not allowed"></textarea>
+                                <textarea id="body" name="body" class="materialize-textarea validate" pattern="[\w,./_=?-]+" placeholder = "Enter Content text" required></textarea>
                                 <label for="body">Text Content</label>
+                                <span class="helper-text" data-error="Empty article not allowed"> </span>
                             </div>
                         </div>
                         <div class="row">
@@ -33,6 +36,7 @@
                                 <i class="far fa-comment prefix"></i>
                                 <input id="keywords" name="keywords" type="text" class="validate" pattern="[\w,./_=?-]+"  required placeholder = "Enter keywords seperated by a comma"></input>
                                 <label for="keywords">Keywords</label>
+                                <span class="helper-text" data-error="Keywords required"> </span>
                             </div>
                         </div>
                         <div class="row">

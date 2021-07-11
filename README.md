@@ -1,59 +1,253 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Finance Mind Learning Platform
 
-Welcome jojo157,
+## Introduction
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+View Live Website [here](https://jojo157.github.io/#)
 
-`python3 -m http.server`
+![Finance Mind on different devices](#)
 
-A blue button should appear to click: _Make Public_,
+Image created using [Am I responsive](http://ami.responsivedesign.is/)
 
-Another blue button should appear to click: _Open Browser_.
+## Table of Contents
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- [UX](#ux)
+  - [Strategy](#strategy)
+    - [User Needs](#user-needs)
+        - [As a site user](as-a-site-user)
+        - [As the business owner](as-the-business-owner)
+  - [Scope](#scope)
+    - [Features](#features)
+    - [Future Features](#future-features)
+  - [Structure](#structure)
+  - [Skeleton](#skeleton)
+  - [Surface](#surface)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Images](#images)
+- [Testing](#testing)
+    - [Development Issues](#development-issues)
+    - [Code Validation](#code-validation)
+        - [Html](#html)
+        - [CSS](#css)
+        - [Javascript](#javascript)
+    - [Performance Testing](#performance-testing)
+    - [User Stories Testing](#user-stories-testing)
+    - [Functionality Testing](#functionality-testing)
+    - [Validation Testing](#validation-testing)
+    - [Compatibility Testing](#compatibility-testing)
+        - [Different devices](#different-devices)
+        - [Different Browsers](#different-browsers)
+        - [Different Operating Systems](#different-operating-systems)
+- [Technologies Used](#technologies-used)
+    - [Frameworks and Libraries](#frameworks-and-libraries)
+    - [Version Control](#version-control)
+    - [Other Programs](#other-programs)
+- [Deployment](#deployment)
+- [Credits](#credits)
+    - [Code](#code)
+    - [Content](#content)
+    - [Media](#media)
+    - [Acknowledgements](#acknowledgements)
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## UX
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The 5 planes of User Experience:
 
-To log into the Heroku toolbelt CLI:
+### Strategy
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+...
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+#### User Needs
 
-## Updates Since The Instructional Video
+##### As a site user
+-
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+##### As the business owner
+- 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Scope
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### Features 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The following features are in scope for this project.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### Future Features 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The following features are not in scope for this project:
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Structure
 
----
+During the planning stage, it was decided that the following pages would be needed to ensure the user needs are meet:
 
-Happy coding!
+
+
+### Skeleton
+
+Wireframes for this project were created using Balsamiq and can be viewed at below link.
+
+Link to [Wireframe](#)
+
+### Surface
+
+...
+
+#### Colour Scheme
+
+....
+
+#### Typography
+
+...
+
+#### Images
+...
+
+## Testing
+
+During development, testing was conducted at every step, mainly using the console to log results and check for errors. Minor issues that were quickly resolved are not noted in this Readme but details of changes are included in the project commits. Issues that took longer to resolve are discussed below. 
+
+### Development Issues
+
+- 
+
+
+### Code Validation
+
+#### Html
+
+Html pages were validated with [W3C Html Checker](https://validator.w3.org/nu/). 
+
+
+
+#### CSS
+
+CSS page was validated with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+
+
+#### Javascript
+
+Javascript files were validated with [JSHint](https://jshint.com/)
+
+![Validation results](Assets/IMAGES/javascriptValidation.png)
+
+
+### Performance Testing
+
+Performance was tested using Lighthouse, one of Google's web developer tools.
+
+#### Home Page
+
+
+
+### User Stories Testing
+
+The user's needs are met as follows:
+
+
+
+
+### Functionality Testing
+
+I tested the functionality of the site on a laptop first. Each page was tested and results are given below:
+
+ 
+   
+### Validation Testing
+
+contact form
+
+### Compatibility Testing
+
+#### Different devices
+
+Using Google Developer tools, I viewed the website on the following devices:
+- Galaxy S5
+- Pixel 2
+- Pixel 2 XL
+- iPhone 5/6/7/8 & Plus
+- iPhone X
+- iPad & iPad Pro
+- Surface duo
+- Galaxy fold
+
+
+
+#### Different Browsers
+
+I tested the website on:
+
+- Google Chrome
+- Safari
+- Firefox
+- Microsoft Edge
+- Internet Explorer
+
+Differences discovered across browsers:
+
+
+
+
+#### Different Operating Systems
+
+The above testing was conducted on below operating systems:
+
+- Windows 8.1
+- MacOS Big Sur 11.2.3
+- iOS 14.4.2
+- Android
+
+There were no differences detected on those operating systems. [Browser Stack](live.browserstack.com) was used to view and check the functionality across a wide range of devices and operating systems.
+
+
+## Technologies Used
+
+### Frameworks and Libraries
+
+- [Google Fonts](https://fonts.google.com/) was used to import the font selectedfor the website.
+- [jQuery](https://jquery.com/) was used as a Javascript library.
+
+
+### Version Control
+
+- [Git](https://git-scm.com/) was used as a version control system.
+- [GitHub](https://github.com/) was used for the repository hosting.
+- [Gitpod](https://www.gitpod.io/) was used as the developer platform.
+
+### Other Programs
+
+- [Balsamiq](https://balsamiq.com/) was used to create a mock-up of the website after exploring the strategy and scope planes of user experience for this project.
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate CSS code.
+- [W3C Html Checker](https://validator.w3.org/) was used to validate HTML code.
+- [Pic Resize](https://picresize.com/) was used to resize images available on the website, improving its performance.
+- [Ligthhouse](https://github.com/GoogleChrome/lighthouse) was used to audit my website. The results of the audit were considered when making improvements to the website's performance etc.
+- [Am I responsive](http://ami.responsivedesign.is/) was used to view the website across several devices at once.
+- [W3C Spell checker](https://www.w3.org/2002/01/spellchecker) was used to check the spelling of the website.
+- [Can I use](https://caniuse.com/) was used to check browser supports range and potential compability issues and known bugs. 
+- [Browser Stack](live.browserstack.com) was used to test the website on different operating systems and browsers.
+- [Favicon from Pics](http://favicon.htmlkit.com/favicon/) was used to create a favicon to be used in the address bar.
+
+
+## Deployment
+
+
+
+## Credits
+
+### Code
+
+
+
+### Content
+
+### Media
+
+
+### Acknowledgements
