@@ -4,21 +4,20 @@
 
     
     
-      <form action="{{ url_for('search') }}" method="post" class="col s12 m8 offset-m2 l8 offset-l2">
+    <form action="{{ url_for('search') }}" method="post" class="col s12 m8 offset-m2 l8 offset-l2">
     <div class="row"> 
-        <div class=" valign-wrapper center-align">
-              <div class="input-field col s12 m7 offset-m1 l7 0ffset-l1">
+              <div class="input-field col s12 m7 offset-m1 l7 offset-l1 search-bar">
                   <i class="fas fa-search prefix"></i>
                   <input type="text" name="search" id="search" minlength="3" class="validate" required value="{{query}}">
                   <label for="search">Search</label>
               </div>
-              <div class="col s12 m4 l4 search-buttons">
+
+              <div class="col s12 m4 l4 search-buttons center">
                   <a href="{{ url_for('home') }}" class="btn-small green-button text-shadow">Reset</a>
                   <button type="submit" class="green-button btn-small text-shadow">
                  Search
                   </button>
               </div>
-          </div>
         </div>
       </form>
   
@@ -37,7 +36,7 @@
 
       {% if site_contents.count() > 0 %}
         {% for single_content in site_contents %}
-        <div class=" col s12 l4 m6 content-container card">
+        <div class=" col s12 l4 offset-l1 m8 offset-m2 content-container card">
             <ul class="collapsible">
               <li>
                 <div class="media-container content-image-container">
@@ -69,8 +68,8 @@
 
                 <div class="col s12">
                     <div class="col s12">
-                        <h4 class="center">{{ single_content.title.capitalize()}}</h4>   
-                        <p class="center">Category: {{ single_content.category.capitalize()}}</p> 
+                        <h4 class="center">{{ single_content.title}}</h4>   
+                        <p class="center">Category: {{ single_content.category}}</p> 
                     </div>
                 </div>
                
@@ -86,9 +85,6 @@
                 </div>
 
                 <div class="col s12 expand-actions-container">
-                    <div class="col hide-on-small-and-down l1 m1">
-                        <i class="fas fa-expand-alt tooltipped" data-tooltip="Change in/out of full screen" ></i>
-                    </div>
                     <div class="collapsible-header col l1 offset-l10 m1 offset-m10">
                         <i class="fas fa-chevron-circle-down right tooltipped" data-tooltip="Expand to read article"></i>
                     </div>

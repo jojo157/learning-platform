@@ -17,7 +17,8 @@ body {
     max-width: 100vw;
     padding: 0;
     margin: 0;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
 textarea, .article-body {
@@ -166,6 +167,12 @@ i.fas.fa-chevron-circle-down, i.fas.fa-expand-alt {
 
 .content-container{
     border: 1px solid #e0e0e0 ;
+    max-width:100vw;
+}
+
+.search-bar{
+    max-width:100vw;
+   
 }
 .collapsible-header p{
     width: 100%;
@@ -198,7 +205,9 @@ ul.collapsible{
     border:none;
 }
 
-
+.search-buttons{
+    max-width:100%;
+}
 
 /* Register Page */
 
@@ -225,13 +234,21 @@ textarea#body.materialize-textarea{
 
 /* Profile Page */
 
-.post-it{
-    margin: 10px;
+.post_it{
+    margin: 20px;
     text-align:center;    
 }
 
 .post-it-body{
     height: 200px;
+}
+
+.fav-button{
+    margin-top:10px;
+}
+
+.fav-container{
+    text-align: center;
 }
 
 .card-content{
@@ -247,12 +264,10 @@ div.btn-small{
 .profile-container{
     height: 100%;
     margin-top: 40px;
-    
-    
 }
 
 .fav-articles-heading{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 div a.post-it-action{
@@ -264,6 +279,10 @@ i.fas.fa-user-cog{
     font-size: 30px;
     margin-right: 10px;
     margin-top: 10px;
+}
+
+.notes-title{
+    margin-top: 30px;
 }
 
  /* Admin User management page  */
@@ -308,7 +327,7 @@ i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.f
 
 }
 
-@media only screen and (min-width: 601px) and (max-width: 1025px) {
+@media only screen and (min-width: 601px) and (max-width: 1026px) {
     /* For tablets: */
     .header-title{
         margin-left: 20px;
@@ -321,7 +340,7 @@ i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.f
    
 }
 
-@media only screen and (min-width: 1026px) {
+@media only screen and (min-width: 1027px) {
     /* For desktop: */
     .home-margin{
         margin-top: 20px;

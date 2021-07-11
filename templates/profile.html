@@ -16,8 +16,8 @@
      
         <h5 class="center fav-articles-heading">Your Favourite Articles</h5>
         {% for favourite in favourites %}
-        <div class="s12 m12 l12 post_it">
-          <div class="btn-small deep-purple lighten-4">
+        <div class="s12 m12 l12 fav-container">
+          <div class="btn-small deep-purple lighten-4 fav-button">
             <a href="{{ url_for('search_fav', query = favourite.content_title) }}" >{{ favourite.content_title }}</a>
             <a href="{{ url_for('delete_fav', fav_title = favourite.content_title) }}" class="confirm" title="Are you sure you wish to delete this favourite?"><i class="fas fa-times right"></i></a>
           </div>
@@ -32,7 +32,7 @@
         
         <div class="col s12 l12 m12">
           <div class="s12">
-          <h5 class="center">Your Notes</h5>
+          <h5 class="center notes-title">Your Notes</h5>
           </div>
           <div class="col s2">
             <a  href="{{ url_for('notes') }}" class="btn-small light-blue accent-3 tooltipped" data-position="right" data-tooltip="Add a new note"><i class="fas fa-plus-circle"></i></a>
@@ -42,7 +42,7 @@
 
         {% for note in notes %}
 
-        <div class="col s12 m4 l4">
+        <div class="col s12 m8 offset-m2 l4 offset-l1">
           <div class="card  green lighten-4 post-it">
             <div class="card-content center post-it-body">
               <span class="card-title">{{ note.title }}</span>
