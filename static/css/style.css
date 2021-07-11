@@ -346,6 +346,10 @@ i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.f
         margin-left: 20px;
         margin-top: 30px;
     }
+
+    nav{
+        height: 15vh;
+    }
 }
 
 
@@ -368,6 +372,6 @@ i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.f
     }
 
     nav{
-        height: 20vh;
+        height: 15vh;
     }
 }
