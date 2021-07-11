@@ -69,6 +69,7 @@ a{
 .header-title{
     margin-left: 20px;
     margin-top: 10px;
+    max-height: 100%;
 }
 nav{
     height: 20vh;
