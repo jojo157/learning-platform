@@ -194,15 +194,20 @@ The users collection is populated when a user succesfully registers and is used 
 
 ### Surface
 
-...
+The Finance Mind application was designed to reinforce learning and create a sense of trust among learners using soft tones. 
 
 #### Colour Scheme
 
-....
+Shades of blue were used to create the impression of trust and loyalty. Turquoise was used to represent open communication, creativity and calming nature. The combination of shades between blue and green are widely used in financial websites. A ligther shade creates the asscoaite while also looking modern. 
+
+The colours used are:
+- rgba(2,0,36,1)
+- rgba(63,172,255,1) 
+- rgba(0,255,203,1)
 
 #### Typography
 
-...
+Fonts used are Playfair Display for Headings and Open sans for paragraph elements. These fonts look professional while maintaining readability. 
 
 #### Images
 ...
