@@ -24,7 +24,6 @@ Image created using [Am I responsive](http://ami.responsivedesign.is/)
   - [Surface](#surface)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
-    - [Images](#images)
 - [Testing](#testing)
     - [Development Issues](#development-issues)
     - [Code Validation](#code-validation)
@@ -198,19 +197,16 @@ The Finance Mind application was designed to reinforce learning and create a sen
 
 #### Colour Scheme
 
-Shades of blue were used to create the impression of trust and loyalty. Turquoise was used to represent open communication, creativity and calming nature. The combination of shades between blue and green are widely used in financial websites. A ligther shade creates the asscoaite while also looking modern. 
+Shades of blue were used to create the impression of trust and loyalty. Turquoise was used to represent open communication, creativity and calming nature. The combination of shades between blue and green are widely used in financial websites. A ligther shade creates the association while also looking modern. 
 
-The colours used are:
-- rgba(2,0,36,1)
-- rgba(63,172,255,1) 
-- rgba(0,255,203,1)
+The colours used are shown below:
+![Color Schema](static/images/readme_images/colors.png)
+The navbar is a gradient of these colors to give a fresh appearance by mergining the colors. 
 
 #### Typography
 
 Fonts used are Playfair Display for Headings and Open sans for paragraph elements. These fonts look professional while maintaining readability. 
 
-#### Images
-...
 
 ## Testing
 
