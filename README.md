@@ -178,9 +178,19 @@ During the planning stage, it was decided that the following pages would be need
 
 ### Skeleton
 
+#### Wireframes
+
 Wireframes for this project were created using Balsamiq and can be viewed at below link.
 
 Link to [Wireframe](static/wireframes/wireframes.pdf)
+
+#### Database Design
+
+MongoDB Database Design
+
+This application uses Mongo DB to store and retrieve the user data. Mongo DB is a non-relational databse. This application consists of 4 collections as shown in the schema diagram below. 
+
+![Finance Mind Schema](static/images/readme_images/schema.png)
 
 ### Surface
 
