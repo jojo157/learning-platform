@@ -1,10 +1,9 @@
 # Finance Mind Learning Application
 
 ## Introduction
-The Finance Mind application is a platform to allow company trainners to provide current 
+The Finance Mind application is a platform that allows a company to provide learning content to its staff in an easy to use format. The idea was developed based on my own want for such an application in my current job that would also ensure data security. 
 
-
-View Live Website [here](https://jojo157.github.io/#)
+View Live Website [here](https://learning-platform-ms3.herokuapp.com/)
 
 ![Finance Mind on different devices](#)
 

@@ -68,7 +68,7 @@ a{
 /* Navbar */
 .header-title{
     margin-left: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 nav{
     height: 20vh;
@@ -310,7 +310,10 @@ i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.f
 
 @media only screen and (min-width: 601px) and (max-width: 1025px) {
     /* For tablets: */
-
+    .header-title{
+        margin-left: 20px;
+        margin-top: 30px;
+    }
    
 }
 
@@ -334,6 +337,11 @@ i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.f
     .success-div{
         margin-top: 20px;
     }
+
+    .header-title{
+        margin-left: 20px;
+        margin-top: 30px;
+    }
 }
 
 
@@ -348,5 +356,10 @@ i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.f
     .home-features-margin{
         margin-top: 40px;
         margin-bottom: 20px;
+    }
+
+    .header-title{
+        margin-left: 20px;
+        margin-top: 30px;
     }
 }
