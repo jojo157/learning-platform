@@ -186,8 +186,6 @@ Link to [Wireframe](static/wireframes/wireframes.pdf)
 
 #### Database Design
 
-MongoDB Database Design
-
 This application uses Mongo DB to store and retrieve the user data. Mongo DB is a non-relational databse. This application consists of 4 collections as shown in the schema diagram below. 
 
 The users collection is populated when a user succesfully registers and is used to verify a user upon login.The content collect stores the data for articles that appear on the library page. Only an admin user can add to this collection. The posts collection stores the data for a users stick notes that are displayed on their profile. The favourites collection takes record of a users favoured articles. 
