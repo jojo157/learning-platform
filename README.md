@@ -5,7 +5,7 @@ The Finance Mind application is a platform that allows a company to provide lear
 
 View Live Website [here](https://learning-platform-ms3.herokuapp.com/)
 
-![Finance Mind on different devices](images/readme_images/mockup.png)
+![Finance Mind on different devices](static/images/readme_images/mockup.png)
 
 Image created using [Am I responsive](http://ami.responsivedesign.is/)
 
