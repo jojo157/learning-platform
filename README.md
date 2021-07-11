@@ -100,7 +100,7 @@ The following features are in scope for this project.
 - CRUD Functionality.
   - Application enables the functionality to Create, Read, Update and Delete data.
 - Database to store app data.
-  - MongoDB database is used to store all application data. 
+  - MongoDB database will be used to store all application data. 
 - Contact Form.
   - Contact form to enable user to send message to admin. 
 - Library with searchable content.
@@ -127,27 +127,60 @@ The following features are in scope for this project.
   - A custom 404 error page if the user navigate to a resourse that doesnt exist with a button to return home. 
 
 
-
-
-
-
 #### Future Features 
 
-The following features are not in scope for this project:
-
-- 
+I would like to include the following future features.
+- Messaging functionality for admin to users.
+  - The feature when an admin user could choose a user to send a private message to.
+- Push notifications about new content been added.
+  - The option to send a notification to all site users when new articles added to encourage their continued learning. 
 
 ### Structure
 
 During the planning stage, it was decided that the following pages would be needed to ensure the user needs are meet:
 
+- Landing Page with elements:
+  - To tell vistior what the application is for.
+  - To allow user to register.
+  - To allow user to login.
+  - To allow user to contact site admin.
+
+- Content Library with elements:
+  - To allow user to search library.
+  - To allow user to like and dislike article.
+  - to favourite article.
+  - To read content and interact with it as needed.
+  - For an admin user to allow them to edit or delete content. 
+
+- Profile Page with elements:
+  - Welcome message.
+  - To create a new sticky note.
+  - To edit an existing note.
+  - To view articles favored and ability to click and be redirected to article. 
+  - Ability to remove favourites.
+  - To be able to edit user profile settings.
+
+- User Management Page with elements (only for admin user):
+  - To see all registered users.
+  - To edit users.
+  - To delete users.
+
+- Add site content page with elements (only for admin user):
+  - Forum to fill in:
+    - Category
+    - Title
+    - Content body
+    - Keywords
+    - Picture
+    - External resource
+  - Content body to preserve formatting as entered by user. 
 
 
 ### Skeleton
 
 Wireframes for this project were created using Balsamiq and can be viewed at below link.
 
-Link to [Wireframe](#)
+Link to [Wireframe](static/wireframes/wireframes.pdf)
 
 ### Surface
 
