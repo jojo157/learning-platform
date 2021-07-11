@@ -10,29 +10,33 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-folder prefix"></i>
-                                <input id="category" name="category" type="text" pattern="^[a-zA-Z]{3,30}$" class="validate" required value="{{ post.category }}">
+                                <input id="category" name="category" type="text" pattern=".*\S+.*" class="validate" required value="{{ post.category }}">
                                 <label for="category">Category</label>
+                                <span class="helper-text" data-error="Category required"> </span>
                             </div> 
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-heading prefix"></i>
-                                <input id="title" name="title" type="text" class="validate" required value="{{ post.title }}">
+                                <input id="title" name="title" type="text" pattern=".*\S+.*" class="validate" required value="{{ post.title }}">
                                 <label for="title">Title</label>
+                                <span class="helper-text" data-error="Title required"> </span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-newspaper prefix"></i>
-                                <textarea id="body" name="body" class="materialize-textarea" placeholder = "Enter Content text">{{ post.content }}</textarea>
+                                <textarea id="body" name="body" class="materialize-textarea validate" pattern=".*\S+.*" required placeholder = "Enter Content text">{{ post.content }}</textarea>
                                 <label for="body">Text Content</label>
+                                <span class="helper-text" data-error="Empty article not allowed"> </span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-comment prefix"></i>
-                                <input id="keywords" name="keywords" type="text" class="validate" required placeholder = "Enter keywords seperated by a comma" value="{{ post.keywords }}"></input>
+                                <input id="keywords" name="keywords" type="text" class="validate" pattern=".*\S+.*" required placeholder = "Enter keywords seperated by a comma" value="{{ post.keywords }}"></input>
                                 <label for="keywords">Keywords</label>
+                                <span class="helper-text" data-error="Keywords required"> </span>
                             </div>
                         </div>
                         <div class="row">
@@ -62,4 +66,8 @@
 
 
 
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/textarea.js') }}"></script>
 {% endblock %}

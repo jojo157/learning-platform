@@ -10,14 +10,14 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="far fa-user prefix"></i>
-                            <input id="first_name" name="first_name" type="text" pattern="^[a-zA-Z]{3,30}$" class="validate" required value="{{ user_data.first_name }}">
+                            <input id="first_name" name="first_name" type="text" pattern="^[\w,./_=?-]+.{3,30}$" class="validate" required value="{{ user_data.first_name }}">
                             <label for="first_name">First Name</label>
                         </div> 
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="far fa-user prefix"></i>
-                            <input id="last_name" name="last_name" type="text" pattern="^[a-zA-Z]{3,30}$" class="validate" required value="{{ user_data.last_name }}">
+                            <input id="last_name" name="last_name" type="text" pattern="^[\w,./_=?-]+.{3,30}$" class="validate" required value="{{ user_data.last_name }}">
                             <label for="last_name">Last Name</label>
                         </div>
                     </div>
@@ -38,14 +38,16 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-lock prefix"></i>
-                            <input id="password" name="password" type="password" pattern="^[a-zA-Z0-9#]{5,20}$" class="validate" required value="######">
+                            <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required value="######">
                             <label for="password">Password</label>
+                            <span class="helper-text" data-error="Must contain at least 8 characters including one number, one uppercase and lowercase letter"> </span>
+                            
                         </div>
                     </div> 
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-lock prefix"></i>
-                            <input id="access_level" name="access_level" type="text" pattern="^[a-zA-Z0-9#]{5,20}$" class="validate" required value="{{ user_data.access_level }}">
+                            <input id="access_level" name="access_level" type="text" pattern="^[\w,./_=?-]+.{3,30}$" class="validate" required value="{{ user_data.access_level }}">
                             <label for="access_level">Access Level</label>
                         </div>
                     </div> 

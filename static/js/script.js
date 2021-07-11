@@ -130,3 +130,4 @@ fetch(`${window.origin}/fav_content/`, {
   return ;
 })
 }
+

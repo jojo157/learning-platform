@@ -11,15 +11,17 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="fas fa-heading prefix"></i>
-                                <input id="title" name="title" type="text" class="validate" pattern="[\w,./_=?-]+"  title="Title required" required>
+                                <input id="title" name="title" type="text" class="validate" pattern=".*\S+.*" required>
                                 <label for="title"> Note Title</label>
+                                <span class="helper-text" data-error="Title required"> </span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="far fa-newspaper prefix"></i>
-                                <textarea id="body" name="body" class="materialize-textarea validate" pattern="[\w,./_=?-]+"  title="Empty note not allowed" placeholder = "Enter Content text"></textarea>
+                                <textarea id="body" name="body" class="materialize-textarea validate" pattern=".*\S+.*" placeholder = "Enter Content text" required ></textarea>
                                 <label for="body">Note</label>
+                                <span class="helper-text" data-error="Empty note not allowed"> </span>
                             </div>
                         </div>
                     
@@ -35,4 +37,8 @@
 
 
 
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/textarea.js') }}"></script>
 {% endblock %}

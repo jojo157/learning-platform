@@ -1,7 +1,7 @@
-# Finance Mind Learning Platform
+# Finance Mind Learning Application
 
 ## Introduction
-
+The Finance Mind application is a platform to allow company trainners to provide current 
 
 
 View Live Website [here](https://jojo157.github.io/#)
