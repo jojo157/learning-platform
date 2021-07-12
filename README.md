@@ -212,7 +212,7 @@ Fonts used are Playfair Display for Headings and Open sans for paragraph element
 
 A summary of testing conducted is shown in the table below. 
 
-![Testing Summary](static/images/readme_images/test summary.png)
+![Testing Summary](static/images/readme_images/testsummary.png)
 
 
 ### Code Validation
@@ -223,13 +223,13 @@ Html pages were validated with [W3C Html Checker](https://validator.w3.org/nu/).
 
 The pages validated are shown below.
 
-![Html pages validated](static/images/readme_images/html validation.png)
+![Html pages validated](static/images/readme_images/htmlvalidation.png)
 
 The only error present was that their was an unmatched trailing div. This was removed and the code rechecked. All application pages successfully passed through the validator.
 
 A warning appeared on all pages that the flash message section lacked a heading. This warning can be ignored as the section contains a heading element where the elements html is injected with jinga templating language when needed. 
 
-![Html pass](static/images/readme_images/html pass.png)
+![Html pass](static/images/readme_images/htmlpass.png)
 
 #### CSS
 
@@ -251,13 +251,13 @@ Missing semi-colons were added and the scripts retested. No errors or warnings p
 
 Python files were validated with [PEP8 online](http://pep8online.com)
 
-![First validation results](static/images/readme_images/pep8 fail.png)
+![First validation results](static/images/readme_images/pep8fail.png)
 
 The error present was that the app.py file had several occurances where a line was greater than 79 characters. I reformatted the app.py file to ensure no line was more than 79 characters and retested.
 
 The file is now PEP8 compliant.
 
-![Final validation results](static/images/readme_images/pep8 pass.png)
+![Final validation results](static/images/readme_images/pep8pass.png)
 
 ### Performance Testing
 
