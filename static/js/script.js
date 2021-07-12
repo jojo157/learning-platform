@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+const $ = window.$;
+
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('.collapsible').collapsible();
@@ -10,7 +13,7 @@ $(document).ready(function(){
 
 
  // code to send click data on content to python function to add to database
-//thumbs up - adds 1 to current score in databse and refreshes  the dom and keeps location
+//thumbs up - adds 1 to current score in database and refreshes the dom and keeps location
 
 $('.score_up').click(function(event) {
     event.stopPropagation();
@@ -42,11 +45,13 @@ function score_up(id){
   })
 .then(function(response){
     return ;
-})
+});
 }
 
 
 // thumbs down
+//thumbs down - adds 1 to current score in database and refreshes the dom and keeps location
+
 
 $('.score_down').click(function(event) {
   event.stopPropagation();
@@ -78,10 +83,12 @@ fetch(`${window.origin}/home/score_down/`, {
 })
 .then(function(response){
   return ;
-})
+});
 }
 
 // favourite article
+//adds the details of content clicked to the favourites collection and creates quick link on profile
+//Modal alerts user that added to favourites
 
 
 $('.fav_content').click(function(event) {
@@ -112,6 +119,6 @@ fetch(`${window.origin}/fav_content/`, {
 })
 .then(function(response){
   return ;
-})
+});
 }
 
