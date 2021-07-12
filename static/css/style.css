@@ -1,11 +1,15 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap');
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Playfair Display';
 }
 
-p{
+p {
     font-family: 'Open Sans';
 }
 
@@ -19,9 +23,10 @@ body {
     margin: 0;
     overflow-y: auto;
     overflow-x: hidden;
-  }
+}
 
-textarea, .article-body {
+textarea,
+.article-body {
     white-space: pre-wrap;
 }
 
@@ -29,92 +34,101 @@ main {
     flex: 1 0 auto;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-.bold{
+.bold {
     font-weight: bold;
 }
 
-/* button styles */ 
-.green-button{
- background-color: #00ffcb;
- color: #000;
- font-family: 'Open Sans';
- margin-right: 5px;
+/* button styles */
+.green-button {
+    background-color: #00ffcb;
+    color: #000;
+    font-family: 'Open Sans';
+    margin-right: 5px;
 }
 
-.card-title{
+.card-title {
     margin-bottom: 10px;
 }
 
 /* Flash messaging styles */
-.flashes{
+.flashes {
     border-radius: 15px;
 }
 
-.alert-error{
+.alert-error {
     color: red;
-    
+
 }
 
-.alert-success{
+.alert-success {
     color: green;
-    
+
 }
 
 
 /* Navbar */
 
-nav{
+nav {
     height: 25vh;
 }
-.gradient-colours{
-    background-image: linear-gradient(213deg, rgba(2,0,36,1) 0%, rgba(63,172,255,1) 35%, rgba(0,255,203,1) 100%);
+
+.gradient-colours {
+    background-image: linear-gradient(213deg, rgba(2, 0, 36, 1) 0%, rgba(63, 172, 255, 1) 35%, rgba(0, 255, 203, 1) 100%);
 }
 
 /* Footer */
-i.fab.fa-facebook-f, i.fab.fa-twitter, i.fab.fa-linkedin-in{
+i.fab.fa-facebook-f,
+i.fab.fa-twitter,
+i.fab.fa-linkedin-in {
     color: white;
     font-size: 20px;
 }
-.gradient-colours-2{
 
-    background-image: linear-gradient(48deg, rgba(2,0,36,1) 0%, rgba(63,172,255,1) 35%, rgba(0,255,203,1) 100%);  
+.gradient-colours-2 {
+
+    background-image: linear-gradient(48deg, rgba(2, 0, 36, 1) 0%, rgba(63, 172, 255, 1) 35%, rgba(0, 255, 203, 1) 100%);
 }
 
 /* Index Page */
-img{
+img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.success-div{
-    height: 200px;    
+.success-div {
+    height: 200px;
 }
 
-.offer-div{
+.offer-div {
     margin-top: 20px;
 }
 
-.home-features-margin{
+.home-features-margin {
     margin-top: 30px;
 }
 
-.home-features-margin div{
+.home-features-margin div {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-i.fas.fa-file-alt, i.fas.fa-book-open, i.far.fa-thumbs-up, i.fas.fa-users, i.fas.fa-address-card, i.fas.fa-bookmark{
+i.fas.fa-file-alt,
+i.fas.fa-book-open,
+i.far.fa-thumbs-up,
+i.fas.fa-users,
+i.fas.fa-address-card,
+i.fas.fa-bookmark {
     color: #3facff;
     font-size: 30px;
 }
 
-.div-text-heading{
+.div-text-heading {
     text-transform: capitalize;
 }
 
@@ -125,105 +139,115 @@ i.fas.fa-file-alt, i.fas.fa-book-open, i.far.fa-thumbs-up, i.fas.fa-users, i.fas
 
 /* Home Page */
 
-.logo-size{ 
+.logo-size {
     object-fit: contain;
     overflow: hidden;
 }
 
-.media-container{
-   min-height: 100%;
+.media-container {
+    min-height: 100%;
 }
 
-.sub-header-text{
+.sub-header-text {
     font-size: 18px;
 }
 
-i.fas.fa-search, i.far.fa-thumbs-down, i.far.fa-bookmark {
+i.fas.fa-search,
+i.far.fa-thumbs-down,
+i.far.fa-bookmark {
     color: #3facff;
     font-size: 30px;
-    
+
 }
 
-i.fas.fa-chevron-circle-down, i.fas.fa-expand-alt {
+i.fas.fa-chevron-circle-down,
+i.fas.fa-expand-alt {
     color: #000;
     font-size: 20px;
 }
 
-.content-admin-buttons{
+.content-admin-buttons {
     margin-top: 10px;
 }
 
 
-.content-image-container{
+.content-image-container {
     height: 300px;
     margin-bottom: 10px;
 }
 
 
-.content-image-container img{
+.content-image-container img {
     height: 300px;
     object-fit: fill;
 }
 
-.content-container{
-    border: 1px solid #e0e0e0 ;
-    max-width:100vw;
+.content-container {
+    border: 1px solid #e0e0e0;
+    max-width: 100vw;
 }
 
-.search-bar{
-    max-width:100vw;
-   
+.search-bar {
+    max-width: 100vw;
+
 }
-.collapsible-header p{
+
+.collapsible-header p {
     width: 100%;
 }
 
-.expand-actions-container{
-   margin-bottom:20px;
-   margin-top:10px;
-  
+.expand-actions-container {
+    margin-bottom: 20px;
+    margin-top: 10px;
+
 }
 
-.collapsible-header{
+.collapsible-header {
     border-bottom: none;
 }
 
 
-.content-icon{
+.content-icon {
     margin-top: 20px;
 
 }
 
-ul.collapsible{
+ul.collapsible {
     -webkit-box-shadow: none;
-    box-shadow:none;
-    border:none;
+    box-shadow: none;
+    border: none;
 }
 
-.refresh, .refresh:active, .refresh:focus{
+.refresh,
+.refresh:active,
+.refresh:focus {
     background-color: #fff;
-    border:none;
+    border: none;
 }
 
-.search-buttons{
-    max-width:100%;
+.search-buttons {
+    max-width: 100%;
 }
 
 /* Register Page */
 
-i.far.fa-user, i.far.fa-user, i.far.fa-envelope, i.fas.fa-user-tag, i.fas.fa-lock{
+i.far.fa-user,
+i.far.fa-user,
+i.far.fa-envelope,
+i.fas.fa-user-tag,
+i.fas.fa-lock {
     color: #3facff;
     font-size: 30px;
 }
 
-i.fas.fa-sign-in-alt{
+i.fas.fa-sign-in-alt {
     color: #1565c0;
     font-size: 30px;
 }
 
 /* Content Page forum */
 
-textarea#body.materialize-textarea{
+textarea#body.materialize-textarea {
     height: 6rem;
 }
 
@@ -234,139 +258,147 @@ textarea#body.materialize-textarea{
 
 /* Profile Page */
 
-.post_it{
+.post_it {
     margin: 20px;
-    text-align:center;    
-}
-
-.post-it-body{
-    height: 200px;
-}
-
-.fav-button{
-    margin-top:10px;
-}
-
-.fav-container{
     text-align: center;
 }
 
-.card-content{
+.post-it-body {
+    height: 200px;
+}
+
+.fav-button {
+    margin-top: 10px;
+}
+
+.fav-container {
+    text-align: center;
+}
+
+.card-content {
     overflow-y: scroll;
     overflow-wrap: break-word;
 }
 
-div.btn-small{
+div.btn-small {
     border-radius: 50px;
 }
 
 
-.profile-container{
+.profile-container {
     height: 100%;
     margin-top: 40px;
 }
 
-.fav-articles-heading{
+.fav-articles-heading {
     margin-bottom: 20px;
 }
 
-div a.post-it-action{
+div a.post-it-action {
     color: #311b92;
 }
 
-i.fas.fa-user-cog{
+i.fas.fa-user-cog {
     color: #3facff;
     font-size: 30px;
     margin-right: 10px;
     margin-top: 10px;
 }
 
-.notes-title{
+.notes-title {
     margin-top: 30px;
 }
 
- /* Admin User management page  */
+/* Admin User management page  */
 
-.user-card-container{
+.user-card-container {
     margin: 20px;
 }
 
-.user-buttons{
-    margin-top:20px;
-    margin-bottom:20px;
+.user-buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.user-management-header{
+.user-management-header {
     margin-bottom: 30px;
 }
 
 /* Add site content */
 
-i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.fa-image{
+i.far.fa-folder,
+i.fas.fa-heading,
+i.far.fa-newspaper,
+i.far.fa-comment,
+i.far.fa-image {
     color: #3facff;
     font-size: 30px;
 }
 
 
 /* 404 page */
-.pageNF{
+.pageNF {
     margin-top: 10vh;
 }
 
 
-   /* Media Queries: */
+/* Media Queries: */
 
 @media only screen and (max-width: 321px) {
     /* For smaller mobiles: */
 
-    .nav-wrapper{
+    .nav-wrapper {
         margin-bottom: 10px;
     }
+
     /* Home Page */
-    
+
 
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1026px) {
+
     /* For tablets: */
-    .header-title{
+    .header-title {
         margin-left: 20px;
         margin-top: 30px;
     }
 
-    nav{
+    nav {
         height: 15vh;
     }
-   
+
 }
 
 @media only screen and (min-width: 1027px) {
+
     /* For desktop: */
-    .home-margin{
+    .home-margin {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    
-    .home-features-margin{
+
+    .home-features-margin {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .home-features-margin div{
+
+    .home-features-margin div {
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
 
-    .success-div{
+    .success-div {
         margin-top: 20px;
     }
 
-    .header-title{
+    .header-title {
         margin-left: 20px;
         margin-top: 30px;
     }
 
-    nav{
+    nav {
         height: 15vh;
     }
 }
@@ -375,22 +407,22 @@ i.far.fa-folder, i.fas.fa-heading, i.far.fa-newspaper, i.far.fa-comment, i.far.f
 @media only screen and (min-width: 1900px) {
     /* For larger desktop: */
 
-    .home-margin{
+    .home-margin {
         margin-top: 20px;
         margin-bottom: 30px;
     }
-    
-    .home-features-margin{
+
+    .home-features-margin {
         margin-top: 40px;
         margin-bottom: 20px;
     }
 
-    .header-title{
+    .header-title {
         margin-left: 20px;
         margin-top: 30px;
     }
 
-    nav{
+    nav {
         height: 15vh;
     }
 }
