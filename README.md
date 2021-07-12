@@ -210,11 +210,9 @@ Fonts used are Playfair Display for Headings and Open sans for paragraph element
 
 ## Testing
 
-During development, testing was conducted at every step, mainly using the console to log results and check for errors. Minor issues that were quickly resolved are not noted in this Readme but details of changes are included in the project commits. Issues that took longer to resolve are discussed below. 
+A summary of testing conducted is shown in the table below. 
 
-### Development Issues
-
-- 
+![Testing Summary](static/images/readme_images/test summary.png)
 
 
 ### Code Validation
@@ -223,7 +221,15 @@ During development, testing was conducted at every step, mainly using the consol
 
 Html pages were validated with [W3C Html Checker](https://validator.w3.org/nu/). 
 
+The pages validated are shown below.
 
+![Html pass](static/images/readme_images/html validation.png)
+
+The only error present was that their was an unmatched trailing div. This was removed and the code rechecked. All application pages successfully passed through the validator.
+
+A warning appeared on all pages that the flash message section lacked a heading. This warning can be ignored as the section contains a heading element where the elements html is injected with jinga templating language when needed. 
+
+![Html pass](static/images/readme_images/html pass.png)
 
 #### CSS
 
@@ -305,6 +311,10 @@ The above testing was conducted on below operating systems:
 
 There were no differences detected on those operating systems. [Browser Stack](live.browserstack.com) was used to view and check the functionality across a wide range of devices and operating systems.
 
+
+### Development Issues
+
+- 
 
 ## Technologies Used
 
