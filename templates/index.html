@@ -1,57 +1,61 @@
 {% extends "base.html" %}
 {% block content %}
- 
-    <div class="row">
-        
-        <div class="col s12 m8 offset-m2 l8 offset-l2 center offer-div">
-            <h4 class="home-margin div-text-heading">Digital solutions for your workforce</h4>
-            <p class="sub-header-text div-text"> Finance Mind is an innovative learning platform built to enable your success.
+
+<div class="row">
+
+    <div class="col s12 m8 offset-m2 l8 offset-l2 center offer-div">
+        <h4 class="home-margin div-text-heading">Digital solutions for your workforce</h4>
+        <p class="sub-header-text div-text"> Finance Mind is an innovative learning platform built to enable your
+            success.
             We put the tools in your hands to upskill and develop employees with easy content creation.
-            </p>
-            <div class="col l3 m4 s6 offset-l3 offset-m2">
+        </p>
+        <div class="col l3 m4 s6 offset-l3 offset-m2">
             <a href="{{ url_for('register') }}" class="btn-large green-button">SIGNUP</a>
-            </div>    
-            <div class="col l3 m4 s6 ">
-                <a href="{{ url_for('login') }}" class="btn-large green-button">LOGIN</a>
-            </div>    
+        </div>
+        <div class="col l3 m4 s6 ">
+            <a href="{{ url_for('login') }}" class="btn-large green-button">LOGIN</a>
         </div>
     </div>
+</div>
 
-    <div class="row center home-features-margin">
-        <div class="col s12 l12 m12">
-            <h4>Features</h4>
-        </div>
-        <div class="col s12 l4 m6">
-            <i class="fas fa-file-alt"></i>
-            <h5>Content Forum</h5>
-            <p> An easy to use forum allows administrators to add content including images and external links</p>
-        </div>
-        <div class="col s12 l4 m6">
-            <i class="fas fa-book-open"></i>
-            <h5>Content Library</h5>
-            <p> Your publised content is presented to an authorised user in the content library with a search functionality.</p>
-        </div>
-        <div class="col s12 l4 m6">
-            <i class="far fa-thumbs-up"></i>
-            <h5>User feedback in realtime</h5>
-            <p>A user can like or dislike an article. This enables you to supply the content your employees want.</p>
-        </div>
-        <div class="col s12 l4 m6">
-            <i class="fas fa-users"></i>
-            <h5>User Management</h5>
-            <p>Administrators have quick access to all users of their companies' platform and can easily modify a user and their permissions.</p>
-        </div>
-        <div class="col s12 l4 m6">
-            <i class="fas fa-address-card"></i>
-            <h5>User Profile</h5>
-            <p>All users have a unique personal profile page where they can access their favourite articles and create private sticky notes. </p>
-        </div>
-        <div class="col s12 l4 m6">
-            <i class="fas fa-bookmark"></i>
-            <h5>Favourites</h5>
-            <p>Users can favourite an article and a link will be added to their profile for quick access.</p>
-        </div>
-    </div>  
+<div class="row center home-features-margin">
+    <div class="col s12 l12 m12">
+        <h4>Features</h4>
+    </div>
+    <div class="col s12 l4 m6">
+        <i class="fas fa-file-alt"></i>
+        <h5>Content Forum</h5>
+        <p> An easy to use forum allows administrators to add content including images and external links</p>
+    </div>
+    <div class="col s12 l4 m6">
+        <i class="fas fa-book-open"></i>
+        <h5>Content Library</h5>
+        <p> Your publised content is presented to an authorised user in the content library with a search functionality.
+        </p>
+    </div>
+    <div class="col s12 l4 m6">
+        <i class="far fa-thumbs-up"></i>
+        <h5>User feedback in realtime</h5>
+        <p>A user can like or dislike an article. This enables you to supply the content your employees want.</p>
+    </div>
+    <div class="col s12 l4 m6">
+        <i class="fas fa-users"></i>
+        <h5>User Management</h5>
+        <p>Administrators have quick access to all users of their companies' platform and can easily modify a user and
+            their permissions.</p>
+    </div>
+    <div class="col s12 l4 m6">
+        <i class="fas fa-address-card"></i>
+        <h5>User Profile</h5>
+        <p>All users have a unique personal profile page where they can access their favourite articles and create
+            private sticky notes. </p>
+    </div>
+    <div class="col s12 l4 m6">
+        <i class="fas fa-bookmark"></i>
+        <h5>Favourites</h5>
+        <p>Users can favourite an article and a link will be added to their profile for quick access.</p>
+    </div>
+</div>
 
 
 {% endblock %}

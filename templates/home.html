@@ -1,108 +1,115 @@
 {% extends "base.html" %}
 {% block content %}
-    <h4 class="center">Content Library</h4>
+<h4 class="center">Content Library</h4>
 
-    
-    
-    <form action="{{ url_for('search') }}" method="post" class="col s12 m8 offset-m2 l8 offset-l2">
-    <div class="row"> 
-              <div class="input-field col s12 m7 offset-m1 l7 offset-l1 search-bar">
-                  <i class="fas fa-search prefix"></i>
-                  <input type="text" name="search" id="search" minlength="3" class="validate" required value="{{query}}">
-                  <label for="search">Search</label>
-              </div>
 
-              <div class="col s12 m4 l4 search-buttons center">
-                  <a href="{{ url_for('home') }}" class="btn-small green-button text-shadow">Reset</a>
-                  <button type="submit" class="green-button btn-small text-shadow">
-                 Search
-                  </button>
-              </div>
+
+<form action="{{ url_for('search') }}" method="post" class="col s12 m8 offset-m2 l8 offset-l2">
+  <div class="row">
+    <div class="input-field col s12 m7 offset-m1 l7 offset-l1 search-bar">
+      <i class="fas fa-search prefix"></i>
+      <input type="text" name="search" id="search" minlength="3" class="validate" required value="{{query}}">
+      <label for="search">Search</label>
+    </div>
+
+    <div class="col s12 m4 l4 search-buttons center">
+      <a href="{{ url_for('home') }}" class="btn-small green-button text-shadow">Reset</a>
+      <button type="submit" class="green-button btn-small text-shadow">
+        Search
+      </button>
+    </div>
+  </div>
+</form>
+
+
+<div id="favouredArticle" class="modal">
+  <div class="modal-content">
+    <h4 class="center">Article Favoured</h4>
+    <p class="center">A quick link has been added to your profile, under your favourites section.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close  btn-flat">OK</a>
+  </div>
+</div>
+
+<div class="row">
+
+  {% if site_contents.count() > 0 %}
+  {% for single_content in site_contents %}
+  <div class=" col s12 l4 offset-l1 m8 offset-m2 content-container card">
+    <ul class="collapsible">
+      <li>
+        <div class="media-container content-image-container">
+          <img class="materialboxed" src="{{ single_content.picture }}">
         </div>
-      </form>
-  
-      
-      <div id="favouredArticle" class="modal">
-        <div class="modal-content">
-          <h4 class="center">Article Favoured</h4>
-          <p class="center">A quick link has been added to your profile, under your favourites section.</p>
+        <div>
+
         </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close  btn-flat">OK</a>
+        {%  if level == "admin" %}
+        <div class="center content-admin-buttons">
+          <a href="{{ url_for('editcontent', content_id = single_content._id) }}"
+            class="btn-small green-button ">Edit</a>
+          <a href="{{ url_for('delete_content', content_id = single_content._id) }}"
+            class="btn-small green-button confirm" title="Are you sure you wish to delete this post?">Delete</a>
         </div>
-      </div>
+        {% endif %}
+        <div class="content-feedback-area row">
+          <div class="col s3">
+            <button class="refresh score_up" id="{{single_content._id}}"><i
+                class="far fa-thumbs-up content-icon"></i><span>{{ single_content.rating_up}}</span></button>
 
-    <div class="row">
-
-      {% if site_contents.count() > 0 %}
-        {% for single_content in site_contents %}
-        <div class=" col s12 l4 offset-l1 m8 offset-m2 content-container card">
-            <ul class="collapsible">
-              <li>
-                <div class="media-container content-image-container">
-                    <img class="materialboxed"  src="{{ single_content.picture }}">
-                </div>
-                <div>
-                    
-                </div>
-                {%  if level == "admin" %}
-                <div class="center content-admin-buttons">
-                    <a href="{{ url_for('editcontent', content_id = single_content._id) }}" class="btn-small green-button ">Edit</a>
-                    <a href="{{ url_for('delete_content', content_id = single_content._id) }}" class="btn-small green-button confirm" title="Are you sure you wish to delete this post?">Delete</a>
-                </div>
-                {% endif %}
-                <div class="content-feedback-area row">
-                  <div class="col s3">
-                    <button class="refresh score_up" id="{{single_content._id}}"><i class="far fa-thumbs-up content-icon"></i><span>{{ single_content.rating_up}}</span></button>   
-                    
-                  </div>
-                  <div class="col s3">
-                    <button class="refresh score_down" id="{{single_content._id}}"><i class="far fa-thumbs-down content-icon"></i><span>{{ single_content.rating_down}}</span></button>
-                    
-                  </div>
-                  <div class="col s3 offset-s3">
-                    <button class="refresh fav_content" id="{{single_content._id}}" ><i class="far fa-bookmark content-icon tooltipped" data-tooltip="Add article to your favourites"></i></button>
-                  </div>
-                    </div>
-
-
-                <div class="col s12">
-                    <div class="col s12">
-                        <h4 class="center">{{ single_content.title}}</h4>   
-                        <p class="center">Category: {{ single_content.category}}</p> 
-                    </div>
-                </div>
-               
-                <div class="collapsible-body">
-                    
-                    <span class="article-body">{{ single_content.content}}</span>
-                    <br> <br>
-                    <span><a class="btn-small green-button"href="{{ single_content.resource}}" target="_blank">Further Reading</a>
-                    </span>
-                    <hr>
-                    <span class="left">{{ single_content.date}}</span>
-                    <span class="right">Author: {{ single_content.user}}</span>
-                </div>
-
-                <div class="col s12 expand-actions-container">
-                    <div class="collapsible-header col l1 offset-l10 m1 offset-m10">
-                        <i class="fas fa-chevron-circle-down right tooltipped" data-tooltip="Expand to read article"></i>
-                    </div>
-                </div> 
-              </li>
-            </ul>
           </div>
+          <div class="col s3">
+            <button class="refresh score_down" id="{{single_content._id}}"><i
+                class="far fa-thumbs-down content-icon"></i><span>{{ single_content.rating_down}}</span></button>
 
-        {% endfor %}
-
-      {% else %}
-      <div class="row">
-            <div class="col s12">
-                <h5 class="center"> No Results Found</h5>
-            </div>
+          </div>
+          <div class="col s3 offset-s3">
+            <button class="refresh fav_content" id="{{single_content._id}}"><i
+                class="far fa-bookmark content-icon tooltipped"
+                data-tooltip="Add article to your favourites"></i></button>
+          </div>
         </div>
-      {% endif %}
-      
-    
 
-{% endblock %}
+
+        <div class="col s12">
+          <div class="col s12">
+            <h4 class="center">{{ single_content.title}}</h4>
+            <p class="center">Category: {{ single_content.category}}</p>
+          </div>
+        </div>
+
+        <div class="collapsible-body">
+
+          <span class="article-body">{{ single_content.content}}</span>
+          <br> <br>
+          <span><a class="btn-small green-button" href="{{ single_content.resource}}" target="_blank">Further
+              Reading</a>
+          </span>
+          <hr>
+          <span class="left">{{ single_content.date}}</span>
+          <span class="right">Author: {{ single_content.user}}</span>
+        </div>
+
+        <div class="col s12 expand-actions-container">
+          <div class="collapsible-header col l1 offset-l10 m1 offset-m10">
+            <i class="fas fa-chevron-circle-down right tooltipped" data-tooltip="Expand to read article"></i>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  {% endfor %}
+
+  {% else %}
+  <div class="row">
+    <div class="col s12">
+      <h5 class="center"> No Results Found</h5>
+    </div>
+  </div>
+  {% endif %}
+
+
+
+  {% endblock %}

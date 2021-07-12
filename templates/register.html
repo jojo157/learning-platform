@@ -3,59 +3,65 @@
 
 <h3 class="center-align ">Register</h3>
 
-    <div class="row">
-        <div class = "col s12 m8 offset-m2 l6 offset-l3">
-            <div class="card-panel">
-                <form method="POST" action="{{ url_for('register') }}">
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="far fa-user prefix"></i>
-                                <input id="first_name" name="first_name" type="text" pattern="^[\w,./_=?-]+.{3,30}$" title="First Name must be letters only" class="validate" required>
-                                <label for="first_name">First Name</label>
-                                <span class="helper-text" data-error="Name must be between 3 and 30 letters"> </span>
-                            </div> 
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="far fa-user prefix"></i>
-                                <input id="last_name" name="last_name" type="text" pattern="^[\w,./_=?-]+.{3,30}$" class="validate" title="Last Name must be letters only" required>
-                                <label for="last_name">Last Name</label>
-                                <span class="helper-text" data-error="Name must be between 3 and 30 letters"> </span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="far fa-envelope prefix"></i>
-                                <input id="email" name="email" type="email" class="validate" required>
-                                <label for="email">Email</label>
-                                <span class="helper-text" data-error="Valid email required"> </span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="fas fa-user-tag prefix"></i>
-                                <input id="username" name="username" type="text" class="validate" pattern="[\w,./_=?-]+.{6,}" title="Must contain six or more characters" required>
-                                <label for="username">Username</label>
-                                <span class="helper-text" data-error="Username must be at least 6 characters"> </span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="fas fa-lock prefix"></i>
-                                <input id="password" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
-                                <label for="password">Password</label>
-                                <span class="helper-text" data-error="Must contain at least 8 characters including one number, one uppercase and lowercase letter"> </span>
-                            </div>
-                        </div> 
-                        <div class="row">
-                            <button type="submit" class="col s8 offset-s2 btn-large text-shadow green-button">
-                                Register <i class="fas fa-sign-in-alt"></i>
-                            </button>
-                        </div>     
-                </form>
-            </div>
+<div class="row">
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel">
+            <form method="POST" action="{{ url_for('register') }}">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="far fa-user prefix"></i>
+                        <input id="first_name" name="first_name" type="text" pattern="^[\w,./_=?-]+.{3,30}$"
+                            title="First Name must be letters only" class="validate" required>
+                        <label for="first_name">First Name</label>
+                        <span class="helper-text" data-error="Name must be between 3 and 30 letters"> </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="far fa-user prefix"></i>
+                        <input id="last_name" name="last_name" type="text" pattern="^[\w,./_=?-]+.{3,30}$"
+                            class="validate" title="Last Name must be letters only" required>
+                        <label for="last_name">Last Name</label>
+                        <span class="helper-text" data-error="Name must be between 3 and 30 letters"> </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="far fa-envelope prefix"></i>
+                        <input id="email" name="email" type="email" class="validate" required>
+                        <label for="email">Email</label>
+                        <span class="helper-text" data-error="Valid email required"> </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-tag prefix"></i>
+                        <input id="username" name="username" type="text" class="validate" pattern="[\w,./_=?-]+.{6,}"
+                            title="Must contain six or more characters" required>
+                        <label for="username">Username</label>
+                        <span class="helper-text" data-error="Username must be at least 6 characters"> </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-lock prefix"></i>
+                        <input id="password" name="password" type="password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="validate" required>
+                        <label for="password">Password</label>
+                        <span class="helper-text"
+                            data-error="Must contain at least 8 characters including one number, one uppercase and lowercase letter">
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="col s8 offset-s2 btn-large text-shadow green-button">
+                        Register <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
 
 
