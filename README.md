@@ -223,7 +223,7 @@ Html pages were validated with [W3C Html Checker](https://validator.w3.org/nu/).
 
 The pages validated are shown below.
 
-![Html pass](static/images/readme_images/html validation.png)
+![Html pages validated](static/images/readme_images/html validation.png)
 
 The only error present was that their was an unmatched trailing div. This was removed and the code rechecked. All application pages successfully passed through the validator.
 
@@ -235,14 +235,29 @@ A warning appeared on all pages that the flash message section lacked a heading.
 
 CSS page was validated with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
+No errors were present.
 
+![CSS pass](static/images/readme_images/validcss.png)
 
 #### Javascript
 
 Javascript files were validated with [JSHint](https://jshint.com/)
 
-![Validation results](Assets/IMAGES/javascriptValidation.png)
+Missing semi-colons were added and the scripts retested. No errors or warnings present
 
+![Javascript results](static/images/readme_images/validJS.png)
+
+#### Python
+
+Python files were validated with [PEP8 online](http://pep8online.com)
+
+![First validation results](static/images/readme_images/pep8 fail.png)
+
+The error present was that the app.py file had several occurances where a line was greater than 79 characters. I reformatted the app.py file to ensure no line was more than 79 characters and retested.
+
+The file is now PEP8 compliant.
+
+![Final validation results](static/images/readme_images/pep8 pass.png)
 
 ### Performance Testing
 
