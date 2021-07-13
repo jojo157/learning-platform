@@ -19,7 +19,7 @@ $('.score_up').click(function(event) {
     event.stopPropagation();
     event.stopImmediatePropagation();
     try{
-      id = this.getAttribute('data-article');
+      var id = this.getAttribute('data-article');
       score_up(id);
     }
     finally{
@@ -58,7 +58,7 @@ $('.score_down').click(function(event) {
   event.stopPropagation();
   event.stopImmediatePropagation();
   try{
-    id = this.getAttribute('data-article');
+    var id = this.getAttribute('data-article');
     score_down(id);
   }
   finally{
@@ -97,7 +97,7 @@ $('.fav_content').click(function(event) {
   event.stopPropagation();
   event.stopImmediatePropagation();
   try{
-    id = this.getAttribute('data-article');
+    var id = this.getAttribute('data-article');
     fav_content(id);
   }
   finally{
