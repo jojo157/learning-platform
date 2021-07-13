@@ -274,8 +274,14 @@ The file is now PEP8 compliant.
 ### Performance Testing
 
 Performance was tested using Lighthouse, one of Google's web developer tools.
+To improve the SEO of the app, I added a meta description. Additonally I added the attribute rel="noopener" to all 'a' elements to increase the app security.
 
-#### Home Page
+Tehe final results for each page are shown in the below table.
+
+
+
+
+
 
 
 
