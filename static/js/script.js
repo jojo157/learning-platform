@@ -19,7 +19,7 @@ $('.score_up').click(function(event) {
     event.stopPropagation();
     event.stopImmediatePropagation();
     try{
-      score_up(this.id);
+      score_up(this.class);
     }
     finally{
       var value = parseInt($(this).text());

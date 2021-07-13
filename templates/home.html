@@ -40,11 +40,9 @@
     <ul class="collapsible">
       <li>
         <div class="media-container content-image-container">
-          <img class="materialboxed" src="{{ single_content.picture }}">
+          <img class="materialboxed" src="{{ single_content.picture }}" alt="article image">
         </div>
-        <div>
-
-        </div>
+        
         {%  if level == "admin" %}
         <div class="center content-admin-buttons">
           <a href="{{ url_for('editcontent', content_id = single_content._id) }}"
@@ -55,17 +53,17 @@
         {% endif %}
         <div class="content-feedback-area row">
           <div class="col s3">
-            <button class="refresh score_up" id="{{single_content._id}}"><i
+            <button class="refresh score_up" class="{{single_content._id}}"><i
                 class="far fa-thumbs-up content-icon"></i><span>{{ single_content.rating_up}}</span></button>
 
           </div>
           <div class="col s3">
-            <button class="refresh score_down" id="{{single_content._id}}"><i
+            <button class="refresh score_down" class="{{single_content._id}}"><i
                 class="far fa-thumbs-down content-icon"></i><span>{{ single_content.rating_down}}</span></button>
 
           </div>
           <div class="col s3 offset-s3">
-            <button class="refresh fav_content" id="{{single_content._id}}"><i
+            <button class="refresh fav_content" class="{{single_content._id}}"><i
                 class="far fa-bookmark content-icon tooltipped"
                 data-tooltip="Add article to your favourites"></i></button>
           </div>
@@ -111,5 +109,5 @@
   {% endif %}
 
 
-
+</div>
   {% endblock %}
