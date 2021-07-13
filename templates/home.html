@@ -13,7 +13,7 @@
     </div>
 
     <div class="col s12 m4 l4 search-buttons center">
-      <a href="{{ url_for('home') }}" class="btn-small green-button text-shadow">Reset</a>
+      <a rel="noopener" href="{{ url_for('home') }}" class="btn-small green-button text-shadow">Reset</a>
       <button type="submit" class="green-button btn-small text-shadow">
         Search
       </button>
@@ -28,7 +28,7 @@
     <p class="center">A quick link has been added to your profile, under your favourites section.</p>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-close  btn-flat">OK</a>
+    <a rel="noopener" href="#!" class="modal-close  btn-flat">OK</a>
   </div>
 </div>
 
@@ -45,9 +45,9 @@
         
         {%  if level == "admin" %}
         <div class="center content-admin-buttons">
-          <a href="{{ url_for('editcontent', content_id = single_content._id) }}"
+          <a href="{{ url_for('editcontent', content_id = single_content._id) }}" rel="noopener"
             class="btn-small green-button ">Edit</a>
-          <a href="{{ url_for('delete_content', content_id = single_content._id) }}"
+          <a href="{{ url_for('delete_content', content_id = single_content._id) }}" rel="noopener"
             class="btn-small green-button confirm" title="Are you sure you wish to delete this post?">Delete</a>
         </div>
         {% endif %}
@@ -81,7 +81,7 @@
 
           <span class="article-body">{{ single_content.content}}</span>
           <br> <br>
-          <span><a class="btn-small green-button" href="{{ single_content.resource}}" target="_blank">Further
+          <span><a class="btn-small green-button" href="{{ single_content.resource}}" target="_blank" rel="noopener">Further
               Reading</a>
           </span>
           <hr>

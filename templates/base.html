@@ -20,24 +20,24 @@
     <header>
         <nav>
             <div class="nav-wrapper gradient-colours">
-                <a href="{{ url_for('home') }}" class="brand-logo">
+                <a href="{{ url_for('home') }}" class="brand-logo" rel="noopener">
                     <h3 class="header-title">Finance Mind</h3>
                 </a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <a href="#" data-target="mobile-demo" rel="noopener" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
-                    <li><a href="{{ url_for('home') }}">Library</a></li>
-                    <li><a href="{{ url_for('profile') }}">My Profile</a></li>
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a rel="noopener" href="{{ url_for('home') }}">Library</a></li>
+                    <li><a rel="noopener" href="{{ url_for('profile') }}">My Profile</a></li>
+                    <li><a rel="noopener" href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a rel="noopener" href="{{ url_for('contact') }}">Contact</a></li>
                     {%  if session.access|lower == "admin"|lower %}
-                    <li><a href="{{ url_for('admin') }}">User Management</a></li>
-                    <li><a href="{{ url_for('content') }}">Add Site Content</a></li>
+                    <li><a rel="noopener" href="{{ url_for('admin') }}">User Management</a></li>
+                    <li><a rel="noopener" href="{{ url_for('content') }}">Add Site Content</a></li>
                     {% endif %}
                     {% else %}
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a rel="noopener" href="{{ url_for('register') }}">Register</a></li>
+                    <li><a rel="noopener" href="{{ url_for('login') }}">Login</a></li>
+                    <li><a rel="noopener" href="{{ url_for('contact') }}">Contact</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -45,18 +45,18 @@
 
         <ul class="sidenav" id="mobile-demo">
             {% if session.user %}
-            <li><a href="{{ url_for('home') }}">Library</a></li>
-            <li><a href="{{ url_for('profile') }}"> My Profile</a></li>
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a rel="noopener" href="{{ url_for('home') }}">Library</a></li>
+            <li><a rel="noopener" href="{{ url_for('profile') }}"> My Profile</a></li>
+            <li><a rel="noopener" href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a rel="noopener" href="{{ url_for('contact') }}">Contact</a></li>
             {%  if session.access|lower == "admin"|lower %}
-            <li><a href="{{ url_for('admin') }}">User Management</a></li>
-            <li><a href="{{ url_for('content') }}">Add Site Content</a></li>
+            <li><a rel="noopener" href="{{ url_for('admin') }}">User Management</a></li>
+            <li><a rel="noopener" href="{{ url_for('content') }}">Add Site Content</a></li>
             {% endif %}
             {% else %}
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a rel="noopener" href="{{ url_for('register') }}">Register</a></li>
+            <li><a rel="noopener" href="{{ url_for('login') }}">Login</a></li>
+            <li><a rel="noopener" href="{{ url_for('contact') }}">Contact</a></li>
             {% endif %}
         </ul>
     </header>
