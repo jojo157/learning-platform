@@ -74,10 +74,13 @@ def home():
     If user is not logged in, they are rendered to
     app landing page to register or login
     """
+    if session.get("user") is None:
+        return render_template("index.html")
 
-    site_contents = mongo.db.content.find({"view": "public"}).sort("date_time", -1)
-    level = mongo.db.users.find_one({"username": session["user"]})["access_level"]
-    query = " "
+    else:
+        site_contents = mongo.db.content.find({"view": "public"}).sort("date_time", -1)
+        level = mongo.db.users.find_one({"username": session["user"]})["access_level"]
+        query = " "
 
     return render_template(
         "home.html", site_contents=site_contents, level=level, query=query
@@ -91,16 +94,20 @@ def score_up():
     when called by a logged in user.
     If not logged in, renders app landing page
     """
-    req = request.get_json()
-    rated_article = req["article"]
-    document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
-    current_score = document["rating_up"]
-    new_score = current_score + 1
-    mongo.db.content.update_one(
-        {"_id": ObjectId(rated_article)},
-        {"$set": {"rating_up": new_score}},
-    )
-    res = make_response("score changed")
+    if session.get("user") is None:
+        return render_template("index.html")
+
+    else:
+        req = request.get_json()
+        rated_article = req["article"]
+        document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
+        current_score = document["rating_up"]
+        new_score = current_score + 1
+        mongo.db.content.update_one(
+            {"_id": ObjectId(rated_article)},
+            {"$set": {"rating_up": new_score}},
+        )
+        res = make_response("score changed")
 
     return res
 
@@ -112,16 +119,20 @@ def score_down():
     when called by a logged-in user.
     If not logged in, renders app landing page.
     """
-    req = request.get_json()
-    rated_article = req["article"]
-    document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
-    current_score = document["rating_down"]
-    new_score = current_score + 1
-    mongo.db.content.update_one(
-        {"_id": ObjectId(rated_article)},
-        {"$set": {"rating_down": new_score}},
-    )
-    res = make_response("score changed")
+    if session.get("user") is None:
+        return render_template("index.html")
+
+    else:
+        req = request.get_json()
+        rated_article = req["article"]
+        document = mongo.db.content.find_one({"_id": ObjectId(rated_article)})
+        current_score = document["rating_down"]
+        new_score = current_score + 1
+        mongo.db.content.update_one(
+            {"_id": ObjectId(rated_article)},
+            {"$set": {"rating_down": new_score}},
+        )
+        res = make_response("score changed")
 
     return res
 
@@ -133,9 +144,13 @@ def search():
     renders the library page with relevant content.
     If not logged in, renders app landing page.
     """
-    query = request.form.get("search")
-    content = mongo.db.content.find({"$text": {"$search": query}})
-    level = session.get("access")
+    if session.get("user") is None:
+        return render_template("index.html")
+
+    else:
+        query = request.form.get("search")
+        content = mongo.db.content.find({"$text": {"$search": query}})
+        level = session.get("access")
 
     return render_template("home.html", site_contents=content, level=level, query=query)
 
@@ -230,12 +245,15 @@ def profile():
     Renders the users profile page with thier specific data
     If user is not logged in, then returned to landing page.
     """
-    name = mongo.db.users.find_one({"username": session["user"]})["first_name"]
-    notes = mongo.db.posts.find({"username": session["user"]}).sort("date_time", -1)
-    favourites = mongo.db.favourites.find({"username": session["user"]})
-    return render_template(
-        "profile.html", name=name, notes=notes, favourites=favourites
-    )
+    if not session.get("user") is None:
+        name = mongo.db.users.find_one({"username": session["user"]})["first_name"]
+        notes = mongo.db.posts.find({"username": session["user"]}).sort("date_time", -1)
+        favourites = mongo.db.favourites.find({"username": session["user"]})
+        return render_template(
+            "profile.html", name=name, notes=notes, favourites=favourites
+        )
+
+    return render_template("index.html")
 
 
 @app.route("/search_fav/<string:query>", methods=["GET", "POST"])
@@ -244,7 +262,11 @@ def search_fav(query):
     Renders the library page with data related
     to the clicked favourite article.
     """
-    content = mongo.db.content.find({"$text": {"$search": query}})
+    if session.get("user") is None:
+        return render_template("index.html")
+
+    else:
+        content = mongo.db.content.find({"$text": {"$search": query}})
 
     return render_template("home.html", site_contents=content, query=query)
 
@@ -256,21 +278,25 @@ def notes():
     The created date is added in the function call.
     If a user is not logged in, tpage rendered is landing page.
     """
-    if request.method == "GET":
-        return render_template("notes.html")
+    if session.get("user") is None:
+        return render_template("index.html")
 
-    if request.method == "POST":
-        newpost = {
-            "username": session.get("user").lower(),
-            "title": request.form.get("title"),
-            "note": request.form.get("body"),
-            "date": datetime.now().strftime("%d-%m-%Y"),
-            "date_time": datetime.now(),
-        }
-        mongo.db.posts.insert_one(newpost)
+    else:
+        if request.method == "GET":
+            return render_template("notes.html")
 
-        # put the new user into 'session' cookie
-        flash("Note added!", "success")
+        if request.method == "POST":
+            newpost = {
+                "username": session.get("user").lower(),
+                "title": request.form.get("title"),
+                "note": request.form.get("body"),
+                "date": datetime.now().strftime("%d-%m-%Y"),
+                "date_time": datetime.now(),
+            }
+            mongo.db.posts.insert_one(newpost)
+
+            # put the new user into 'session' cookie
+            flash("Note added!", "success")
         return redirect(url_for("profile"))
 
 
@@ -327,29 +353,34 @@ def content():
     stored in the Mongo DB content collection.
     Success messgae given to user and redirected to library.
     """
+    if session.get("user") is None:
+        return render_template("index.html")
 
-    if request.method == "GET":
-        return render_template("content.html")
+    else:
 
-    if request.method == "POST":
-        newpost = {
-            "user": session.get("user").lower(),
-            "category": request.form.get("category"),
-            "title": request.form.get("title"),
-            "content": request.form.get("body"),
-            "date": datetime.now().strftime("%d-%m-%Y"),
-            "keywords": request.form.get("keywords"),
-            "view": "public",
-            "rating_up": 0,
-            "rating_down": 0,
-            "picture": request.form.get("picture"),
-            "resource": request.form.get("resource"),
-            "date_time": datetime.now(),
-        }
-        mongo.db.content.insert_one(newpost)
+        if request.method == "GET":
+            if session.get("access") == "admin":
+                return render_template("content.html")
 
-        flash("Post added!", "success")
-        return redirect(url_for("home"))
+        if request.method == "POST":
+            newpost = {
+                "user": session.get("user").lower(),
+                "category": request.form.get("category"),
+                "title": request.form.get("title"),
+                "content": request.form.get("body"),
+                "date": datetime.now().strftime("%d-%m-%Y"),
+                "keywords": request.form.get("keywords"),
+                "view": "public",
+                "rating_up": 0,
+                "rating_down": 0,
+                "picture": request.form.get("picture"),
+                "resource": request.form.get("resource"),
+                "date_time": datetime.now(),
+            }
+            mongo.db.content.insert_one(newpost)
+
+            flash("Post added!", "success")
+            return redirect(url_for("home"))
 
 
 @app.route("/editcontent/<string:content_id>", methods=["GET", "POST"])
@@ -454,10 +485,13 @@ def user_settings():
     Success message displayed and rendered to profile page.
     If not logged in, user is returned to landing page.
     """
+    if session.get("user") is None:
+        return render_template("index.html")
 
-    if request.method == "GET":
-        user_details = mongo.db.users.find_one({"username": session["user"]})
-        return render_template("usersettings.html", user_details=user_details)
+    else:
+        if request.method == "GET":
+            user_details = mongo.db.users.find_one({"username": session["user"]})
+            return render_template("usersettings.html", user_details=user_details)
 
         if request.method == "POST":
             user_details = mongo.db.users.find_one({"username": session["user"]})
@@ -495,10 +529,16 @@ def admin():
     to an admin user only.
     If not admin, renders your profile page.
     """
+    if session.get("user") is None:
+        return render_template("index.html")
 
-    user_details = mongo.db.users.find_one({"username": session["user"]})
-    all_users = mongo.db.users.find().sort("first_name", 1)
-    return render_template("admin.html", all_users=all_users)
+    else:
+        user_details = mongo.db.users.find_one({"username": session["user"]})
+        if user_details["access_level"] == "admin":
+            all_users = mongo.db.users.find().sort("first_name", 1)
+            return render_template("admin.html", all_users=all_users)
+
+    return redirect(url_for("profile"))
 
 
 @app.route("/admin_edit/<string:user_to_edit>", methods=["GET", "POST"])
