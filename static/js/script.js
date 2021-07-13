@@ -57,7 +57,7 @@ $('.score_down').click(function(event) {
   event.stopPropagation();
   event.stopImmediatePropagation();
   try{
-    score_down(this.id);
+    score_down(this.class);
   }
   finally{
     var value = parseInt($(this).text());
@@ -95,7 +95,7 @@ $('.fav_content').click(function(event) {
   event.stopPropagation();
   event.stopImmediatePropagation();
   try{
-    fav_content(this.id);
+    fav_content(this.class);
   }
   finally{
     $('.modal').modal('open');
