@@ -53,17 +53,17 @@
         {% endif %}
         <div class="content-feedback-area row">
           <div class="col s3">
-            <button class="refresh score_up {{single_content._id}}"><i
+            <button class="refresh score_up" data-article="{{ single_content._id }}"><i
                 class="far fa-thumbs-up content-icon"></i><span>{{ single_content.rating_up}}</span></button>
 
           </div>
           <div class="col s3">
-            <button class="refresh score_down {{single_content._id}}"><i
+            <button class="refresh score_down" data-article="{{ single_content._id }}"><i
                 class="far fa-thumbs-down content-icon"></i><span>{{ single_content.rating_down}}</span></button>
 
           </div>
           <div class="col s3 offset-s3">
-            <button class="refresh fav_content {{single_content._id}}"><i
+            <button class="refresh fav_content" data-article="{{ single_content._id }}"><i
                 class="far fa-bookmark content-icon tooltipped"
                 data-tooltip="Add article to your favourites"></i></button>
           </div>

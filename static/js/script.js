@@ -19,7 +19,8 @@ $('.score_up').click(function(event) {
     event.stopPropagation();
     event.stopImmediatePropagation();
     try{
-      score_up(this.class);
+      id = this.getAttribute('data-article');
+      score_up(id);
     }
     finally{
       var value = parseInt($(this).text());
@@ -57,7 +58,8 @@ $('.score_down').click(function(event) {
   event.stopPropagation();
   event.stopImmediatePropagation();
   try{
-    score_down(this.class);
+    id = this.getAttribute('data-article');
+    score_down(id);
   }
   finally{
     var value = parseInt($(this).text());
@@ -95,7 +97,8 @@ $('.fav_content').click(function(event) {
   event.stopPropagation();
   event.stopImmediatePropagation();
   try{
-    fav_content(this.class);
+    id = this.getAttribute('data-article');
+    fav_content(id);
   }
   finally{
     $('.modal').modal('open');
