@@ -145,6 +145,11 @@ i.fas.fa-bookmark {
 
 /* Home Page */
 
+.article-container{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .logo-size {
     object-fit: contain;
     overflow: hidden;
