@@ -276,12 +276,14 @@ The file is now PEP8 compliant.
 Performance was tested using Lighthouse, one of Google's web developer tools.
 To improve the SEO of the app, I added a meta description. Additonally I added the attribute rel="noopener" to all 'a' elements to increase the app security.
 
-Tehe final results for each page are shown in the below table.
+For the Library Page (home), the best practices score was 87% due to images been displayed with the incorrect aspect ration. I changed the css to preserve the aspect ratio of the images. This resulted in the best practives score increasing to 100% and improved the layout for user experience. 
 
+example output from ligthhouse audit for page home
+![Home Page Audit Results](static/images/readme_images/homeAudit.png)
 
+The final results for each page are shown in the below table.
 
-
-
+![Final validation results](static/images/readme_images/ligthhouseTable.png)
 
 
 
