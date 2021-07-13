@@ -78,8 +78,12 @@ def home():
         return render_template("index.html")
 
     else:
-        site_contents = mongo.db.content.find({"view": "public"}).sort("date_time", -1)
-        level = mongo.db.users.find_one({"username": session["user"]})["access_level"]
+        site_contents = mongo.db.content.find({"view": "public"}).sort(
+            "date_time", -1
+        )
+        level = mongo.db.users.find_one({"username": session["user"]})[
+            "access_level"
+        ]
         query = " "
 
     return render_template(
@@ -152,7 +156,9 @@ def search():
         content = mongo.db.content.find({"$text": {"$search": query}})
         level = session.get("access")
 
-    return render_template("home.html", site_contents=content, level=level, query=query)
+    return render_template(
+        "home.html", site_contents=content, level=level, query=query
+    )
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -185,7 +191,9 @@ def register():
         session["access"] = "general"
         flash("Registration Successful!", "success")
         return redirect(
-            url_for("profile", username=session["user"], access=session["access"])
+            url_for(
+                "profile", username=session["user"], access=session["access"]
+            )
         )
 
     return render_template("register.html")
@@ -246,8 +254,12 @@ def profile():
     If user is not logged in, then returned to landing page.
     """
     if not session.get("user") is None:
-        name = mongo.db.users.find_one({"username": session["user"]})["first_name"]
-        notes = mongo.db.posts.find({"username": session["user"]}).sort("date_time", -1)
+        name = mongo.db.users.find_one({"username": session["user"]})[
+            "first_name"
+        ]
+        notes = mongo.db.posts.find({"username": session["user"]}).sort(
+            "date_time", -1
+        )
         favourites = mongo.db.favourites.find({"username": session["user"]})
         return render_template(
             "profile.html", name=name, notes=notes, favourites=favourites
@@ -395,7 +407,9 @@ def editcontent(content_id):
     else:
         if request.method == "GET":
             if session.get("access") == "admin":
-                post_data = mongo.db.content.find_one({"_id": ObjectId(content_id)})
+                post_data = mongo.db.content.find_one(
+                    {"_id": ObjectId(content_id)}
+                )
                 return render_template("editcontent.html", post=post_data)
 
         if request.method == "POST":
@@ -449,9 +463,9 @@ def fav_content():
         )
         if not existing_fav:
             # add favourite to collection as hasn't been added before
-            content_title = mongo.db.content.find_one({"_id": ObjectId(content_id)})[
-                "title"
-            ]
+            content_title = mongo.db.content.find_one(
+                {"_id": ObjectId(content_id)}
+            )["title"]
             favour = {
                 "content_id": ObjectId(content_id),
                 "username": session["user"],
@@ -490,11 +504,17 @@ def user_settings():
 
     else:
         if request.method == "GET":
-            user_details = mongo.db.users.find_one({"username": session["user"]})
-            return render_template("usersettings.html", user_details=user_details)
+            user_details = mongo.db.users.find_one(
+                {"username": session["user"]}
+            )
+            return render_template(
+                "usersettings.html", user_details=user_details
+            )
 
         if request.method == "POST":
-            user_details = mongo.db.users.find_one({"username": session["user"]})
+            user_details = mongo.db.users.find_one(
+                {"username": session["user"]}
+            )
             if user_details["password"] == "######":
                 updated = {
                     "first_name": request.form.get("first_name"),
@@ -509,7 +529,9 @@ def user_settings():
 
             else:
                 updated = {
-                    "password": generate_password_hash(request.form.get("password")),
+                    "password": generate_password_hash(
+                        request.form.get("password")
+                    ),
                     "first_name": request.form.get("first_name"),
                     "last_name": request.form.get("last_name"),
                     "email": request.form.get("email"),
@@ -564,17 +586,23 @@ def admin_edit(user_to_edit):
                     "password": user_details["password"],
                     "access_level": request.form.get("access_level").lower(),
                 }
-                mongo.db.tasks.update_one({"username": user_to_edit}, {"$set": updated})
+                mongo.db.tasks.update_one(
+                    {"username": user_to_edit}, {"$set": updated}
+                )
 
             else:
                 updated = {
-                    "password": generate_password_hash(request.form.get("password")),
+                    "password": generate_password_hash(
+                        request.form.get("password")
+                    ),
                     "first_name": request.form.get("first_name"),
                     "last_name": request.form.get("last_name"),
                     "email": request.form.get("email").lower(),
                     "access_level": request.form.get("access_level").lower(),
                 }
-                mongo.db.users.update_one({"username": user_to_edit}, {"$set": updated})
+                mongo.db.users.update_one(
+                    {"username": user_to_edit}, {"$set": updated}
+                )
 
             flash("User has been Updated", "success")
 
@@ -638,4 +666,6 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True)
+    app.run(
+        host=os.environ.get("IP"), port=int(os.environ.get("PORT")), debug=True
+    )
