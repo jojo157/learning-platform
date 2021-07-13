@@ -219,15 +219,33 @@ A summary of testing conducted is shown in the table below.
 
 #### Html
 
-Html pages were validated with [W3C Html Checker](https://validator.w3.org/nu/). 
+Html pages were validated with [W3C Html Checker](https://validator.w3.org/nu/). To obtain the expressed HTML code on the pages, the safari developer tools were used to open the page source code and pasted into the text input fof validation.
 
 The pages validated are shown below.
 
 ![Html pages validated](static/images/readme_images/htmlvalidation.png)
 
-The only error present was that their was an unmatched trailing div. This was removed and the code rechecked. All application pages successfully passed through the validator.
+A warning appeared on all pages that the flash message section lacked a heading. This warning can be ignored as the section contains a heading element where the elements html is injected with jinga templating language when needed. Any pages where an error was found are detailed below.
 
-A warning appeared on all pages that the flash message section lacked a heading. This warning can be ignored as the section contains a heading element where the elements html is injected with jinga templating language when needed. 
+##### Landing Page 
+
+The only error present was that their was an unmatched trailing div. This was removed and the code rechecked. The page successfully passed through the validator.
+
+#### Home
+
+On first check, there was 3 errors. The first error was that the image elements were missing an alt attribute. I added this in. The second error is that the article icons all had the same ID. I replaced this with class as each article would have 3 occurances of this value and this violates the definition of a unique ID. The last error is that their was an unclosed div element. I loctaed the element and corrected this. 
+
+The page was reloaded and passed validation successfully. 
+
+
+#### Content
+
+Two errors were present. The first was that the attribute pattern is not allowed on a textarea element. I removed this attribute and targeted an empty field in the javascript file instead for validation.  The second error is that there was a stray div present. I checked the file and removed this. 
+
+#### User Settings
+
+
+All pages now sucessfully pass through the validator. 
 
 ![Html pass](static/images/readme_images/htmlpass.png)
 
