@@ -242,7 +242,7 @@ The page was reloaded and passed validation successfully.
 
 Two errors were present. The first was that the attribute pattern is not allowed on a textarea element. I removed this attribute and targeted an empty field in the javascript file instead for validation.  The second error is that there was a stray div present. I checked the file and removed this. 
 
-#### User Settings
+
 
 
 All pages now sucessfully pass through the validator. 
