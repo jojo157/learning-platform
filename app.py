@@ -506,7 +506,7 @@ def delete_fav(fav_id):
 
     else:
         if request.method == "GET":
-            mongo.db.favourites.remove({"_id": fav_id })
+            mongo.db.favourites.remove({"_id":  ObjectId(fav_id) })
             flash("Favourite has been Deleted", "success")
         return redirect(url_for("profile"))
 
