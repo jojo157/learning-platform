@@ -401,10 +401,10 @@ All articles show the number of likes and dislikes. The admin team can use this 
 
 ### Functionality Testing
 
-I tested the functionality of the site on a laptop and mobile device. Each page was tested and results are given below:
+I tested the functionality of the site on a laptop and mobile device. Each page was tested and final results are given below:
 
 | **Page**     | **Functions checked** | **Working Correctly Desktop** | **Mobile** |
-| --- | --- | --- | 
+| --- | --- | --- | --- |
 | **Landing** | | | |
 |           | Signup button opens registration form| ✓| ✓|  
 |           | Login button opens login form| ✓| ✓|  
@@ -433,7 +433,7 @@ I tested the functionality of the site on a laptop and mobile device. Each page 
 |           | Further Reading button opens resource in new window| ✓| ✓| 
 |           | Clicking on the expand icon when expanded closes the section| ✓| ✓| 
 |           | Admin - edit button on article opens prefilled content form| ✓| ✓| 
-|           | Admin - delete button on article gives confirm message and if press ok, article removed from library| ✓| ✓|  
+|           | Delete button on article gives confirm message and if press ok,article removed from library| ✓| ✓|  
 | **Profile** | | | |
 |           | User settings page loads when click the icon, with the correct data shown | ✓| ✓| 
 |           | Favourite article link when clicked redirects to correct article | ✓| ✓| 
