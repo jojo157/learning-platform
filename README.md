@@ -403,7 +403,7 @@ All articles show the number of likes and dislikes. The admin team can use this 
 
 I tested the functionality of the site on a laptop and mobile device. Each page was tested and final results are given below:
 
-| **Page**     | **Functions checked** | **Working Correctly Desktop** | **Mobile** |
+| **Page**     | **Functions checked** | **Working Correctly Desktop** | **Working Correctly Mobile** |
 | --- | --- | --- | --- |
 | **Landing** | | | |
 |           | Signup button opens registration form| ✓| ✓|  
@@ -460,7 +460,9 @@ I tested the functionality of the site on a laptop and mobile device. Each page 
 
 ### Validation Testing
 
-contact form
+All forms were manually tested and the result of the testing are shown in the below table.
+
+![Form Validation Testing Results](static/images/readme_images/formValidation.png)
 
 ### Compatibility Testing
 
