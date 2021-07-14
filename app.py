@@ -511,7 +511,7 @@ def user_settings():
             user_details = mongo.db.users.find_one(
                 {"username": session["user"]}
             )
-            if request.form.get("password") == "Password21!":
+            if request.form.get("password") == "P########1!":
                 updated = {
                     "first_name": request.form.get("first_name"),
                     "last_name": request.form.get("last_name"),
@@ -574,7 +574,7 @@ def admin_edit(user_to_edit):
         if request.method == "POST":
             user_details = mongo.db.users.find_one({"username": user_to_edit})
 
-            if request.form.get("password") == "Password21!":
+            if request.form.get("password") == "P########1!":
                 updated = {
                     "first_name": request.form.get("first_name"),
                     "last_name": request.form.get("last_name"),
