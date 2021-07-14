@@ -314,6 +314,7 @@ def editnote(note_id):
     Allows user to edit the sticky note they selected.
     Once updated a success message is given on users profile.
     If not logged in, renders landing page.
+    Added condition to ensure a user can only edit their notes. 
     """
     if session.get("user") is None:
         return render_template("index.html")
@@ -322,20 +323,28 @@ def editnote(note_id):
 
         if request.method == "GET":
             note_data = mongo.db.posts.find_one({"_id": ObjectId(note_id)})
-            return render_template("editnote.html", note=note_data)
+            if session.get("user") == note_data["username"]:
+                return render_template("editnote.html", note=note_data)
+            else:
+                return redirect(url_for("profile"))
 
         if request.method == "POST":
-            updated_post = {
-                "username": session.get("user").lower(),
-                "title": request.form.get("title"),
-                "note": request.form.get("body"),
-            }
-            mongo.db.posts.update_one(
-                {"_id": ObjectId(note_id)}, {"$set": updated_post}
-            )
+            note_data = mongo.db.posts.find_one({"_id": ObjectId(note_id)})
+            if session.get("user") == note_data["username"]:
+                updated_post = {
+                    "username": session.get("user").lower(),
+                    "title": request.form.get("title"),
+                    "note": request.form.get("body"),
+                }
+                mongo.db.posts.update_one(
+                    {"_id": ObjectId(note_id)}, {"$set": updated_post}
+                )
 
-            flash("Note updated!", "success")
-            return redirect(url_for("profile"))
+                flash("Note updated!", "success")
+                return redirect(url_for("profile"))
+            else:
+                return redirect(url_for("profile"))
+
 
 
 @app.route("/delete_note/<string:note_id>", methods=["GET", "POST"])
@@ -344,11 +353,14 @@ def delete_note(note_id):
     Allows user to delete the sticky note they selected.
     Once deleted a success message is given on users profile.
     If not logged in, renders landing page.
+    User can only delete their sticky notes.
     """
     if request.method == "GET":
         if not session.get("user") is None:
-            mongo.db.posts.remove({"_id": ObjectId(note_id)})
-            flash("Note has been Deleted", "success")
+            note_data = mongo.db.posts.find_one({"_id": ObjectId(note_id)})
+            if session.get("user") == note_data["username"]:
+                mongo.db.posts.remove({"_id": ObjectId(note_id)})
+                flash("Note has been Deleted", "success")
         return redirect(url_for("profile"))
     return redirect(url_for("index"))
 

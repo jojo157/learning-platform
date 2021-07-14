@@ -464,6 +464,15 @@ All forms were manually tested and the result of the testing are shown in the be
 
 ![Form Validation Testing Results](static/images/readme_images/formValidation.png)
 
+### Access Testing
+
+To ensure that only authorised users can access or modify a resource. Testing was needing using a general user account, an admin user account and stayying logged out and trying to hard access a resource through the browser address.
+
+Based on the results, I added additonal checks to ensure that the edit or delete note is only actioned if the session user matches the requested notes author. 
+
+![Access Testing Results](static/images/readme_images/formValidation.png)
+
+
 ### Compatibility Testing
 
 #### Different devices
@@ -491,9 +500,7 @@ I tested the website on:
 - Internet Explorer
 
 Differences discovered across browsers:
-
-
-
+The only difference noted was the scroll bar style which is dependent on the browser. 
 
 #### Different Operating Systems
 
@@ -505,7 +512,6 @@ The above testing was conducted on below operating systems:
 - Android
 
 There were no differences detected on those operating systems. [Browser Stack](live.browserstack.com) was used to view and check the functionality across a wide range of devices and operating systems.
-
 
 ### Development Issues
 
