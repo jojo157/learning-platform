@@ -20,7 +20,7 @@
     <div class="s12 m12 l12 fav-container">
       <div class="btn-small deep-purple lighten-4 fav-button">
         <a rel="noopener" href="{{ url_for('search_fav', query = favourite.content_title) }}">{{ favourite.content_title }}</a>
-        <a rel="noopener" href="{{ url_for('delete_fav', fav_title = favourite.content_title) }}" class="confirm"
+        <a rel="noopener" href="{{ url_for('delete_fav', fav_id = favourite._id) }}" class="confirm"
           title="Are you sure you wish to delete this favourite?"><i class="fas fa-times right"></i></a>
       </div>
     </div>

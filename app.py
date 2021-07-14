@@ -354,7 +354,6 @@ def editnote(note_id):
                 return redirect(url_for("profile"))
 
 
-
 @app.route("/delete_note/<string:note_id>", methods=["GET", "POST"])
 def delete_note(note_id):
     """
@@ -496,7 +495,7 @@ def fav_content():
         return res
 
 
-@app.route("/delete_fav/<string:fav_title>", methods=["GET", "POST"])
+@app.route("/delete_fav/<string:fav_id>", methods=["GET", "POST"])
 def delete_fav(fav_title):
     """
     Allows user to remove a favourite shortlin from their profile.
@@ -507,7 +506,7 @@ def delete_fav(fav_title):
 
     else:
         if request.method == "GET":
-            mongo.db.favourites.remove({"content_title": fav_title, "username": session["user"]})
+            mongo.db.favourites.remove({"_id": fav_id })
             flash("Favourite has been Deleted", "success")
         return redirect(url_for("profile"))
 
