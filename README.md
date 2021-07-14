@@ -480,7 +480,6 @@ Using Google Developer tools, I viewed the website on the following devices:
 
 Based on the user experience I added some more margin on the landing page and altered the layout of the user management page for smaller devices to ensure the layout is maintained. The application is responsive on all devices.
 
-
 #### Different Browsers
 
 I tested the website on:
