@@ -389,6 +389,7 @@ def content():
         if request.method == "GET":
             if session.get("access") == "admin":
                 return render_template("content.html")
+            return redirect(url_for("home"))
 
         if request.method == "POST":
             newpost = {
@@ -427,6 +428,7 @@ def editcontent(content_id):
                     {"_id": ObjectId(content_id)}
                 )
                 return render_template("editcontent.html", post=post_data)
+            return redirect(url_for("home"))
 
         if request.method == "POST":
             updated_content = {
