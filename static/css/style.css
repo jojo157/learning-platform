@@ -247,8 +247,8 @@ ul.collapsible {
     max-width: 100%;
 }
 
-span.article-body{
-    margin-top: 20px;
+.article-heading-section{
+    margin-bottom: 20px;
 }
 
 .further-reading-button{
