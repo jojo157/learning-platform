@@ -454,9 +454,9 @@ I tested the functionality of the site on a laptop and mobile device. Each page 
 | **Add Site Contents** | | | |
 |           | Valid form can be submitted| ✓| ✓| 
 |           | New article created on the Library page in date order of creation| ✓| ✓| 
-
-
-
+| **404** | | | |
+|           | If try to navigate to page that does not exist, 404 page is rendered| ✓| ✓| 
+|           | Button to return home, navigates user home| ✓| ✓| 
 
 ### Validation Testing
 
@@ -478,6 +478,7 @@ The Create, Read, Update and Delete actions on the Mongo DB database were tested
 
 A summary of the testing is shown below.
 
+![CRUD Testing Results](static/images/readme_images/crudTesting.png)
 
 
 
