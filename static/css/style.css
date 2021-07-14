@@ -141,7 +141,9 @@ i.fas.fa-bookmark {
     text-transform: capitalize;
 }
 
-
+.index-CTA{
+    margin-top:20px;
+}
 
 
 
@@ -348,6 +350,10 @@ i.fas.fa-user-cog {
 
 .user-management-header {
     margin-bottom: 30px;
+}
+
+.line{
+    margin-bottom: 20px;
 }
 
 /* Add site content */
