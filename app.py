@@ -190,11 +190,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         session["access"] = "general"
         flash("Registration Successful!", "success")
-        return redirect(
-            url_for(
-                "profile", username=session["user"], access=session["access"]
-            )
-        )
+        return redirect(url_for("home"))
 
     return render_template("register.html")
 
