@@ -496,7 +496,7 @@ def fav_content():
 
 
 @app.route("/delete_fav/<string:fav_id>", methods=["GET", "POST"])
-def delete_fav(fav_title):
+def delete_fav(fav_id):
     """
     Allows user to remove a favourite shortlin from their profile.
     If not logged in, user is returned to landing page.
