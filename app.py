@@ -475,10 +475,12 @@ def fav_content():
     else:
         req = request.get_json()
         content_id = req["article"]
-        # check if favoured article before
+        # check if this specific user favoured article before
         existing_fav = mongo.db.favourites.find_one(
-            {"content_id": ObjectId(content_id)}
+            {"content_id": ObjectId(content_id), "username": session["user"]}
         )
+
+
         if not existing_fav:
             # add favourite to collection as hasn't been added before
             content_title = mongo.db.content.find_one(

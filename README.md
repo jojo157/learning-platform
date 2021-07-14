@@ -472,6 +472,12 @@ Based on the results, I added additonal checks to ensure that the edit or delete
 
 ![Access Testing Results](static/images/readme_images/accessTesting.png)
 
+#### CRUD Testing
+
+The Create, Read, Update and Delete actions on the Mongo DB database were tested by logging in as an admin user and checking the result of each CRUD execution in the relevant collection on the database to verify the data has been modified as necessary.
+
+A summary of the testing is shown below.
+
 
 ### Compatibility Testing
 
