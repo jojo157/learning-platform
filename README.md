@@ -381,7 +381,7 @@ An admin user can click the delete button to remove a user and this will remove 
 
 > I want to be informed of users reaction to content. 
 
-All articles show the number of likes and dislikes. The admin team can use this information to create similar content to what has been liked the most. As per image of "Article as viewed from admin profile" , the number of likes and dislikes is shown on the article. 
+All articles show the number of likes and dislikes. The admin team can use this information to create similar content to what has been liked the most. As per image above, the number of likes and dislikes is shown on the article. 
 
 
 ##### Business owner
