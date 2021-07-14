@@ -511,9 +511,7 @@ def user_settings():
             user_details = mongo.db.users.find_one(
                 {"username": session["user"]}
             )
-            password_entered = request.form.get("password")
-            print(password_entered)
-            if password_entered == "Password21!":
+            if request.form.get("password") == "Password21!":
                 updated = {
                     "first_name": request.form.get("first_name"),
                     "last_name": request.form.get("last_name"),
