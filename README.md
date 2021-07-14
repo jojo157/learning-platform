@@ -472,7 +472,7 @@ Based on the results, I added additonal checks to ensure that the edit or delete
 
 ![Access Testing Results](static/images/readme_images/accessTesting.png)
 
-#### CRUD Testing
+### CRUD Testing
 
 The Create, Read, Update and Delete actions on the Mongo DB database were tested by logging in as an admin user and checking the result of each CRUD execution in the relevant collection on the database to verify the data has been modified as necessary.
 
@@ -532,6 +532,8 @@ There were no differences detected on those operating systems. [Browser Stack](l
 
 - [Google Fonts](https://fonts.google.com/) was used to import the font selectedfor the website.
 - [jQuery](https://jquery.com/) was used as a Javascript library.
+- [jQuery Aplus](http://japlus.simplit.it/) is a plugin that was used for confirmation messages.
+- [Materialise](https://materializecss.com/) was used as a framework for layout and responsiveness to create this application.
 
 
 ### Version Control
@@ -542,6 +544,8 @@ There were no differences detected on those operating systems. [Browser Stack](l
 
 ### Other Programs
 
+- [MongoDB](https://www.mongodb.com/1) was used to create the document based databases used as data storage for this application.
+- [Heroku](https://id.heroku.com/) was used to deploy this application.
 - [Balsamiq](https://balsamiq.com/) was used to create a mock-up of the website after exploring the strategy and scope planes of user experience for this project.
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate CSS code.
 - [W3C Html Checker](https://validator.w3.org/) was used to validate HTML code.
