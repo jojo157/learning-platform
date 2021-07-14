@@ -45,7 +45,7 @@ def page_not_found(e):
 
 
 @app.errorhandler(500)
-def page_not_found(e):
+def internal_error(e):
     """
     Routes user to 500 page when internal error.
     """
