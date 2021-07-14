@@ -511,13 +511,14 @@ def user_settings():
             user_details = mongo.db.users.find_one(
                 {"username": session["user"]}
             )
-            if request.form.get("password") == "Password21!":
+            password_entered = request.form.get("password")
+            if password_entered == "Password21!":
                 updated = {
                     "first_name": request.form.get("first_name"),
                     "last_name": request.form.get("last_name"),
                     "email": request.form.get("email").lower(),
                     "access_level": user_details["access_level"],
-                    "password": user_details["password"]
+                    "password": user_details["password"],
                 }
                 mongo.db.tasks.update_one(
                     {"username": session["user"]}, {"$set": updated}
