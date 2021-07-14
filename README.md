@@ -478,6 +478,7 @@ Using Google Developer tools, I viewed the website on the following devices:
 - Surface duo
 - Galaxy fold
 
+Based on the user experience I added some more margin on the landing page and altered the layout of the user management page for smaller devices. The application is responsive on all devices.
 
 
 #### Different Browsers

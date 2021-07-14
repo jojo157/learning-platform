@@ -116,10 +116,18 @@ img {
 
 .offer-div {
     margin-top: 20px;
+    margin-left:5px;
+    margin-right: 5px;
+}
+
+.home-margin{
+    margin-bottom: 20px;
 }
 
 .home-features-margin {
     margin-top: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .home-features-margin div {
@@ -286,6 +294,11 @@ textarea#body.materialize-textarea {
 
 /* Profile Page */
 
+.note-container{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .post_it {
     margin: 20px;
     text-align: center;
@@ -340,7 +353,8 @@ i.fas.fa-user-cog {
 /* Admin User management page  */
 
 .user-card-container {
-    margin: 20px;
+    margin-top: 20px;
+    overflow-y: scroll;
 }
 
 .user-buttons {
@@ -355,6 +369,8 @@ i.fas.fa-user-cog {
 .line{
     margin-bottom: 20px;
 }
+
+
 
 /* Add site content */
 
