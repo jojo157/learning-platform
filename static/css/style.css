@@ -247,6 +247,14 @@ ul.collapsible {
     max-width: 100%;
 }
 
+.article-body{
+    margin-top: 20px;
+}
+
+.further-reading-button{
+    margin-bottom: 20px;
+}
+
 /* Register Page */
 
 i.far.fa-user,
