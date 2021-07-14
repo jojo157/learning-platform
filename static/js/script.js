@@ -11,6 +11,7 @@ $(document).ready(function(){
   });
   
 
+ 
 
  // code to send click data on content to python function to add to database
 //thumbs up - adds 1 to current score in database and refreshes the dom and keeps location
