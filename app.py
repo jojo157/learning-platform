@@ -519,7 +519,7 @@ def user_settings():
                     "access_level": user_details["access_level"],
                     "password": user_details["password"],
                 }
-                mongo.db.tasks.update_one(
+                mongo.db.users.update_one(
                     {"username": session["user"]}, {"$set": updated}
                 )
 
@@ -582,7 +582,7 @@ def admin_edit(user_to_edit):
                     "access_level": request.form.get("access_level").lower(),
                     "password": user_details["password"]
                 }
-                mongo.db.tasks.update_one(
+                mongo.db.users.update_one(
                     {"username": user_to_edit}, {"$set": updated}
                 )
 
