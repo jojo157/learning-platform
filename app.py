@@ -512,6 +512,7 @@ def user_settings():
                 {"username": session["user"]}
             )
             password_entered = request.form.get("password")
+            print(password_entered)
             if password_entered == "Password21!":
                 updated = {
                     "first_name": request.form.get("first_name"),
