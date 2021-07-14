@@ -14,26 +14,37 @@ Image created using [Am I responsive](http://ami.responsivedesign.is/)
 - [UX](#ux)
   - [Strategy](#strategy)
     - [User Needs](#user-needs)
-        - [As a site user](as-a-site-user)
-        - [As the business owner](as-the-business-owner)
+        - [As a site user](#as-a-site-user)
+        - [As a site admin](#as-a-site-admin)
+        - [As the business owner](#as-the-business-owner)
   - [Scope](#scope)
     - [Features](#features)
     - [Future Features](#future-features)
   - [Structure](#structure)
   - [Skeleton](#skeleton)
+    - [Wireframes](#wireframes)
+    - [Database Design](#database-design)
   - [Surface](#surface)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
 - [Testing](#testing)
-    - [Development Issues](#development-issues)
     - [Code Validation](#code-validation)
         - [Html](#html)
+          - [Landing Page](#landing-page)
+          - [Home](#home)
+          - [Content](#content)
         - [CSS](#css)
         - [Javascript](#javascript)
+        - [Python](#python)
     - [Performance Testing](#performance-testing)
     - [User Stories Testing](#user-stories-testing)
+      - [Site user](#site-user)
+      - [Site admin](#site-admin)
+      - [Business owner](#business-owner)
     - [Functionality Testing](#functionality-testing)
     - [Validation Testing](#validation-testing)
+    - [Access Testing](#access-testing) 
+    - [CRUD Testing](#crud-testing)
     - [Compatibility Testing](#compatibility-testing)
         - [Different devices](#different-devices)
         - [Different Browsers](#different-browsers)
@@ -43,10 +54,11 @@ Image created using [Am I responsive](http://ami.responsivedesign.is/)
     - [Version Control](#version-control)
     - [Other Programs](#other-programs)
 - [Deployment](#deployment)
+  - [Run local](#run-local)
+  - [Fork repository](#fork-repository)
 - [Credits](#credits)
     - [Code](#code)
     - [Content](#content)
-    - [Media](#media)
     - [Acknowledgements](#acknowledgements)
 
 
@@ -231,11 +243,11 @@ A warning appeared on all pages that the flash message section lacked a heading.
 
 The only error present was that their was an unmatched trailing div. This was removed and the code rechecked. 
 
-#### Home
+##### Home
 
 On first check, there was 3 errors. The first error was that the image elements were missing an alt attribute. I added this in. The second error is that the article icons all had the same ID. I replaced this with class as each article would have 3 occurances of this value and this violates the definition of a unique ID. The last error is that their was an unclosed div element. I located the element and corrected this. 
 
-#### Content
+##### Content
 
 Two errors were present. The first was that the attribute pattern is not allowed on a textarea element. I removed this attribute and have custom javascript to validate this field when white space is present only. The second error is that there was a stray div present. I checked the file and removed this. 
 
@@ -351,7 +363,7 @@ The users profile page has a section called your notes. A plus icon advises the 
 ![A Users Note Section on profile](static/images/readme_images/userNotes.png)
 
 
-##### Site admin
+#### Site admin
 
 > I want to be able to create site content such as articles that allow the inclusion of resources such as images and links. 
 
@@ -384,7 +396,7 @@ An admin user can click the delete button to remove a user and this will remove 
 All articles show the number of likes and dislikes. The admin team can use this information to create similar content to what has been liked the most. As per image above, the number of likes and dislikes is shown on the article. 
 
 
-##### Business owner
+#### Business owner
 
 > I want to enable my employees to learn on the go.
 
@@ -522,10 +534,6 @@ The above testing was conducted on below operating systems:
 
 There were no differences detected on those operating systems. [Browser Stack](live.browserstack.com) was used to view and check the functionality across a wide range of devices and operating systems.
 
-### Development Issues
-
-- 
-
 ## Technologies Used
 
 ### Frameworks and Libraries
@@ -560,17 +568,75 @@ There were no differences detected on those operating systems. [Browser Stack](l
 
 ## Deployment
 
+The project files were created in gitpod using the CI Gitpod Full Template. 
+
+This project was deployed to Heroku.
+
+First an application needs to be created using the following steps:
+
+- Login to Heroku
+- Click the new button
+- Select create new app.
+- Enter a name for your app.
+- Select the relevant region.
+
+Once the above steps are complete you now need to create a connection to the github repositary for your application.
+
+- Click the deploy tab 
+- Select profile github
+- Add repositary name, click search
+- Click connect to this app
+
+We now need to set our environment variables for Heroku to be able to deploy our app successfully.
+
+- Click the settings tab 
+- Click Reveal Config Vars button and enter the environment variables.
+
+Once Added we can ebale automatic deployement by click on the deploy tab and under automatic deploy, choose the branch and click enable automatic deploys.
+
+### Run local
+
+To run this application locally, one requires an env.py file with the environment variables.
+
+The steps are:
+- Log into GitHub and locate the Finance Mind repository.
+- Click the "Code" button, click HTTPS and copy the link shown.
+- Open terminal and change the working directory to where you want the clone repository to be.
+- In the terminal, type git clone, and then paste the URL you copied earlier.
+- Press enter and your local clone is now created.
+
+You will then need to install the requirements.txt. This can be done using the command
+> pip install -r requirements.txt 
+
+### Fork repository
+
+To copy the repository so that you have access to available files and any new changes will not affect the original repository follow the below steps:
+
+- Log into GitHub and locate the Finance Mind repository.
+- On the top far right click on the fork button.
+- This will add a copy of Finance Mind to your repository.
 
 
 ## Credits
 
 ### Code
 
-
+- I used this [Blog](https://blog.teclado.com/flashing-messages-with-flask/) for help with add different categories for flash messages for style purposes. 
+- I used this [tutorial](https://www.youtube.com/watch?v=QKcVjdLEX_s) for learning purposes of using fetch with flask.
+- I used this [resource](https://stackoverflow.com/questions/34548311/data-from-textarea-with-line-breaks-to-database)to solve the issue where the white space on submitting an article was not being preserved.
+- I used this users [code](https://stackoverflow.com/questions/32237379/python-flask-redirect-to-https-from-http) to convert http to https. 
+- Sean from tutoring for the javascript code that prevents only space characters being validated on a textarea input. 
 
 ### Content
 
-### Media
-
+- The Code Institute content helped greatly with this project.
+- Realpython was a great resource to understand PEP8.
+- Materalise documentation was used extensively. 
 
 ### Acknowledgements
+
+- I would like to thank my mentor Spencer Barriball for his help, encouragement and advice.
+- I would like to thank Code Institute's Tutor support for their help throughout the course.
+- I would like to thank my fellow students for their help on slack.
+- I would like to thank my wife Leticia for her continued support.
+- I would like to thank Stack Overflow and W3Schools for their content when trouble shooting as these resources were essential to work out how to correct my code.
