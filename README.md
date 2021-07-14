@@ -466,11 +466,11 @@ All forms were manually tested and the result of the testing are shown in the be
 
 ### Access Testing
 
-To ensure that only authorised users can access or modify a resource. Testing was needing using a general user account, an admin user account and stayying logged out and trying to hard access a resource through the browser address.
+To ensure that only authorised users can access or modify a resource. Testing was needed using a general user account, an admin user account and staying logged out and trying to hard access a resource through the browser address.
 
-Based on the results, I added additonal checks to ensure that the edit or delete note is only actioned if the session user matches the requested notes author. 
+Based on the results, I added additonal checks to ensure that the edit or delete note is only actioned if the session user matches the requested notes author. I also added a 500 internal error page as this occured during testing for unauthorised access requests. 
 
-![Access Testing Results](static/images/readme_images/formValidation.png)
+![Access Testing Results](static/images/readme_images/accessTesting.png)
 
 
 ### Compatibility Testing
