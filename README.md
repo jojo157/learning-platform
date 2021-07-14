@@ -291,6 +291,7 @@ The final results for each page are shown in the below table.
 
 The user's needs are met as follows:
 
+#### Site user
 
 > I want to be able to understand the site purpose immediately.
 
@@ -348,6 +349,54 @@ On the users profile page there is an icon of a user with settings wheel. If use
 The users profile page has a section called your notes. A plus icon advises the user they can add a new note. Once clicked a form is presented to the user and once submitted a new note is added to the users profile in date order.
 
 ![A Users Note Section on profile](static/images/readme_images/userNotes.png)
+
+
+##### Site admin
+
+> I want to be able to create site content such as articles that allow the inclusion of resources such as images and links. 
+
+An admin user is presented with additonal navigation options. One is to add site content. When clicked this will load a form that allows an admin user to create a new article for the site library. The form allows optional images and external resouce links as further reading.
+
+![Navigation bar for admin user](static/images/readme_images/navAdmin.png)
+
+
+> I want to be able to edit all site library contents, even if another admin created it. 
+
+An admin user is presented with an edit and delete button on all articles on the library page. A general user does not have this functionality. These buttons enable to ability for admin to edit the article on a prefilled form or delete the article with a confirm message. 
+
+![Article as viewed from admin profile](static/images/readme_images/articleAdmin.png)
+
+
+> I want to be able to amend all users' details, to enable a change in user access rights or if user has issue logging in. 
+
+User Management page presents all register users on the app in alphabetical order. An admin user can choose to amend a user by clicking the edit button on that user. This functionality is only accessible to an authorised admin user.
+
+![User Management Page](static/images/readme_images/usermanagement.png)
+
+
+> I want to be able to remove a user from the platform and all their stored data.
+
+An admin user can click the delete button to remove a user and this will remove all their data from the database. A confirm message is presented on all delete functionality. 
+
+
+> I want to be informed of users reaction to content. 
+
+All articles show the number of likes and dislikes. The admin team can use this information to create similar content to what has been liked the most. As per image of "Article as viewed from admin profile" , the number of likes and dislikes is shown on the article. 
+
+
+##### Business owner
+
+> I want to enable my employees to learn on the go.
+
+The application is responsive across devices and a registered user can access the app once they have internet connection. This enables on the go learning.
+
+> I want my employees to stay up to date on relevant topics.
+
+The ability for the admin / content moderators to edit and create new content helps ensure relevant topics are being pushed to employees. Articles are shown in date order of newest material at the top. 
+
+> I want to see feedback from users engaging with content. 
+
+All articles show the number of likes and dislikes. The admin team can use this information to create similar content to what has been liked the most. 
 
 
 ### Functionality Testing
