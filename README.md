@@ -401,59 +401,59 @@ All articles show the number of likes and dislikes. The admin team can use this 
 
 ### Functionality Testing
 
-I tested the functionality of the site on a laptop first. Each page was tested and results are given below:
+I tested the functionality of the site on a laptop and mobile device. Each page was tested and results are given below:
 
-| **Page**     | **Functions checked** | **Working Correctly** |
+| **Page**     | **Functions checked** | **Working Correctly Desktop** | **Mobile** |
 | --- | --- | --- | 
-| **Landing** | | |
-|           | Signup button opens registration form| ✓| 
-|           | Login button opens login form| ✓| 
-|           | navigation links open correct page| ✓| 
-|           | Click on logo redirect to landing page| ✓| 
-|           | Footer links navigate to correct page in new window| ✓| 
-| **Register** | | |
-|           | If enter valid date, user created and logged in| ✓| 
-|           | If enter username already in database, given error that username already exists, try another. | ✓| 
-| **Login** | | |
-|           | If valid details, logged in and redirect to Library page| ✓| 
-|           | If invalid details, not logged in and error message given| ✓|
-| **Contact** | | |
-|           | User not allowed to send empty form| ✓| 
-|           | When submitted, user gets message to advise message sent.| ✓| 
-|           | Admin recieves message that was sent.| ✓| 
-| **Library** | | |
-|           | Search bar filter articles absed on query| ✓| 
-|           | If not matching results, message shown to user| ✓| 
-|           | Reset button cleares search| ✓| 
-|           | Search button submits query for search| ✓| 
-|           | Article like button increases scrore by 1 when clicked | ✓| 
-|           | Article dislike button increases scrore by 1 when clicked | ✓| 
-|           | Article favourite icon adds the clicked article to favs section on profile| ✓| 
-|           | Article expand button expands article to view its contents| ✓| 
-|           | Further Reading button opens resource in new window| ✓| 
-|           | Clicking on the expand icon when expanded closes the section| ✓| 
-|           | Admin - edit button on article opens prefilled content form| ✓| 
-|           | Admin - delete button on article gives confirm message and if press ok, article removed from library| ✓| 
-| **Profile** | | |
-|           | User settings page loads when click the icon, with the correct data shown | ✓| 
-|           | Favourite article link when clicked redirects to correct article | ✓| 
-|           | The plus icon under notes opens the add note form| ✓| 
-|           | The edit button on note, opens prefilled note form| ✓| 
-|           | The delete button gives user delete confirm message and when press ok, note deleted.| ✓| 
-|           | Notes shown in date order| ✓| 
+| **Landing** | | | |
+|           | Signup button opens registration form| ✓| ✓|  
+|           | Login button opens login form| ✓| ✓|  
+|           | navigation links open correct page| ✓| ✓|  
+|           | Click on logo redirect to landing page| ✓| ✓|  
+|           | Footer links navigate to correct page in new window| ✓| ✓|  
+| **Register** | | | |
+|           | If enter valid date, user created and logged in| ✓| ✓| 
+|           | If enter username already in database, given error that username already exists, try another. | ✓| ✓|  
+| **Login** | | | |
+|           | If valid details, logged in and redirect to Library page| ✓| ✓|  
+|           | If invalid details, not logged in and error message given| ✓| ✓| 
+| **Contact** | | | |
+|           | User not allowed to send empty form| ✓| ✓| 
+|           | When submitted, user gets message to advise message sent.| ✓| ✓| 
+|           | Admin recieves message that was sent.| ✓| ✓| 
+| **Library** | | | |
+|           | Search bar filter articles absed on query| ✓| ✓| 
+|           | If not matching results, message shown to user| ✓| ✓| 
+|           | Reset button cleares search| ✓| ✓| 
+|           | Search button submits query for search| ✓| ✓| 
+|           | Article like button increases scrore by 1 when clicked | ✓| ✓| 
+|           | Article dislike button increases scrore by 1 when clicked | ✓| ✓| 
+|           | Article favourite icon adds the clicked article to favs section on profile| ✓| ✓| 
+|           | Article expand button expands article to view its contents| ✓| ✓| 
+|           | Further Reading button opens resource in new window| ✓| ✓| 
+|           | Clicking on the expand icon when expanded closes the section| ✓| ✓| 
+|           | Admin - edit button on article opens prefilled content form| ✓| ✓| 
+|           | Admin - delete button on article gives confirm message and if press ok, article removed from library| ✓| ✓|  
+| **Profile** | | | |
+|           | User settings page loads when click the icon, with the correct data shown | ✓| ✓| 
+|           | Favourite article link when clicked redirects to correct article | ✓| ✓| 
+|           | The plus icon under notes opens the add note form| ✓| ✓| 
+|           | The edit button on note, opens prefilled note form| ✓| ✓| 
+|           | The delete button gives user delete confirm message and when press ok, note deleted.| ✓| ✓| 
+|           | Notes shown in date order| ✓| ✓| 
 | **Logout** | | |
-|           | users data is removed from session when click log out| ✓| 
+|           | users data is removed from session when click log out| ✓| ✓| 
 | **Note** | | |
-|           | Valid form creates a new note on the users profile| ✓| 
+|           | Valid form creates a new note on the users profile| ✓| ✓| 
 | **Edit Note** | | |
-|           | The prefilled note, can be editted and once user pressed update, the note shows the new information| ✓| 
-| **User Management** | | |
-|           | All registered users are shown to an admin user alphabetically based on first name| ✓| 
-|           | Admin - click edit button oens form with the selected users details| ✓| 
-|           | Admin - click delete button - confirm prompt and then user removed from users screen| ✓| 
-| **Add Site Contents** | | |
-|           | Valid form can be submitted| ✓| 
-|           | New article created on the Library page in date order of creation| ✓| 
+|           | The prefilled note, can be editted and once user pressed update, the note shows the new information| ✓| ✓|  
+| **User Management** | | | |
+|           | All registered users are shown to an admin user alphabetically based on first name| ✓| ✓| 
+|           | Admin - click edit button oens form with the selected users details| ✓| ✓| 
+|           | Admin - click delete button - confirm prompt and then user removed from users screen| ✓| ✓| 
+| **Add Site Contents** | | | |
+|           | Valid form can be submitted| ✓| ✓| 
+|           | New article created on the Library page in date order of creation| ✓| ✓| 
 
 
 
