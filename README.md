@@ -292,6 +292,62 @@ The final results for each page are shown in the below table.
 The user's needs are met as follows:
 
 
+> I want to be able to understand the site purpose immediately.
+
+The Landing Page describes the purpose of Finance Mind clearly. Some of the features are highligthed to give a user a flavour of what is possible on the platform. Two call to action buttons show the user they can signup or login. Additonally the navbar, again reinforces the option to register or login.
+
+
+> I want to be able to register and login, so that I can access the learning content.
+
+An easy to understand form is provided to create an account. If an entered value does not match what is required, the user is presented with an error message to help them complete registration. 
+
+![Form validation message](static/images/readme_images/formVal.png)
+
+A registered user can login to their profile by providing the registered username and password. This data is securly saved in the MongoDB database and upon login request the entered values are checked. If they match the database data, the user is logged in, if incorrect the user is given a warning message. If user is still having difficult they can contact the site admin, who will be able to reset their password.
+
+![Unsuccessful login attempt](static/images/readme_images/login.png)
+
+
+> I want to be able to easily naviage the site, ensuring I can acess the desired content with ease. 
+
+Upon login, a user is automatically redirected to the libray page where all the articles are present. All pages contain a navbar with navigation links that will redirect a user to their desired location. If a user tries to naviate to a resource that doesnt exist. A custom 404 page will be displayed with a button to return to home page. 
+
+![General user Navaigation Bar](static/images/readme_images/userNav.png)
+
+
+> I want to be able to search articles to show relevant results only.
+
+A search bar is present on the Library page that allows a user to enter a query that will filter the articles to show any matching results. If no result is found, the user is advised. Additionally, a user is given a reset button to clear the search bar, returning the page to show all.
+
+![Search Bar with no results for query](static/images/readme_images/search.png)
+
+
+> I want to be able to favourite articles for quick access in the future.
+
+Each article has a favoruite icon (the widely associated bookmark icon). When a user clicks this, they get a message to say that the article was favoured and a quick link added to their profile.
+
+![General users article actions](static/images/readme_images/articleActions.png)
+
+![Users Profile favourites section](static/images/readme_images/favSection.png)
+
+
+> I want to be able to contact the site admin if needed.
+
+The site admin can be contacted by filling out a form on the contact page. Upon submission the user is advised that the message was sent and admin will contact them shortly. 
+
+
+> I want to be able to update my own user details, such as password without needing to contact the site admin.
+
+On the users profile page there is an icon of a user with settings wheel. If user hovers over this it informs them to edit their user profile. When clicked a form is prefilled with the user details and they can edit the available fields and click update. The users details in the database will be updated accordingly. The user gets a message once updated. 
+
+![User Settings update Icon](static/images/readme_images/userSettings.png)
+
+
+> I want to be able to create short personal notes, that only I have access to.
+
+The users profile page has a section called your notes. A plus icon advises the user they can add a new note. Once clicked a form is presented to the user and once submitted a new note is added to the users profile in date order.
+
+![A Users Note Section on profile](static/images/readme_images/userNotes.png)
 
 
 ### Functionality Testing
