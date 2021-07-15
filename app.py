@@ -282,6 +282,7 @@ def search_fav(query):
         return render_template("index.html")
 
     else:
+        query = f'"{query}"'
         content = mongo.db.content.find({"$text": {"$search": query}})
 
     return render_template("home.html", site_contents=content, query=query)
