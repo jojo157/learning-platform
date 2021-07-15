@@ -551,7 +551,13 @@ There were no differences detected on those operating systems. [Browser Stack](l
 
 ### Version Control
 
-- [Git](https://git-scm.com/) was used as a version control system.
+- [Git](https://git-scm.com/) was used as a version control system. This following commands were used:
+  - git add filename
+    - This command adds the file to the staging area.
+  - git commit -m "commit message"
+    - This command commits our changes to our local repository.
+  - git push
+    - This command pushes our changes to the remote repository.
 - [GitHub](https://github.com/) was used for the repository hosting.
 - [Gitpod](https://www.gitpod.io/) was used as the developer platform.
 
