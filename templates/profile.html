@@ -19,7 +19,8 @@
     {% for favourite in favourites %}
     <div class="s12 m12 l12 fav-container">
       <div class="btn-small deep-purple lighten-4 fav-button">
-        <a rel="noopener" href="{{ url_for('search_fav', query = favourite.content_title) }}">{{ favourite.content_title }}</a>
+        <a rel="noopener"
+          href="{{ url_for('search_fav', query = favourite.content_title) }}">{{ favourite.content_title }}</a>
         <a rel="noopener" href="{{ url_for('delete_fav', fav_id = favourite._id) }}" class="confirm"
           title="Are you sure you wish to delete this favourite?"><i class="fas fa-times right"></i></a>
       </div>
@@ -37,8 +38,8 @@
           <h5 class="center notes-title">Your Notes</h5>
         </div>
         <div class="col s2">
-          <a rel="noopener" href="{{ url_for('notes') }}" class="btn-small light-blue accent-3 tooltipped" data-position="right"
-            data-tooltip="Add a new note"><i class="fas fa-plus-circle"></i></a>
+          <a rel="noopener" href="{{ url_for('notes') }}" class="btn-small light-blue accent-3 tooltipped"
+            data-position="right" data-tooltip="Add a new note"><i class="fas fa-plus-circle"></i></a>
         </div>
 
       </div>
@@ -53,8 +54,10 @@
           </div>
           <div class="card-action">
             <div class="col12 center">
-              <a rel="noopener" class="deep-purple-text darken-4" href="{{ url_for('editnote', note_id = note._id) }}">Edit</a>
-              <a rel="noopener" class="confirm deep-purple-text darken-4" title="Are you sure you wish to delete this note"
+              <a rel="noopener" class="deep-purple-text darken-4"
+                href="{{ url_for('editnote', note_id = note._id) }}">Edit</a>
+              <a rel="noopener" class="confirm deep-purple-text darken-4"
+                title="Are you sure you wish to delete this note"
                 href="{{ url_for('delete_note', note_id = note._id) }}">Delete</a> <br><br>
             </div>
             <div class="center">

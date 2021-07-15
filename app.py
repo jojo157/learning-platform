@@ -322,7 +322,7 @@ def editnote(note_id):
     Allows user to edit the sticky note they selected.
     Once updated a success message is given on users profile.
     If not logged in, renders landing page.
-    Added condition to ensure a user can only edit their notes. 
+    Added condition to ensure a user can only edit their notes.
     """
     if session.get("user") is None:
         return render_template("index.html")
@@ -479,7 +479,6 @@ def fav_content():
             {"content_id": ObjectId(content_id), "username": session["user"]}
         )
 
-
         if not existing_fav:
             # add favourite to collection as hasn't been added before
             content_title = mongo.db.content.find_one(
@@ -506,7 +505,7 @@ def delete_fav(fav_id):
 
     else:
         if request.method == "GET":
-            mongo.db.favourites.remove({"_id":  ObjectId(fav_id) })
+            mongo.db.favourites.remove({"_id": ObjectId(fav_id)})
             flash("Favourite has been Deleted", "success")
         return redirect(url_for("profile"))
 
@@ -603,7 +602,7 @@ def admin_edit(user_to_edit):
                     "last_name": request.form.get("last_name"),
                     "email": request.form.get("email"),
                     "access_level": request.form.get("access_level").lower(),
-                    "password": user_details["password"]
+                    "password": user_details["password"],
                 }
                 mongo.db.users.update_one(
                     {"username": user_to_edit}, {"$set": updated}

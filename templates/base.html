@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
     <link rel="shortcut icon" href="{{ url_for('static',filename='images/favicon/favicon.ico) }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    
-    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
     {% block styles %}
+    
     {% endblock %}
     <title>Finance Mind</title>
 </head>
@@ -27,7 +27,8 @@
                 <a href="{{ url_for('index') }}" class="brand-logo" rel="noopener">
                     <h3 class="header-title">Finance Mind</h3>
                 </a>
-                <a href="#" data-target="mobile-demo" rel="noopener" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <a href="#" data-target="mobile-demo" rel="noopener" class="sidenav-trigger right"><i
+                        class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
                     <li><a rel="noopener" href="{{ url_for('home') }}">Library</a></li>

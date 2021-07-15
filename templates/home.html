@@ -42,7 +42,7 @@
         <div class="media-container content-image-container">
           <img class="materialboxed" src="{{ single_content.picture }}" alt="article image">
         </div>
-        
+
         {%  if level == "admin" %}
         <div class="center content-admin-buttons">
           <a href="{{ url_for('editcontent', content_id = single_content._id) }}" rel="noopener"
@@ -81,7 +81,8 @@
 
           <span class="article-body">{{ single_content.content}}</span>
           <br> <br>
-          <span><a class="btn-small green-button further-reading-button" href="{{ single_content.resource}}" target="_blank" rel="noopener">Further
+          <span><a class="btn-small green-button further-reading-button" href="{{ single_content.resource}}"
+              target="_blank" rel="noopener">Further
               Reading</a>
           </span>
           <hr>
@@ -110,4 +111,4 @@
 
 
 </div>
-  {% endblock %}
+{% endblock %}

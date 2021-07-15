@@ -15,10 +15,11 @@ p {
 
 /* General styles */
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
+
 body {
     display: flex;
     min-height: 100vh;
@@ -81,7 +82,7 @@ a {
 
 nav {
     min-height: 20vh;
-    width:100%;
+    width: 100%;
 }
 
 
@@ -116,11 +117,11 @@ img {
 
 .offer-div {
     margin-top: 20px;
-    margin-left:5px;
+    margin-left: 5px;
     margin-right: 5px;
 }
 
-.home-margin{
+.home-margin {
     margin-bottom: 20px;
 }
 
@@ -149,8 +150,8 @@ i.fas.fa-bookmark {
     text-transform: capitalize;
 }
 
-.index-CTA{
-    margin-top:20px;
+.index-CTA {
+    margin-top: 20px;
 }
 
 
@@ -158,7 +159,7 @@ i.fas.fa-bookmark {
 
 /* Home Page */
 
-.article-container{
+.article-container {
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -200,7 +201,7 @@ i.fas.fa-expand-alt {
     margin-bottom: 10px;
 }
 
-i.fas.fa-search{
+i.fas.fa-search {
     margin-left: 10px;
 }
 
@@ -257,11 +258,11 @@ ul.collapsible {
     max-width: 100%;
 }
 
-.article-heading-section{
+.article-heading-section {
     margin-bottom: 20px;
 }
 
-.further-reading-button{
+.further-reading-button {
     margin-bottom: 20px;
 }
 
@@ -294,7 +295,7 @@ textarea#body.materialize-textarea {
 
 /* Profile Page */
 
-.note-container{
+.note-container {
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -366,7 +367,7 @@ i.fas.fa-user-cog {
     margin-bottom: 30px;
 }
 
-.line{
+.line {
     margin-bottom: 20px;
 }
 
@@ -414,9 +415,9 @@ i.far.fa-image {
 
     nav {
         min-height: 15vh;
-        width:100%;
+        width: 100%;
     }
-    
+
 
 }
 
@@ -448,7 +449,7 @@ i.far.fa-image {
         margin-top: 30px;
     }
 
-    
+
 }
 
 
@@ -475,8 +476,8 @@ i.far.fa-image {
         height: 400px;
         margin-bottom: 20px;
     }
-    
-    
+
+
     .content-image-container img {
         max-height: 400px;
     }
