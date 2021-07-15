@@ -641,6 +641,11 @@ To copy the repository so that you have access to available files and any new ch
 - The Code Institute content helped greatly with this project.
 - Real python was a great resource to understand PEP8.
 - Materalize documentation was used extensively. 
+- Content for the articles was obtained from the below sources
+  - Risk versus return content credit to [Finra](https://www.finra.org/investors/learn-to-invest/key-investing-concepts/reality-investment-risk) .
+  - What is a pension? content credit to [Irish Life](https://www.irishlifecorporatebusiness.ie/what-is-a-pension) .
+  - Pension Tax Relief content credit to [Revenue](https://www.revenue.ie/en/jobs-and-pensions/pensions/tax-relief-for-pension-contributions.aspx) .
+  - What is investing content credit to [Investopedia](https://www.investopedia.com/articles/basics/06/invest1000.asp).
 
 ### Acknowledgements
 
