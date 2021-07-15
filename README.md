@@ -632,7 +632,7 @@ To copy the repository so that you have access to available files and any new ch
 
 - I used this [Blog](https://blog.teclado.com/flashing-messages-with-flask/) for help with add different categories for flash messages for style purposes. 
 - I used this [tutorial](https://www.youtube.com/watch?v=QKcVjdLEX_s) for learning purposes of using fetch with flask.
-- I used this [resource](https://stackoverflow.com/questions/34548311/data-from-textarea-with-line-breaks-to-database)to solve the issue where the white space on submitting an article was not being preserved.
+- I used this [resource](https://stackoverflow.com/questions/34548311/data-from-textarea-with-line-breaks-to-database) to solve the issue where the white space on submitting an article was not being preserved.
 - I used this users [code](https://stackoverflow.com/questions/32237379/python-flask-redirect-to-https-from-http) to convert http to https. 
 - Sean from tutoring for the JavaScript code that prevents only space characters being validated on a text area input. 
 
