@@ -34,7 +34,7 @@ Image created using [Am I responsive](http://ami.responsivedesign.is/)
           - [Home](#home)
           - [Content](#content)
         - [CSS](#css)
-        - [Javascript](#javascript)
+        - [JavaScript](#javascript)
         - [Python](#python)
     - [Performance Testing](#performance-testing)
     - [User Stories Testing](#user-stories-testing)
@@ -67,14 +67,14 @@ Image created using [Am I responsive](http://ami.responsivedesign.is/)
 The 5 planes of User Experience:
 
 ### Strategy
-Finance Mind was created with the purpose of providing an innovative solution to allow a company's trainning team provide relevant and informative finance content to their employees in a secure platform, to assist with self learning. 
+Finance Mind was created with the purpose of providing an innovative solution to allow a company's training team provide relevant and informative finance content to their employees in a secure platform, to assist with self-learning. 
 
 #### User Needs
 
 ##### As a site user
 - I want to be able to understand the site purpose immediately.
 - I want to be able to register and login, so that I can access the learning content.
-- I want to be able to easily naviage the site, ensuring I can acess the desired content with ease. 
+- I want to be able to easily navigate the site, ensuring I can access the desired content with ease. 
 - I want to be able to search articles to show relevant results only.
 - I want to be able to favourite articles for quick access in the future.
 - I want to be able to contact the site admin if needed.
@@ -87,7 +87,7 @@ Finance Mind was created with the purpose of providing an innovative solution to
 - I want to be able to edit all site library contents, even if another admin created it. 
 - I want to be able to amend all users' details, to enable a change in user access rights or if user has issue logging in. 
 - I want to be able to remove a user from the platform and all their stored data.
-- I want to be informaed of users reaction to content. 
+- I want to be informed of users reaction to content. 
 
 
 ##### As the business owner
@@ -107,15 +107,15 @@ The following features are in scope for this project.
 - Navigation Menu.
   - A navigation menu will be presented on all pages on application. 
 - Responsive Design.
-  - Application is responsive on all device size and browsers.
+  - Application will be responsive on all device size and browsers.
 - CRUD Functionality.
-  - Application enables the functionality to Create, Read, Update and Delete data.
+  - Application will enable the functionality to Create, Read, Update and Delete data.
 - Database to store app data.
   - MongoDB database will be used to store all application data. 
 - Contact Form.
   - Contact form to enable user to send message to admin. 
 - Library with searchable content.
-  - Search bar that allows user query to filter the articles to shown those with a match only. 
+  - Search bar that will allow user query to filter the articles to shown those with a match only. 
 - Favourite article.
   - Allow user to create a quick link on their profile that redirects to the article that was favoured.
 - Article like and dislike feedback.
@@ -127,22 +127,22 @@ The following features are in scope for this project.
 - Edit sticky note on profile page.
   - Edit selected note where data is prefilled on form.
 - Admin content creation. 
-  - Form to create site contents that only admin has access to. 
+  - Form to create site contents that only admin will has access to. 
 - Admin content edit. 
-  - Edit selected article where data is prefilled on form.
+  - Prefilled form that will allow an admin user edit an existing article.
 - Admin user management 
-  - Page that shows all registered users and allows admin user to edit or delete users.
+  - Page that will show all registered users and allow an admin user to edit or delete users.
 - User settings page.
-  - Page that user can amend their own profile settings. 
+  - Page that will allow a user to amend their own profile settings. 
 - 404 Error Page
-  - A custom 404 error page if the user navigate to a resourse that doesnt exist with a button to return home. 
+  - A custom 404 error page if the user navigates to a resource that doesn't exist with a button to return home. 
 
 
 #### Future Features 
 
 I would like to include the following future features.
 - Messaging functionality for admin to users.
-  - The feature when an admin user could choose a user to send a private message to.
+  - A feature where an admin user could choose another user to send a private message to.
 - Push notifications about new content been added.
   - The option to send a notification to all site users when new articles added to encourage their continued learning. 
 
@@ -151,7 +151,7 @@ I would like to include the following future features.
 During the planning stage, it was decided that the following pages would be needed to ensure the user needs are meet:
 
 - Landing Page with elements:
-  - To tell vistior what the application is for.
+  - To tell visitor what the application is for.
   - To allow user to register.
   - To allow user to login.
   - To allow user to contact site admin.
@@ -159,15 +159,15 @@ During the planning stage, it was decided that the following pages would be need
 - Content Library with elements:
   - To allow user to search library.
   - To allow user to like and dislike article.
-  - to favourite article.
+  - To allow user to favourite article.
   - To read content and interact with it as needed.
-  - For an admin user to allow them to edit or delete content. 
+  - To allow an admin user to edit or delete content. 
 
 - Profile Page with elements:
   - Welcome message.
   - To create a new sticky note.
   - To edit an existing note.
-  - To view articles favored and ability to click and be redirected to article. 
+  - To view articles favoured and ability to click and be redirected to article. 
   - Ability to remove favourites.
   - To be able to edit user profile settings.
 
@@ -197,9 +197,9 @@ Link to [Wireframe](static/wireframes/wireframes.pdf)
 
 #### Database Design
 
-This application uses Mongo DB to store and retrieve the user data. Mongo DB is a non-relational databse. This application consists of 4 collections as shown in the schema diagram below. 
+This application uses Mongo DB to store and retrieve the user data. Mongo DB is a non-relational database. This application consists of 4 collections as shown in the schema diagram below. 
 
-The users collection is populated when a user succesfully registers and is used to verify a user upon login.The content collect stores the data for articles that appear on the library page. Only an admin user can add to this collection. The posts collection stores the data for a users stick notes that are displayed on their profile. The favourites collection takes record of a users favoured articles. 
+The users collection is populated when a user successfully registers and is used to verify a user upon login.The content collect stores the data for articles that appear on the library page. Only an admin user can add to this collection. The posts collection stores the data for a user's sticky notes that are displayed on their profile. The favourites collection takes record of a user's favoured articles. 
 
 ![Finance Mind Schema](static/images/readme_images/schema.png)
 
@@ -209,11 +209,13 @@ The Finance Mind application was designed to reinforce learning and create a sen
 
 #### Colour Scheme
 
-Shades of blue were used to create the impression of trust and loyalty. Turquoise was used to represent open communication, creativity and calming nature. The combination of shades between blue and green are widely used in financial websites. A ligther shade creates the association while also looking modern. 
+Shades of blue were used to create the impression of trust and loyalty. Turquoise was used to represent open communication, creativity and calming nature. The combination of shades between blue and green are widely used in financial websites. A lighter shade creates the financial association while also looking modern. 
 
 The colours used are shown below:
+
 ![Color Schema](static/images/readme_images/colors.png)
-The navbar is a gradient of these colors to give a fresh appearance by mergining the colors. 
+
+The navbar is a gradient of these colours to give a fresh appearance by merging the colours. 
 
 #### Typography
 
@@ -237,21 +239,21 @@ The pages validated are shown below.
 
 ![Html pages validated](static/images/readme_images/htmlvalidation.png)
 
-A warning appeared on all pages that the flash message section lacked a heading. This warning can be ignored as the section contains a heading element where the elements html is injected with jinga templating language when needed. Any pages where an error was found are detailed below.
+A warning appeared on all pages that the flash message section lacked a heading. This warning can be ignored as the section contains a heading element where the elements html is injected with Jinga templating language when needed. Any pages where an error was found are detailed below.
 
 ##### Landing Page 
 
-The only error present was that their was an unmatched trailing div. This was removed and the code rechecked. 
+The only error present was that there was an unmatched trailing div. This was removed and the code rechecked. 
 
 ##### Home
 
-On first check, there was 3 errors. The first error was that the image elements were missing an alt attribute. I added this in. The second error is that the article icons all had the same ID. I replaced this with class as each article would have 3 occurances of this value and this violates the definition of a unique ID. The last error is that their was an unclosed div element. I located the element and corrected this. 
+On first check, there was 3 errors. The first error was that the image elements were missing an alt attribute. I added this in. The second error is that the article icons all had the same ID. I replaced this with a custom data attribute as each article would have 3 occurrences of this value and this violates the definition of a unique ID. The last error is that there was an unclosed div element. I located the element and corrected this. 
 
 ##### Content
 
-Two errors were present. The first was that the attribute pattern is not allowed on a textarea element. I removed this attribute and have custom javascript to validate this field when white space is present only. The second error is that there was a stray div present. I checked the file and removed this. 
+Two errors were present. The first was that the attribute pattern is not allowed on a text area element. I removed this attribute and have custom JavaScript to validate this field when white space is present only. The second error is that there was a stray div present. I checked the file and removed this. 
 
-All pages now sucessfully pass through the validator as shown in the image below.
+All pages now successfully pass through the validator as shown in the image below.
 
 ![Html pass](static/images/readme_images/htmlpass.png)
 
@@ -263,9 +265,9 @@ No errors were present.
 
 ![CSS pass](static/images/readme_images/validcss.png)
 
-#### Javascript
+#### JavaScript
 
-Javascript files were validated with [JSHint](https://jshint.com/)
+JavaScript files were validated with [JSHint](https://jshint.com/)
 
 Missing semi-colons were added and the scripts retested. No errors or warnings present.
 
@@ -277,7 +279,7 @@ Python files were validated with [PEP8 online](http://pep8online.com)
 
 ![First validation results](static/images/readme_images/pep8fail.png)
 
-The error present was that the app.py file had several occurances where a line was greater than 79 characters. I reformatted the app.py file to ensure no line was more than 79 characters and retested.
+The error present was that the app.py file had several occurrences where a line was greater than 79 characters. I reformatted the app.py file to ensure no line was more than 79 characters and retested.
 
 The file is now PEP8 compliant.
 
@@ -286,11 +288,12 @@ The file is now PEP8 compliant.
 ### Performance Testing
 
 Performance was tested using Lighthouse, one of Google's web developer tools.
-To improve the SEO of the app, I added a meta description. Additonally I added the attribute rel="noopener" to all 'a' elements to increase the app security.
+To improve the SEO of the app, I added a meta description. Additionally I added the attribute rel="noopener" to all 'a' elements to increase the app security.
 
-For the Library Page (home), the best practices score was 87% due to images been displayed with the incorrect aspect ration. I changed the css to preserve the aspect ratio of the images. This resulted in the best practives score increasing to 100% and improved the layout for user experience. 
+For the Library Page (home), the best practices score was 87% due to images been displayed with the incorrect aspect ratio. I changed the CSS to preserve the aspect ratio of the images. This resulted in the best practices score increasing to 100% and improved the layout for user experience. 
 
-example output from ligthhouse audit for page home
+example output from Ligthhouse audit for page home
+
 ![Home Page Audit Results](static/images/readme_images/homeAudit.png)
 
 The final results for each page are shown in the below table.
@@ -307,7 +310,7 @@ The user's needs are met as follows:
 
 > I want to be able to understand the site purpose immediately.
 
-The Landing Page describes the purpose of Finance Mind clearly. Some of the features are highligthed to give a user a flavour of what is possible on the platform. Two call to action buttons show the user they can signup or login. Additonally the navbar, again reinforces the option to register or login.
+The Landing Page describes the purpose of Finance Mind clearly. Some of the features are highlighted to give a user a flavour of what is possible on the platform. Two call to action buttons show the user they can sign up or login. Additionally the navbar, again reinforces the option to register or login.
 
 
 > I want to be able to register and login, so that I can access the learning content.
@@ -316,14 +319,14 @@ An easy to understand form is provided to create an account. If an entered value
 
 ![Form validation message](static/images/readme_images/formVal.png)
 
-A registered user can login to their profile by providing the registered username and password. This data is securly saved in the MongoDB database and upon login request the entered values are checked. If they match the database data, the user is logged in, if incorrect the user is given a warning message. If user is still having difficult they can contact the site admin, who will be able to reset their password.
+A registered user can login to their profile by providing the registered username and password. This data is securely saved in the MongoDB database and upon a login request, the entered values are checked. If they match the database data, the user is logged in, if incorrect the user is given a warning message. If user is still having difficult they can contact the site admin, who will be able to reset their password.
 
 ![Unsuccessful login attempt](static/images/readme_images/login.png)
 
 
-> I want to be able to easily naviage the site, ensuring I can acess the desired content with ease. 
+> I want to be able to easily navigate the site, ensuring I can access the desired content with ease. 
 
-Upon login, a user is automatically redirected to the libray page where all the articles are present. All pages contain a navbar with navigation links that will redirect a user to their desired location. If a user tries to naviate to a resource that doesnt exist. A custom 404 page will be displayed with a button to return to home page. 
+Upon login, a user is automatically redirected to the library page where all the articles are present. All pages contain a navbar with navigation links that will redirect a user to their desired location. If a user tries to navigate to a resource that doesn't exist. A custom 404 page will be displayed with a button to return to home page. 
 
 ![General user Navaigation Bar](static/images/readme_images/userNav.png)
 
@@ -337,7 +340,7 @@ A search bar is present on the Library page that allows a user to enter a query 
 
 > I want to be able to favourite articles for quick access in the future.
 
-Each article has a favoruite icon (the widely associated bookmark icon). When a user clicks this, they get a message to say that the article was favoured and a quick link added to their profile.
+Each article has a favourite icon (the widely associated bookmark icon). When a user clicks this, they get a message to say that the article was favoured and a quick link added to their profile. When the fav button on the users profile is clicked, it loads the favoured article only. 
 
 ![General users article actions](static/images/readme_images/articleActions.png)
 
@@ -346,12 +349,12 @@ Each article has a favoruite icon (the widely associated bookmark icon). When a 
 
 > I want to be able to contact the site admin if needed.
 
-The site admin can be contacted by filling out a form on the contact page. Upon submission the user is advised that the message was sent and admin will contact them shortly. 
+The site admin can be contacted by filling out a form on the contact page. Upon submission the user is advised that the message was sent and admin will contact them shortly. The admin will recieve a message contining the users form details (Name, email and message) and an additonal value of username. If user is logged it, the value is equal to their username and if not, the value is equal to guest.
 
 
 > I want to be able to update my own user details, such as password without needing to contact the site admin.
 
-On the users profile page there is an icon of a user with settings wheel. If user hovers over this it informs them to edit their user profile. When clicked a form is prefilled with the user details and they can edit the available fields and click update. The users details in the database will be updated accordingly. The user gets a message once updated. 
+On the users profile page there is an icon of a user with cog wheel. If user hovers over this it informs them to edit their user profile. When clicked, a form is prefilled with the user details and they can edit the available fields and click update. The users details in the database will be updated accordingly. The user gets a success message once updated. 
 
 ![User Settings update Icon](static/images/readme_images/userSettings.png)
 
@@ -367,21 +370,21 @@ The users profile page has a section called your notes. A plus icon advises the 
 
 > I want to be able to create site content such as articles that allow the inclusion of resources such as images and links. 
 
-An admin user is presented with additonal navigation options. One is to add site content. When clicked this will load a form that allows an admin user to create a new article for the site library. The form allows optional images and external resouce links as further reading.
+An admin user is presented with additional navigation options. One is to add site content. When clicked this will load a form that allows an admin user to create a new article for the site library. The form allows optional images and external resource links as further reading.
 
 ![Navigation bar for admin user](static/images/readme_images/navAdmin.png)
 
 
 > I want to be able to edit all site library contents, even if another admin created it. 
 
-An admin user is presented with an edit and delete button on all articles on the library page. A general user does not have this functionality. These buttons enable to ability for admin to edit the article on a prefilled form or delete the article with a confirm message. 
+An admin user is presented with an edit and delete button on all articles on the library page. A general user does not have this functionality. These buttons enable the ability for admin to edit the article on a prefilled form or delete the article with a confirm message. 
 
 ![Article as viewed from admin profile](static/images/readme_images/articleAdmin.png)
 
 
 > I want to be able to amend all users' details, to enable a change in user access rights or if user has issue logging in. 
 
-User Management page presents all register users on the app in alphabetical order. An admin user can choose to amend a user by clicking the edit button on that user. This functionality is only accessible to an authorised admin user.
+The User Management page shows all registered users on the app in alphabetical order. An admin user can choose to amend a user by clicking the edit button on that user. A prefilled form allows the details to be updated with a success message on completion. This functionality is only accessible to an authorised admin user.
 
 ![User Management Page](static/images/readme_images/usermanagement.png)
 
@@ -393,14 +396,14 @@ An admin user can click the delete button to remove a user and this will remove 
 
 > I want to be informed of users reaction to content. 
 
-All articles show the number of likes and dislikes. The admin team can use this information to create similar content to what has been liked the most. As per image above, the number of likes and dislikes is shown on the article. 
+All articles show the number of likes and dislikes. The admin team can use this information to create similar content to what has been liked the most. As per the image of an article above, the number of likes and dislikes is shown on the article. 
 
 
 #### Business owner
 
 > I want to enable my employees to learn on the go.
 
-The application is responsive across devices and a registered user can access the app once they have internet connection. This enables on the go learning.
+The application is responsive across all devices and a registered user can access the app once they have internet connection. This enables on the go learning.
 
 > I want my employees to stay up to date on relevant topics.
 
@@ -420,27 +423,27 @@ I tested the functionality of the site on a laptop and mobile device. Each page 
 | **Landing** | | | |
 |           | Signup button opens registration form| ✓| ✓|  
 |           | Login button opens login form| ✓| ✓|  
-|           | navigation links open correct page| ✓| ✓|  
+|           | Navigation links open correct page| ✓| ✓|  
 |           | Click on logo redirect to landing page| ✓| ✓|  
 |           | Footer links navigate to correct page in new window| ✓| ✓|  
 | **Register** | | | |
-|           | If enter valid date, user created and logged in| ✓| ✓| 
-|           | If enter username already in database, given error that username already exists, try another. | ✓| ✓|  
+|           | If enter valid data, user created and logged in| ✓| ✓| 
+|           | If enter username already in database, given error that username already exists. | ✓| ✓|  
 | **Login** | | | |
 |           | If valid details, logged in and redirect to Library page| ✓| ✓|  
 |           | If invalid details, not logged in and error message given| ✓| ✓| 
 | **Contact** | | | |
 |           | User not allowed to send empty form| ✓| ✓| 
 |           | When submitted, user gets message to advise message sent.| ✓| ✓| 
-|           | Admin recieves message that was sent.| ✓| ✓| 
+|           | Admin receives message that was sent.| ✓| ✓| 
 | **Library** | | | |
-|           | Search bar filter articles absed on query| ✓| ✓| 
-|           | If not matching results, message shown to user| ✓| ✓| 
-|           | Reset button cleares search| ✓| ✓| 
+|           | Search bar filters articles based on query| ✓| ✓| 
+|           | If no matching results, message shown to user| ✓| ✓| 
+|           | Reset button clears search| ✓| ✓| 
 |           | Search button submits query for search| ✓| ✓| 
-|           | Article like button increases scrore by 1 when clicked | ✓| ✓| 
-|           | Article dislike button increases scrore by 1 when clicked | ✓| ✓| 
-|           | Article favourite icon adds the clicked article to favs section on profile| ✓| ✓| 
+|           | Article like button increases score by 1 when clicked | ✓| ✓| 
+|           | Article dislike button increases score by 1 when clicked | ✓| ✓| 
+|           | Article favourite icon adds the clicked article to favourite section on profile| ✓| ✓| 
 |           | Article expand button expands article to view its contents| ✓| ✓| 
 |           | Further Reading button opens resource in new window| ✓| ✓| 
 |           | Clicking on the expand icon when expanded closes the section| ✓| ✓| 
@@ -458,10 +461,10 @@ I tested the functionality of the site on a laptop and mobile device. Each page 
 | **Note** | | |
 |           | Valid form creates a new note on the users profile| ✓| ✓| 
 | **Edit Note** | | |
-|           | The prefilled note, can be editted and once user pressed update, the note shows the new information| ✓| ✓|  
+|           | The prefilled note, can be edited and once user pressed update, the note shows the new information| ✓| ✓|  
 | **User Management** | | | |
 |           | All registered users are shown to an admin user alphabetically based on first name| ✓| ✓| 
-|           | Admin - click edit button oens form with the selected users details| ✓| ✓| 
+|           | Admin - click edit button opens form with the selected users details| ✓| ✓| 
 |           | Admin - click delete button - confirm prompt and then user removed from users screen| ✓| ✓| 
 | **Add Site Contents** | | | |
 |           | Valid form can be submitted| ✓| ✓| 
@@ -480,7 +483,9 @@ All forms were manually tested and the result of the testing are shown in the be
 
 To ensure that only authorised users can access or modify a resource. Testing was needed using a general user account, an admin user account and staying logged out and trying to hard access a resource through the browser address.
 
-Based on the results, I added additonal checks to ensure that the edit or delete note is only actioned if the session user matches the requested notes author. I also added a 500 internal error page as this occured during testing for unauthorised access requests. 
+Based on the results, I added additional checks to ensure that the edit or delete note is only actioned if the session user matches the requested notes author. I also added a 500 internal error page as this occurred during testing for unauthorised access requests. 
+
+The results are shown below.
 
 ![Access Testing Results](static/images/readme_images/accessTesting.png)
 
@@ -488,11 +493,11 @@ Based on the results, I added additonal checks to ensure that the edit or delete
 
 The Create, Read, Update and Delete actions on the Mongo DB database were tested by logging in as an admin user and checking the result of each CRUD execution in the relevant collection on the database to verify the data has been modified as necessary.
 
+This testing identified a bug in the favourite article function. Previously, the condition checked if an article  had be favoured already in the favourites collection but this did not take the username into consideration, meaning that each article was only allow to be favoured once and the next users request was not recorded. I updated the code to check the favourite based on username and article id and this resolved the bug. Now each user can favourite each article once. 
+
 A summary of the testing is shown below.
 
 ![CRUD Testing Results](static/images/readme_images/crudTesting.png)
-
-
 
 ### Compatibility Testing
 
@@ -538,10 +543,10 @@ There were no differences detected on those operating systems. [Browser Stack](l
 
 ### Frameworks and Libraries
 
-- [Google Fonts](https://fonts.google.com/) was used to import the font selectedfor the website.
-- [jQuery](https://jquery.com/) was used as a Javascript library.
+- [Google Fonts](https://fonts.google.com/) was used to import the font selected for the website.
+- [jQuery](https://jquery.com/) was used as a JavaScript library.
 - [jQuery Aplus](http://japlus.simplit.it/) is a plugin that was used for confirmation messages.
-- [Materialise](https://materializecss.com/) was used as a framework for layout and responsiveness to create this application.
+- [Materialize](https://materializecss.com/) was used as a framework for layout and responsiveness to create this application.
 
 
 ### Version Control
@@ -558,41 +563,45 @@ There were no differences detected on those operating systems. [Browser Stack](l
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate CSS code.
 - [W3C Html Checker](https://validator.w3.org/) was used to validate HTML code.
 - [Pic Resize](https://picresize.com/) was used to resize images available on the website, improving its performance.
-- [Ligthhouse](https://github.com/GoogleChrome/lighthouse) was used to audit my website. The results of the audit were considered when making improvements to the website's performance etc.
+- [Ligthhouse](https://github.com/GoogleChrome/lighthouse) was used to audit my application. The results of the audit were considered when making improvements to the website's performance etc.
 - [Am I responsive](http://ami.responsivedesign.is/) was used to view the website across several devices at once.
 - [W3C Spell checker](https://www.w3.org/2002/01/spellchecker) was used to check the spelling of the website.
-- [Can I use](https://caniuse.com/) was used to check browser supports range and potential compability issues and known bugs. 
+- [Can I use](https://caniuse.com/) was used to check browser supports range and potential compatibility issues and known bugs. 
 - [Browser Stack](live.browserstack.com) was used to test the website on different operating systems and browsers.
 - [Favicon from Pics](http://favicon.htmlkit.com/favicon/) was used to create a favicon to be used in the address bar.
 
 
 ## Deployment
 
-The project files were created in gitpod using the CI Gitpod Full Template. 
+The project files were created in Gitpod using the Code Institute Full Template. 
 
-This project was deployed to Heroku.
+This project was deployed to Heroku. The steps are listed below.
 
 First an application needs to be created using the following steps:
 
-- Login to Heroku
-- Click the new button
+- Login to Heroku.
+- Click the new button.
 - Select create new app.
 - Enter a name for your app.
 - Select the relevant region.
 
-Once the above steps are complete you now need to create a connection to the github repositary for your application.
+Once the above steps are complete you now need to create a connection to the Github repository for your application.
 
-- Click the deploy tab 
-- Select profile github
-- Add repositary name, click search
-- Click connect to this app
+- Click the deploy tab.
+- Select profile Github.
+- Add repository name, click search.
+- Click connect to this app.
 
 We now need to set our environment variables for Heroku to be able to deploy our app successfully.
 
-- Click the settings tab 
-- Click Reveal Config Vars button and enter the environment variables.
+- Click the settings tab.
+- Click Reveal Config Vars button.
+- Enter the environment variables.
 
-Once Added we can ebale automatic deployement by click on the deploy tab and under automatic deploy, choose the branch and click enable automatic deploys.
+Once Added we can enable automatic deployment by:
+- Click on the deploy tab.
+- Under automatic deploy, choose the branch.
+- Click enable automatic deploys.
 
 ### Run local
 
@@ -625,13 +634,13 @@ To copy the repository so that you have access to available files and any new ch
 - I used this [tutorial](https://www.youtube.com/watch?v=QKcVjdLEX_s) for learning purposes of using fetch with flask.
 - I used this [resource](https://stackoverflow.com/questions/34548311/data-from-textarea-with-line-breaks-to-database)to solve the issue where the white space on submitting an article was not being preserved.
 - I used this users [code](https://stackoverflow.com/questions/32237379/python-flask-redirect-to-https-from-http) to convert http to https. 
-- Sean from tutoring for the javascript code that prevents only space characters being validated on a textarea input. 
+- Sean from tutoring for the JavaScript code that prevents only space characters being validated on a text area input. 
 
 ### Content
 
 - The Code Institute content helped greatly with this project.
-- Realpython was a great resource to understand PEP8.
-- Materalise documentation was used extensively. 
+- Real python was a great resource to understand PEP8.
+- Materalize documentation was used extensively. 
 
 ### Acknowledgements
 
