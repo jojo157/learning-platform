@@ -154,7 +154,10 @@ i.fas.fa-bookmark {
     margin-top: 20px;
 }
 
-
+.brand-logo{
+    justify-content: center;
+    vertical-align: middle;
+}
 
 
 /* Home Page */
@@ -413,10 +416,10 @@ i.far.fa-image {
 @media only screen and (min-width: 601px) and (max-width: 1026px) {
 
     /* For tablets: */
-    .header-title {
-        margin-left: 20px;
-        margin-top: 30px;
+    .brand-logo{
+        top: 20%;
     }
+    
 }
 
 @media only screen and (min-width: 1027px) {
@@ -442,10 +445,11 @@ i.far.fa-image {
         margin-top: 20px;
     }
 
-    .header-title {
+    .brand-logo{
+        top: 20%;
         margin-left: 20px;
-        margin-top: 30px;
     }
+    
 
 
 }
@@ -464,12 +468,7 @@ i.far.fa-image {
         margin-bottom: 20px;
     }
 
-    .header-title {
-        margin-left: 20px;
-        margin-top: 30px;
-    }
-
-
+   
     .content-image-container {
         height: 400px;
         margin-bottom: 20px;
